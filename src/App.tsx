@@ -18,6 +18,7 @@ function App() {
         >
           Learn React
         </a>
+        <img src="./img/banner-phones.png" alt="phone" />
       </header>
     </div>
   );
