@@ -1,0 +1,129 @@
+.card {
+  width: 272px;
+  height: 506px;
+  padding: 32px;
+  background-color: #FFFFFF;
+}
+
+.image {
+  display: block;
+  object-fit: contain;
+  Width: 208px;
+  Height: 196px;
+  margin-bottom: 24px;
+}
+
+.content {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  margin-bottom: 8px;
+  color: #313237;
+}
+
+.prices {
+  display: flex;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 140%;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+.new_price {
+  font-weight: 800;
+  line-height: 140%;
+  color: #313237;
+  margin-right: 8px;
+}
+
+.old_price {
+  font-weight: 600;
+  line-height: 28px;
+  color: #89939A;
+  text-decoration-line: line-through;
+}
+
+.line {
+  width: 208px;
+  height: 0;
+  border: 1px solid #E2E6E9;
+  margin-bottom: 16px;
+}
+
+.screen_info {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  color: #89939A;
+  margin-bottom: 8px;
+}
+
+.screen_type {
+  color: #313237;
+}
+
+.capacity_info {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  color: #89939A;
+  margin-bottom: 8px;
+}
+
+.capacity_type {
+  color: #313237;
+}
+
+.ram_info {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  color: #89939A;
+  margin-bottom: 16px;
+}
+
+.ram_type {
+  color: #313237;
+}
+
+.buttons {
+  display: flex;
+}
+
+.button_add_to_card {
+  width: 160px;
+  height: 40px;
+  background-color: #313237;
+  border-style: solid;
+  text-align: center;
+  border-color: #313237;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+
+.button_link {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.add_to_favorite {
+  width: 40px;
+  height: 40px;
+  background: url("../../../public/img/buttons/to_favourites.svg") no-repeat;
+  display: inline-block;
+  cursor: pointer;
+
+  &:hover {
+    background: url("../../../public/img/buttons/to_favourites_hover.svg") no-repeat;
+  }
+}
