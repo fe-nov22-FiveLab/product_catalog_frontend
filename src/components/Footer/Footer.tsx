@@ -1,57 +1,56 @@
-import React from "react";
+import React from 'react';
 import styles from './Footer.module.scss';
+// import logo from '../../../public/img/icons/logo.svg';
+import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => (
   <div className={styles.container}>
-    <footer className={styles.footer}>
-      <div className={styles.footer_logo}>
-        <p className={styles.footer_logo_title}>
-          nice gadgets
-        </p>
+    <div className={styles.content}>
+      <footer className={styles.footer}>
         <img
           className={styles.footer_logo}
-          src="./img/icons/logo_ok.png"
+          src="img/icons/logo.svg"
           alt="logo nice gadgets"
         />
-      </div>
-      <ul className={styles.footer_list}>
-        <li className={styles.footer_item}>
-          <a
-            href="/github"
-            className={styles.footer_link}
-          >
-           github
-          </a>
-        </li>
-        <li className={styles.footer_item}>
-          <a
-            href="/contacts"
-            className={styles.footer_link}
-          >
-            contacts
-          </a>
-    
-          </li>
-    
+
+        <ul className={styles.footer_list}>
           <li className={styles.footer_item}>
-            <a
-              href="/rights"
+            <Link
+              to={'/github'}
               className={styles.footer_link}
             >
-              rights
-            </a>
+             github
+            </Link>
           </li>
-      </ul>
-      <div className={styles.footer_top_item}>
-        <p className={styles.footer_top_title}>Back to top</p>
-        <div className={styles.footer_button_top}>
-          <img
-            src="./img/icons/arrow-top.svg"
-            alt="back to top"
-            className={styles.footer_arrow_top}
-          />
+
+          <li className={styles.footer_item}>
+            <Link
+              to={'/contacts'}
+              className={styles.footer_link}
+            >
+              contacts
+            </Link>
+          </li>
+
+          <li className={styles.footer_item}>
+            <Link
+              to={'/rights'}
+              className={styles.footer_link}
+            >
+                rights
+            </Link>
+          </li>
+        </ul>
+
+        <div className={styles.footer_top_button}>
+          <p className={styles.footer_top_title}>Back to top</p>
+
+          <Link to={'#'}
+            className={styles.footer_arrow_up}
+          >
+          </Link>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
   </div>
-)
+);
