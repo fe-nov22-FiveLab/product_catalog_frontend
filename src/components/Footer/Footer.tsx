@@ -15,29 +15,20 @@ export const Footer: React.FC = () => (
 
         <ul className={styles.footer_list}>
           <li className={styles.footer_item}>
-            <Link
-              to={'/github'}
-              className={styles.footer_link}
-            >
-             github
+            <Link to={'/github'} className={styles.footer_link}>
+              github
             </Link>
           </li>
 
           <li className={styles.footer_item}>
-            <Link
-              to={'/contacts'}
-              className={styles.footer_link}
-            >
+            <Link to={'/contacts'} className={styles.footer_link}>
               contacts
             </Link>
           </li>
 
           <li className={styles.footer_item}>
-            <Link
-              to={'/rights'}
-              className={styles.footer_link}
-            >
-                rights
+            <Link to={'/rights'} className={styles.footer_link}>
+              rights
             </Link>
           </li>
         </ul>
@@ -45,10 +36,7 @@ export const Footer: React.FC = () => (
         <div className={styles.footer_top_button}>
           <p className={styles.footer_top_title}>Back to top</p>
 
-          <Link to={'#'}
-            className={styles.footer_arrow_up}
-          >
-          </Link>
+          <Link to={'#'} className={styles.footer_arrow_up}></Link>
         </div>
       </footer>
     </div>

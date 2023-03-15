@@ -9,7 +9,7 @@ export const Header: React.FC = () => {
           <a href="#home">
             <img
               className={styles.nav__logo__image}
-              src="/img/icons/logo.svg"
+              src="img/icons/logo.svg"
               alt="logo"
             />
           </a>
@@ -17,22 +17,25 @@ export const Header: React.FC = () => {
 
         <ul className={styles.nav__list}>
           <li className={styles.nav__item}>
-            <a className={styles.nav__link__active} href="#apple">Home</a>
+            <a className={styles.nav__link__active} href="#apple">
+              Home
+            </a>
           </li>
 
           <li className={styles.nav__item}>
-            <a className={styles.nav__link} href="#phones">Phones</a>
+            <a className={styles.nav__link} href="#phones">
+              Phones
+            </a>
           </li>
 
           <li className={styles.nav__item}>
-            <a className={styles.nav__link} href="#tablets">Tablets</a>
+            <a className={styles.nav__link} href="#tablets">
+              Tablets
+            </a>
           </li>
 
           <li className={styles.nav__item}>
-            <a
-              className={styles.nav__link}
-              href="#accessories"
-            >
+            <a className={styles.nav__link} href="#accessories">
               Accessories
             </a>
           </li>
@@ -40,14 +43,11 @@ export const Header: React.FC = () => {
       </nav>
 
       <div className={styles.icon}>
-        <a className={styles.icon_favourites} href="#favourites">
-        </a>
+        <a className={styles.icon_favourites} href="#favourites"></a>
 
-        <a className={styles.icon_shop_bag} href="#shopBag">
-        </a>
+        <a className={styles.icon_shop_bag} href="#shopBag"></a>
 
-        <a className={styles.icon_burger_menu} href="#burgerMenu">
-        </a>
+        <a className={styles.icon_burger_menu} href="#burgerMenu"></a>
       </div>
     </header>
   );
