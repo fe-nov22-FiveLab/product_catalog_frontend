@@ -1,26 +1,16 @@
 import React from 'react';
 import { Catalog } from './components/Catalog';
+import { Navigate, Route, Routes } from 'react-router-dom';
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit<code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Catalog />
-        <img src="./img/banner-phones.png" alt="phone" />
-      </header>
+      <Routes>
+        <Route path="/" element={<Catalog />} />
+        <Route path="home" element={<Navigate to="/" replace />} />
+      </Routes>
     </div>
   );
-}
+};
 
 export default App;
