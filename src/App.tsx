@@ -1,5 +1,6 @@
 import React from 'react';
 import { Catalog } from './components/Catalog';
+import { Footer } from './components/Footer';
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
         <Catalog />
         <img src="./img/banner-phones.png" alt="phone" />
       </header>
+
+      <Footer />
     </div>
   );
 }
