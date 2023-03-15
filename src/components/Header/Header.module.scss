@@ -1,0 +1,159 @@
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 48px;
+  border-bottom: 1px solid #e2e6e9;
+  background-color: #ffffff;
+
+  @media (min-width: 1200px) {
+    height: 63px;
+  }
+}
+
+.nav {
+  display: flex;
+
+  &__logo {
+    padding-left: 16px;
+    padding-right: 16px;
+
+    &__image {
+      height: 20px;
+      width: 64px;
+
+      @media (min-width: 1200px) {
+        height: 26px;
+        width: 80px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      padding-left: 24px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+
+    @media (max-width: 630px) {
+      display: none;
+    }
+  }
+
+  &__item {
+    display: flex;
+    padding-left: 32px;
+
+    line-height: 11px;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+
+    @media (min-width: 1200px) {
+      padding-left: 64px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+    color: #89939a;
+
+    &:hover {
+      color: #313237;
+    }
+
+    &__active {
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+    color: #89939a;
+
+    color: #313237;
+    position: relative;
+
+    &:hover {
+      color: #313237;
+    }
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 130%;
+        height: 3px;
+        width: 100%;
+
+        background-color: #313237;
+
+        @media (min-width: 1200px) {
+          top: 140%;
+        }
+      }
+    }
+  }
+}
+
+.icon {
+  display: flex;
+
+    &_shop_bag {
+      height: 48px;
+      width: 48px;
+      background: url("../../../public/img/icons/cart.svg") no-repeat center;
+      border-bottom: 1px solid #e2e6e9;
+      border-left: 1px solid #e2e6e9;
+
+      &:hover {
+        border: 1px solid #313237;
+      }
+
+      @media (min-width: 1200px) {
+        width: 64px;
+        height: 64px;
+      }
+
+      @media (max-width: 639px) {
+        display: none;
+      }
+    }
+
+    &_favourites {
+      height: 48px;
+      width: 48px;
+      background: url("../../../public/img/icons/favourites.svg") no-repeat center;
+      border-bottom: 1px solid #e2e6e9;
+      border-left: 1px solid #e2e6e9;
+
+      &:hover {
+        border: 1px solid #313237;
+      }
+
+      @media (min-width: 1200px) {
+        width: 64px;
+        height: 64px;
+      }
+
+      @media (max-width: 639px) {
+        display: none;
+      }
+    }
+
+    &_burger_menu {
+      width: 48px;
+      height: 48px;
+      background: url("../../../public/img/icons/burgerMenuIcon.svg") no-repeat center;
+
+      @media (min-width: 640px) {
+        display: none;
+      }
+    }
+  }
