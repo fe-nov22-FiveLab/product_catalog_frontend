@@ -1,6 +1,6 @@
 {
   "name": "product_catalog_frontend",
-  "homepage": "https://fe-nov22-FiveLab.github.io/product_catalog_frontend",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
