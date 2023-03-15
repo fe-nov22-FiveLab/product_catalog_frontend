@@ -11,6 +11,10 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+body, p {
   margin: 0;
+}
+
+button {
+  font-family: 'Mont', sans-serif;
 }
