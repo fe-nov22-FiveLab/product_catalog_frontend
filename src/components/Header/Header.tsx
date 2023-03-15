@@ -9,7 +9,7 @@ export const Header: React.FC = () => {
           <a href="#home">
             <img
               className={styles.nav__logo__image}
-              src="../../../public/img/icons/logo.svg"
+              src="/img/icons/logo.svg"
               alt="logo"
             />
           </a>
