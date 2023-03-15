@@ -4,17 +4,16 @@ declare module '*.scss' {
 }
 
 declare module '*.svg' {
-  const content: any;
+  const content: unknown;
   export default content;
 }
 
 declare module '*.png' {
-  const content: any;
+  const content: unknown;
   export default content;
 }
 
-
 declare module '*.jpg' {
-  const content: any;
+  const content: unknown;
   export default content;
 }
