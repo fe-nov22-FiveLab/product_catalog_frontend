@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Footer.module.scss';
-// import logo from '../../../public/img/icons/logo.svg';
+import logo from '../../assets/img/logo.svg';
 import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
         <footer className={styles.footer}>
           <img
             className={styles.footer_logo}
-            src="img/icons/logo.svg"
+            src={logo}
             alt="logo nice gadgets"
           />
 
