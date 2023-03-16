@@ -1,16 +1,58 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
 .card {
-  width: 272px;
-  height: 506px;
-  padding: 32px;
-  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 288px;
+  height: 440px;
+  padding: 16px;
+  background-color: $white-color;
+  border: 1px solid $elements-color;
+
+  @include onTablet {
+    width: 288px;
+    height: 506px;
+    padding: 24px;
+  }
+
+  @include onDesktop {
+    width: 272px;
+    height: 506px;
+    padding: 32px;
+  }
 }
 
 .image {
   display: block;
   object-fit: contain;
-  width: 208px;
-  height: 196px;
+  width: 148px;
+  height: 129px;
   margin-bottom: 24px;
+
+  @include onTablet {
+    width: 173px;
+    height: 202px;
+  }
+
+  @include onDesktop {
+    width: 208px;
+    height: 196px;
+  }
+}
+
+.phone_infos {
+  width: 148px;
+
+  @include onTablet {
+    width: 173px;
+  }
+
+  @include onDesktop {
+    width: 208px;
+  }
 }
 
 .content {
@@ -18,35 +60,35 @@
   font-size: 14px;
   line-height: 21px;
   margin-bottom: 8px;
-  color: #313237;
+  color: $primary-color;
 }
 
 .prices {
   display: flex;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 22px;
   line-height: 140%;
   align-items: baseline;
   margin-bottom: 8px;
 }
+
 .new_price {
   font-weight: 800;
   line-height: 140%;
-  color: #313237;
+  color: $primary-color;
   margin-right: 8px;
 }
 
 .old_price {
   font-weight: 600;
   line-height: 28px;
-  color: #89939a;
+  color: $secondary-color;
   text-decoration-line: line-through;
 }
 
 .line {
-  width: 208px;
   height: 0;
-  border: 1px solid #e2e6e9;
+  border: 1px solid $elements-color;
   margin-bottom: 16px;
 }
 
@@ -56,12 +98,12 @@
   font-weight: 600;
   font-size: 12px;
   line-height: 15px;
-  color: #89939a;
+  color: $secondary-color;
   margin-bottom: 8px;
 }
 
 .screen_type {
-  color: #313237;
+  color: $primary-color;
 }
 
 .capacity_info {
@@ -70,12 +112,12 @@
   font-weight: 600;
   font-size: 12px;
   line-height: 15px;
-  color: #89939a;
+  color: $secondary-color;
   margin-bottom: 8px;
 }
 
 .capacity_type {
-  color: #313237;
+  color: $primary-color;
 }
 
 .ram_info {
@@ -84,12 +126,12 @@
   font-weight: 600;
   font-size: 12px;
   line-height: 15px;
-  color: #89939a;
+  color: $secondary-color;
   margin-bottom: 16px;
 }
 
 .ram_type {
-  color: #313237;
+  color: $primary-color;
 }
 
 .buttons {
@@ -97,22 +139,35 @@
 }
 
 .button_add_to_card {
-  width: 160px;
+  width: 100px;
   height: 40px;
-  background-color: #313237;
+  background-color: $primary-color;
   border-style: solid;
   text-align: center;
-  border-color: #313237;
+  border-color: $primary-color;
   cursor: pointer;
   margin-right: 8px;
+
+  &:hover {
+    box-shadow: 0px 3px 13px rgba(23, 32, 49, 0.4);
+  }
+
+  @include onTablet {
+    width: 125px;
+  }
+
+  @include onDesktop {
+    width: 160px;
+  }
 }
 
 .button_link {
   font-weight: 700;
   font-size: 14px;
   line-height: 21px;
+  text-align: center;
   text-decoration: none;
-  color: #ffffff;
+  color: $white-color;
 }
 
 .add_to_favorite {

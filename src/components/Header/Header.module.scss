@@ -41,8 +41,6 @@
 
   &__list {
     display: flex;
-    padding: 0;
-    margin: 0;
 
     @media (max-width: 639px) {
       display: none;

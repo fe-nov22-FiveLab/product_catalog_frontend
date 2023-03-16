@@ -1,10 +1,14 @@
-body, p, ul {
-  margin: 0;
-  padding: 0;
-}
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
 
 .container {
-border-top: 1px solid #e2e6e9;
+  height: $footer-height-mobile;
+
+  @include onTablet {
+    height: $footer-height-tablet;
+  }
+
+  border-top: 1px solid $elements-color;
 }
 
 .content {
@@ -12,11 +16,11 @@ border-top: 1px solid #e2e6e9;
   margin: 0 auto;
   padding: 32px 16px;
 
-  @media (min-width: 640px) {
+  @include onTablet {
     padding: 32px 24px;
   }
 
-  @media (min-width: 1200px) {
+  @include onDesktop {
     padding: 32px;
   }
 }
@@ -28,9 +32,9 @@ border-top: 1px solid #e2e6e9;
   gap: 32px;
   font-size: 12px;
   font-weight: 800;
-  color: #89939A;
+  color: $secondary-color;
 
-  @media (min-width: 640px) {
+  @include onTablet {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -40,41 +44,40 @@ border-top: 1px solid #e2e6e9;
     display: flex;
     flex-direction: column;
     text-transform: uppercase;
-    list-style: none;
     gap: 16px;
 
-    @media (min-width: 640px) {
-    gap: 16px;
-    flex-direction: row;
+    @include onTablet {
+      gap: 16px;
+      flex-direction: row;
     }
 
-    @media (min-width: 1200px) {
-    gap: 100px;
-    flex-direction: row;
+    @include onDesktop {
+      gap: 100px;
+      flex-direction: row;
     }
   }
 
   &_link {
-    text-decoration: none;
-    color: #89939A;
+    color: $secondary-color;
   }
 
   &_top_button {
     display: flex;
     align-items: center;
     gap: 16px;
-    align-self: center;
   }
 
   &_arrow_up {
     height: 32px;
     width: 32px;
     display: inline-block;
-    background: url("../../../public/img/buttons/slider_button_default_up.svg") no-repeat;
+    background: url('../../../public/img/buttons/slider_button_default_up.svg')
+      no-repeat;
     transform: rotate(90);
 
     &:hover {
-    background: url("../../../public/img/buttons/slider_button_hover_up.svg") no-repeat;
+      background: url('../../../public/img/buttons/slider_button_hover_up.svg')
+        no-repeat;
     }
   }
 }
