@@ -1,10 +1,12 @@
-body, p, ul {
+body,
+p,
+ul {
   margin: 0;
   padding: 0;
 }
 
 .container {
-border-top: 1px solid #e2e6e9;
+  border-top: 1px solid #e2e6e9;
 }
 
 .content {
@@ -28,7 +30,7 @@ border-top: 1px solid #e2e6e9;
   gap: 32px;
   font-size: 12px;
   font-weight: 800;
-  color: #89939A;
+  color: #89939a;
 
   @media (min-width: 640px) {
     flex-direction: row;
@@ -44,19 +46,19 @@ border-top: 1px solid #e2e6e9;
     gap: 16px;
 
     @media (min-width: 640px) {
-    gap: 16px;
-    flex-direction: row;
+      gap: 16px;
+      flex-direction: row;
     }
 
     @media (min-width: 1200px) {
-    gap: 100px;
-    flex-direction: row;
+      gap: 100px;
+      flex-direction: row;
     }
   }
 
   &_link {
     text-decoration: none;
-    color: #89939A;
+    color: #89939a;
   }
 
   &_top_button {
@@ -70,11 +72,13 @@ border-top: 1px solid #e2e6e9;
     height: 32px;
     width: 32px;
     display: inline-block;
-    background: url("../../../public/img/buttons/slider_button_default_up.svg") no-repeat;
+    background: url('../../../public/img/buttons/slider_button_default_up.svg')
+      no-repeat;
     transform: rotate(90);
 
     &:hover {
-    background: url("../../../public/img/buttons/slider_button_hover_up.svg") no-repeat;
+      background: url('../../../public/img/buttons/slider_button_hover_up.svg')
+        no-repeat;
     }
   }
 }

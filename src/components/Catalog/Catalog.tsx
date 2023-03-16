@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './Catalog.module.scss';
-import 'bulma/css/bulma.css';
 import { Card } from '../Card/Card';
 
 export const Catalog: React.FC = () => {
