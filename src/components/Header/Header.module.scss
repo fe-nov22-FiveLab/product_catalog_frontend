@@ -41,8 +41,6 @@
 
   &__list {
     display: flex;
-    padding: 0;
-    margin: 0;
 
     @media (max-width: 639px) {
       display: none;
@@ -67,7 +65,7 @@
     align-items: center;
 
     text-decoration: none;
-    color: $primary-color;
+    color: $secondary-color;
 
     &:hover {
       color: $primary-color;
