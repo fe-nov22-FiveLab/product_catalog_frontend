@@ -12,7 +12,6 @@
   background-color: $white-color;
   border: 1px solid $elements-color;
 
-
   @include onTablet {
     width: 288px;
     height: 506px;
@@ -54,7 +53,6 @@
   @include onDesktop {
     width: 208px;
   }
-
 }
 
 .content {
@@ -167,8 +165,7 @@
   font-weight: 700;
   font-size: 14px;
   line-height: 21px;
-  text-align: ce
-  ;
+  text-align: ce;
   text-decoration: none;
   color: $white-color;
 }

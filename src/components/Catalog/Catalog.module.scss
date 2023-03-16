@@ -1,6 +1,4 @@
-@import "../../styles/variables.scss";
-@import "../../styles/mixins.scss";
-
+@import '../../styles/variables.scss';
 @import '../../styles/mixins.scss';
 
 $card-width-desctop: 272px;
@@ -16,7 +14,6 @@ $column-gap: 16px;
   row-gap: 40px;
 
   @include onTablet {
-
     max-width: $card-width-tablet-mobile * 2 + $column-gap;
     grid-template-columns: 1fr 1fr;
   }
