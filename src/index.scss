@@ -3,16 +3,14 @@
 @import 'styles/variables';
 @import 'styles/mixins';
 
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .container {
-  min-height: $main-height-mobile;
-
-  @include onTablet {
-    min-height: $main-height-tablet;
-  }
-
-  @include onDesktop {
-    min-height: $main-height-desktop;
-  }
+  flex-grow: 1;
   padding: 0 16px;
 
   @include onTablet {

@@ -2,10 +2,10 @@
 @import '../../styles/mixins.scss';
 
 .container {
-  height: $footer-height-mobile;
+  height: 257px;
 
   @include onTablet {
-    height: $footer-height-tablet;
+    height: 96px;
   }
 
   border-top: 1px solid $elements-color;
@@ -71,9 +71,13 @@
     height: 32px;
     width: 32px;
     display: inline-block;
+
+    border: none;
     background: url('../../../public/img/buttons/slider_button_default_up.svg')
-      no-repeat;
+    no-repeat;
     transform: rotate(90);
+
+    transition: all 0.3s;
 
     &:hover {
       background: url('../../../public/img/buttons/slider_button_hover_up.svg')
