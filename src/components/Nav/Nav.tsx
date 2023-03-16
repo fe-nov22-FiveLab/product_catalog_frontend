@@ -8,7 +8,11 @@ export const Nav: React.FC = () => {
     <nav className={styles.nav}>
       <div className={styles.nav__logo}>
         <NavLink to="home">
-          <img className={styles.nav__logo__image} src="/img/icons/logo.svg" alt="logo" />
+          <img
+            className={styles.nav__logo__image}
+            src="img/icons/logo.svg"
+            alt="logo"
+          />
         </NavLink>
       </div>
 

@@ -13,15 +13,13 @@ export const Header: React.FC = () => {
         <div className={styles.icon}>
           <NavLink to="favourites">
             <div className={styles.icon__action}>
-
-              <img src="/img/icons/favourites.svg" alt="favourites" />
+              <img src="img/icons/favourites.svg" alt="favourites" />
             </div>
           </NavLink>
 
           <NavLink to="cart">
             <div className={styles.icon__action}>
-
-              <img src="/img/icons/bag.svg" alt="shopping bag" />
+              <img src="img/icons/bag.svg" alt="shopping bag" />
             </div>
           </NavLink>
 
