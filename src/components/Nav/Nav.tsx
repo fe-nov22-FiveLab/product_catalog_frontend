@@ -14,27 +14,19 @@ export const Nav: React.FC = () => {
 
       <ul className={styles.nav__list}>
         <li className={styles.nav__item}>
-          <NavigationLink path="/" text="HOME" styleClass={styles.nav__link} />
+          <NavigationLink path="/" text="HOME" />
         </li>
 
         <li className={styles.nav__item}>
-          <NavigationLink path="phones" text="PHONES" styleClass={styles.nav__link} />
+          <NavigationLink path="phones" text="PHONES" />
         </li>
 
         <li className={styles.nav__item}>
-          <NavigationLink
-            path="tablets"
-            text="TABLETS"
-            styleClass={styles.nav__link}
-          />
+          <NavigationLink path="tablets" text="TABLETS" />
         </li>
 
         <li className={styles.nav__item}>
-          <NavigationLink
-            path="accessories"
-            text="ACCESSORIES"
-            styleClass={styles.nav__link}
-          />
+          <NavigationLink path="accessories" text="ACCESSORIES" />
         </li>
       </ul>
     </nav>
