@@ -5,18 +5,21 @@ import { Footer } from './components/Footer';
 import { PhonesPage } from './pages/PhonesPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { Header } from './components/Header';
+// import styles from './index.scss';
 
 const App: React.FC = () => {
   return (
     <div className="App">
       <Header />
 
-      <Routes>
-        <Route path="/" element={<Catalog />} />
-        <Route path="home" element={<Navigate to="/" replace />} />
-        <Route path="/phones" element={<PhonesPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<Catalog />} />
+          <Route path="home" element={<Navigate to="/" replace />} />
+          <Route path="/phones" element={<PhonesPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </div>
 
       <Footer />
     </div>

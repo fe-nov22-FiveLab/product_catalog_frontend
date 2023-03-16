@@ -1,5 +1,7 @@
 @import './styles/fonts.scss';
 @import './styles/variables.scss';
+@import "./styles/mixins.scss";
+
 
 * {
   box-sizing: border-box;
@@ -14,6 +16,18 @@ html {
 body,
 p {
   margin: 0;
+}
+
+.container {
+  padding: 0 16px;
+
+  @include onTablet {
+  padding: 0 24px;
+  }
+
+  @include onDesktop {
+  padding: 0 32px;
+  }
 }
 
 button {

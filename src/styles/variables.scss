@@ -6,3 +6,17 @@ $hover-bg-color: #fafbfc;
 $white-color: #ffffff;
 $green-color: #27ae60;
 $red-color: #eb5757;
+
+$header-height-desktop: 64px;
+$header-height-mobile: 48px;
+$footer-height-tablet: 96px;
+$footer-height-mobile: 257px;
+$main-height-mobile: calc(
+  100vh - #{$header-height-mobile + $footer-height-mobile}
+);
+$main-height-tablet: calc(
+  100vh - #{$header-height-mobile + $footer-height-tablet}
+);
+$main-height-desktop: calc(
+  100vh - #{$header-height-desktop + $footer-height-tablet}
+);
