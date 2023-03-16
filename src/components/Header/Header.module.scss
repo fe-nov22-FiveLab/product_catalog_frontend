@@ -120,6 +120,19 @@
   height: 48px;
   border-left: 1px solid $elements-color;
 
+  &__burger_menu {
+    background-color: $white-color;
+    border: 1px solid $elements-color;
+    border-bottom: none;
+    height: 48px;
+    width: 48px;
+    cursor: pointer;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
   &:hover {
     background-color: $elements-color;
   }
