@@ -16,61 +16,36 @@ export const Card: React.FC = () => {
           Apple iPhone Xs 64GB Silver (iMT9G2FS/A)
         </p>
         <div className={styles.prices}>
-          <p className={styles.new_price}>
-            $799
-          </p>
-          <p className={styles.old_price}>
-            $899
-          </p>
+          <p className={styles.new_price}>$799</p>
+          <p className={styles.old_price}>$899</p>
         </div>
 
         <div className={styles.line}></div>
 
         <div className={styles.screen_info}>
-          <p className={styles.screen}>
-            Screen
-          </p>
-          <p className={styles.screen_type}>
-            5.8” OLED
-          </p>
+          <p className={styles.screen}>Screen</p>
+          <p className={styles.screen_type}>5.8” OLED</p>
         </div>
 
         <div className={styles.capacity_info}>
-          <p className={styles.capacity}>
-            Capacity
-          </p>
-          <p className={styles.capacity_type}>
-            64 GB
-          </p>
+          <p className={styles.capacity}>Capacity</p>
+          <p className={styles.capacity_type}>64 GB</p>
         </div>
 
         <div className={styles.ram_info}>
-          <p className={styles.ram}>
-            RAM
-          </p>
-          <p className={styles.ram_type}>
-            4 GB
-          </p>
+          <p className={styles.ram}>RAM</p>
+          <p className={styles.ram_type}>4 GB</p>
         </div>
-
 
         <div className={styles.buttons}>
           <button className={styles.button_add_to_card}>
-            <a
-              className={styles.button_link}
-              href="#button"
-              data-qa="hover"
-            >
+            <a className={styles.button_link} href="#button" data-qa="hover">
               Add to a cart
             </a>
           </button>
-          <Link to='#'
-            className={styles.add_to_favorite}
-          >
-          </Link>
+          <Link to="#" className={styles.add_to_favorite}></Link>
         </div>
       </div>
     </>
   );
 };
-

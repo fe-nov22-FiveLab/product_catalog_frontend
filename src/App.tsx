@@ -1,6 +1,7 @@
 import React from 'react';
-import { Catalog } from './components/Catalog';
 import { Navigate, Route, Routes } from 'react-router-dom';
+import { Catalog } from './components/Catalog';
+import { Footer } from './components/Footer';
 import { PhonesPage } from './pages/PhonesPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { Header } from './components/Header';
@@ -16,6 +17,8 @@ const App: React.FC = () => {
         <Route path="/phones" element={<PhonesPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
+
+      <Footer />
     </div>
   );
 };
