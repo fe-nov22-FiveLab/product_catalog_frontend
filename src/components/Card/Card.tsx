@@ -23,7 +23,6 @@ export const Card: React.FC = () => {
 
           <div className={styles.line}></div>
 
-
           <div className={styles.screen_info}>
             <p className={styles.screen}>Screen</p>
             <p className={styles.screen_type}>5.8” OLED</p>

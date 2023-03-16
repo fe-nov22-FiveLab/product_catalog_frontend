@@ -1,5 +1,6 @@
 @import './styles/fonts.scss';
 @import 'styles/variables';
+@import 'styles/mixins';
 
 * {
   box-sizing: border-box;
@@ -14,6 +15,27 @@ html {
 body,
 p {
   margin: 0;
+}
+
+.container {
+  min-height: $main-height-mobile;
+
+  @include onTablet {
+    min-height: $main-height-tablet;
+  }
+
+  @include onDesktop {
+    min-height: $main-height-desktop;
+  }
+  padding: 0 16px;
+
+  @include onTablet {
+    padding: 0 24px;
+  }
+
+  @include onDesktop {
+    padding: 0 32px;
+  }
 }
 
 button {
