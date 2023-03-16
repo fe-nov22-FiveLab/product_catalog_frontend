@@ -1,21 +1,7 @@
-@import './styles/fonts.scss';
+@import 'styles/fonts';
+@import 'styles/normalize';
 @import 'styles/variables';
 @import 'styles/mixins';
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  font-family: 'Mont', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body,
-p {
-  margin: 0;
-}
 
 .App {
   min-height: 100vh;
@@ -34,8 +20,4 @@ p {
   @include onDesktop {
     padding: 0 32px;
   }
-}
-
-button {
-  font-family: 'Mont', sans-serif;
 }

@@ -1,14 +1,6 @@
 @import '../../styles/variables.scss';
 @import '../../styles/mixins.scss';
 
-body,
-body,
-p,
-ul {
-  margin: 0;
-  padding: 0;
-}
-
 .container {
   height: 257px;
 
@@ -52,7 +44,6 @@ ul {
     display: flex;
     flex-direction: column;
     text-transform: uppercase;
-    list-style: none;
     gap: 16px;
 
     @include onTablet {
@@ -67,7 +58,6 @@ ul {
   }
 
   &_link {
-    text-decoration: none;
     color: $secondary-color;
   }
 
@@ -75,7 +65,6 @@ ul {
     display: flex;
     align-items: center;
     gap: 16px;
-    align-self: center;
   }
 
   &_arrow_up {
