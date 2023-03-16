@@ -5,7 +5,6 @@ import { Footer } from './components/Footer';
 import { PhonesPage } from './pages/PhonesPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { Header } from './components/Header';
-// import styles from './index.scss';
 
 const App: React.FC = () => {
   return (

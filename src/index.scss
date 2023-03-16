@@ -19,6 +19,15 @@ p {
 }
 
 .container {
+  min-height: $main-height-mobile;
+
+  @include onTablet {
+  min-height: $main-height-tablet;
+  }
+
+  @include onDesktop {
+  min-height: $main-height-desktop;
+  }
   padding: 0 16px;
 
   @include onTablet {

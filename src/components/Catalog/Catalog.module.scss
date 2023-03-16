@@ -2,13 +2,5 @@
 @import "../../styles/mixins.scss";
 
 .container {
-  min-height: $main-height-mobile;
 
-  @include onTablet {
-  min-height: $main-height-tablet;
-  }
-
-  @include onDesktop {
-  min-height: $main-height-desktop;
-  }
 }
