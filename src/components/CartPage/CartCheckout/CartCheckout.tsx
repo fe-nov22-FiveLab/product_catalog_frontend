@@ -1,5 +1,5 @@
 import React from 'react';
-import  styles  from './CartCheckout.module.scss';
+import styles from './CartCheckout.module.scss';
 
 export const CartCheckout: React.FC = () => {
   return (

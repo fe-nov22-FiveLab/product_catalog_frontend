@@ -42,21 +42,19 @@ export const Footer: React.FC = () => {
           </ul>
 
           <div className={styles.footer_top_button}>
-            <label
-              className={styles.footer_top_title}
-              htmlFor="back-to-top"
-            >
+            <label className={styles.footer_top_title} htmlFor="back-to-top">
               Back to top
             </label>
 
-            <button type='button'
+            <button
+              type="button"
               className={styles.footer_arrow_up}
               id="back-to-top"
-              onClick={goToTop}></button>
+              onClick={goToTop}
+            ></button>
           </div>
         </footer>
       </div>
     </div>
   );
 };
-
