@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './CartItem.module.scss';
 import { Link } from 'react-router-dom';
-import ClassNames from 'classnames';
+import classNames from 'classnames';
 
 export const CartItem: React.FC = () => {
   return (
@@ -17,12 +17,10 @@ export const CartItem: React.FC = () => {
           <p className={styles.content}>Apple iPhone 14 Pro 128GB Silver (MQ023)</p>
         </div>
 
-
-
         <div className={styles.quantity_and_price}>
           <div className={styles.quantity_buttons}>
             <div className={styles.minus}>
-              <Link to="#" className={classNames(styles.quantity_buttons_minus, { [styles.is_active]: isActive })}
+              <Link to="#" className={classNames(styles.quantity_buttons_minus, { [styles.is_active]: true })}
               >
                 <img className={styles.quantity_minus_img} src="/img/icons/minus_grey.svg" alt="x" />
               </Link>

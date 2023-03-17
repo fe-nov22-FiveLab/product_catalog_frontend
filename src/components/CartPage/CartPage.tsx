@@ -5,17 +5,16 @@ import  styles  from './CartPage.module.scss';
 
 export const CartPage: React.FC = () => {
   return (
-    <>
-      <div className={styles.cart_page}>
-        <div>
-          <CartItem />
-          <CartItem />
-          <CartItem />
-        </div>
-
-        <CartCheckout />
+    <div className={styles.cart_page}>
+      <div>
+        <CartItem />
+        <CartItem />
+        <CartItem />
       </div>
 
-    </>
+      <CartCheckout />
+    </div>
+
+
   );
 };

@@ -39,11 +39,9 @@ export const Card: React.FC = () => {
           </div>
         </div>
         <div className={styles.buttons}>
-          <button className={styles.button_add_to_card}>
-            <a className={styles.button_link} href="#button" data-qa="hover">
-              Add to cart
-            </a>
-          </button>
+          <a className={styles.button_add_to_card} href="#button" data-qa="hover">
+            Add to cart
+          </a>
           <Link to="#" className={styles.add_to_favorite}></Link>
         </div>
       </div>
