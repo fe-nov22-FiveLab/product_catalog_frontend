@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Footer.module.scss';
-import logo from '../../assets/img/logo.svg';
+import logo from '../../assets/img/icons/logo.svg';
 import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
@@ -42,21 +42,19 @@ export const Footer: React.FC = () => {
           </ul>
 
           <div className={styles.footer_top_button}>
-            <label
-              className={styles.footer_top_title}
-              htmlFor="back-to-top"
-            >
+            <label className={styles.footer_top_title} htmlFor="back-to-top">
               Back to top
             </label>
 
-            <button type='button'
+            <button
+              type="button"
               className={styles.footer_arrow_up}
               id="back-to-top"
-              onClick={goToTop}></button>
+              onClick={goToTop}
+            ></button>
           </div>
         </footer>
       </div>
     </div>
   );
 };
-

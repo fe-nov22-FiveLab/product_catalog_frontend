@@ -1,0 +1,28 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+
+  &__home {
+    display: flex;
+    align-items: center;
+
+    margin-right: 13px;
+  }
+
+  &__arrow {
+    margin-right: 13px;
+  }
+
+  &__nav {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    color: $secondary-color;
+  }
+}
