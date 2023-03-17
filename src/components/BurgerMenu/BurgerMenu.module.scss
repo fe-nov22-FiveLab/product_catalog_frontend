@@ -54,6 +54,10 @@
     border: 1px solid $elements-color;
     flex-grow: 1.5;
     cursor: pointer;
+
+    &:hover {
+      border: 1px solid $primary-color;
+    }
   }
 
   &__list {
@@ -97,6 +101,12 @@
 
     background-color: $primary-color;
   }
+
+  &__bottom {
+    &::after {
+      content: none;
+    }
+  }
 }
 
 .icon {
@@ -107,11 +117,14 @@
 
   border: 1px solid $elements-color;
 
+  &:hover {
+    border: 1px solid $primary-color;
+  }
+
   &__action {
     display: flex;
     justify-content: center;
     align-items: center;
-    
     width: 48px;
     height: 48px;
     border: none;
