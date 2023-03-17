@@ -6,7 +6,7 @@ $card-width-tablet-mobile: 288px;
 $column-gap: 16px;
 
 .catalog {
-  margin: 0 auto;
+  margin: 0 auto 24px;
   display: grid;
   max-width: 288px;
   grid-template-columns: 1fr;
@@ -16,6 +16,7 @@ $column-gap: 16px;
   @include onTablet {
     max-width: $card-width-tablet-mobile * 2 + $column-gap;
     grid-template-columns: 1fr 1fr;
+    margin: 0 auto 40px;
   }
 
   @media (min-width: 900px) {
