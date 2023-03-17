@@ -21,7 +21,6 @@ export const Header: React.FC = () => {
 
           <NavLink to="cart">
             <div className={styles.icon__action}>
-
               <img src={bag} />
             </div>
           </NavLink>

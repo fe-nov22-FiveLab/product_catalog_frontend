@@ -9,15 +9,13 @@ interface Props {
   isOpenMenu?: (isOpen: boolean) => void;
 }
 
-export const NavigationLink: React.FC<Props> = ({
-  path,
-  text,
-  isOpenMenu,
-}) => {
+export const NavigationLink: React.FC<Props> = ({ path, text, isOpenMenu }) => {
   return (
     <NavLink
       to={path}
-      className={({ isActive }) => classNames(styles.nav__link, { [styles.is_active]: isActive })}
+      className={({ isActive }) =>
+        classNames(styles.nav__link, { [styles.is_active]: isActive })
+      }
       onClick={() => isOpenMenu !== undefined && isOpenMenu(false)}
     >
       {text}
