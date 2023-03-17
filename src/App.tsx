@@ -5,6 +5,7 @@ import { Footer } from './components/Footer';
 import { PhonesPage } from './pages/PhonesPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { Header } from './components/Header';
+import { CartPage } from './components/CartPage/CartPage';
 
 const App: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const App: React.FC = () => {
         <Route path="home" element={<Navigate to="/" replace />} />
         <Route path="/phones" element={<PhonesPage />} />
         <Route path="*" element={<NotFoundPage />} />
+        <Route path="/cart" element={<CartPage />} />
       </Routes>
 
       <Footer />
