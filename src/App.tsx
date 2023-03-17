@@ -1,6 +1,5 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { Catalog } from './components/Catalog';
 import { Footer } from './components/Footer';
 import { PhonesPage } from './pages/PhonesPage';
 import { NotFoundPage } from './pages/NotFoundPage';
@@ -12,13 +11,14 @@ const App: React.FC = () => {
     <div className="App">
       <Header />
 
-      <Routes>
-        <Route path="/" element={<Catalog />} />
-        <Route path="home" element={<Navigate to="/" replace />} />
-        <Route path="/phones" element={<PhonesPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-        <Route path="/cart" element={<CartPage />} />
-      </Routes>
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<p>Welcome to Nice Gadgets store!</p>} />
+          <Route path="home" element={<Navigate to="/" replace />} />
+          <Route path="/phones" element={<PhonesPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </div>
 
       <Footer />
     </div>

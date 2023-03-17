@@ -1,54 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { Nav } from '../Nav/Nav';
 import styles from './Header.module.scss';
+import { BurgerMenu } from '../BurgerMenu/BurgerMenu';
+import favourites_heart from '../../assets/img/favourites_heart.svg';
+import bag from '../../assets/img/bag.svg';
+import burger from '../../assets/img/burger.svg';
 
 export const Header: React.FC = () => {
+  const [isActiveBurger, setIsActiveBurger] = useState(false);
+
   return (
-    <header className={styles.header}>
-      <nav className={styles.nav}>
-        <div className={styles.nav__logo}>
-          <a href="#home">
-            <img
-              className={styles.nav__logo__image}
-              src="img/icons/logo.svg"
-              alt="logo"
-            />
-          </a>
+    <>
+      {isActiveBurger && (
+        <BurgerMenu
+          handleCloseBurger={setIsActiveBurger}
+        />
+      )}
+      <header className={styles.header}>
+        <Nav />
+
+        <div className={styles.icon}>
+          <NavLink to="favourites">
+            <div className={styles.icon__action}>
+              <img src={favourites_heart} alt="favourites" />
+            </div>
+          </NavLink>
+
+          <NavLink to="cart">
+            <div className={styles.icon__action}>
+
+              <img src={bag} />
+            </div>
+          </NavLink>
+
+          <button
+            onClick={() => setIsActiveBurger(true)}
+            type="button"
+            className={styles.icon__action__burger_menu}
+          >
+            <img src={burger} />
+          </button>
         </div>
-
-        <ul className={styles.nav__list}>
-          <li className={styles.nav__item}>
-            <a className={styles.nav__link__active} href="#apple">
-              Home
-            </a>
-          </li>
-
-          <li className={styles.nav__item}>
-            <a className={styles.nav__link} href="#phones">
-              Phones
-            </a>
-          </li>
-
-          <li className={styles.nav__item}>
-            <a className={styles.nav__link} href="#tablets">
-              Tablets
-            </a>
-          </li>
-
-          <li className={styles.nav__item}>
-            <a className={styles.nav__link} href="#accessories">
-              Accessories
-            </a>
-          </li>
-        </ul>
-      </nav>
-
-      <div className={styles.icon}>
-        <a className={styles.icon_favourites} href="#favourites"></a>
-
-        <a className={styles.icon_shop_bag} href="#shopBag"></a>
-
-        <a className={styles.icon_burger_menu} href="#burgerMenu"></a>
-      </div>
-    </header>
+      </header>
+    </>
   );
 };
