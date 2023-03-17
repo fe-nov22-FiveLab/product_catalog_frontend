@@ -6,6 +6,7 @@ import logo from '../../assets/img/logo.svg';
 import cross from '../../assets/img/cross.svg';
 import favourites_heart from '../../assets/img/favourites_heart.svg';
 import bag from '../../assets/img/bag.svg';
+import { NavLinkBurger } from '../NavLinkBurger/NavLinkBurger';
 
 type Props = {
   handleCloseBurger: React.Dispatch<React.SetStateAction<boolean>>;
@@ -30,44 +31,20 @@ export const BurgerMenu: React.FC<Props> = ({ handleCloseBurger }) => {
       </div>
 
       <div className={styles.burger__list}>
-        <NavLink
-          to="/"
-          className={({ isActive }) => classNames(styles.burger__link, { [styles.is_active]: isActive })}
-        >
-          HOME
-        </NavLink>
-
-        <NavLink
-          to="phones"
-          className={({ isActive }) => classNames(styles.burger__link, { [styles.is_active]: isActive })}
-        >
-          PHONES
-        </NavLink>
-
-        <NavLink
-          to="tablets"
-          className={({ isActive }) => classNames(styles.burger__link, { [styles.is_active]: isActive })}
-        >
-          TABLETS
-        </NavLink>
-
-        <NavLink
-          to="accessories"
-          className={({ isActive }) => classNames(styles.burger__link, { [styles.is_active]: isActive })}
-        >
-          ACCESSORIES
-        </NavLink>
+        <NavLinkBurger path="/" text="HOME" />
+        <NavLinkBurger path="phones" text="PHONES" />
+        <NavLinkBurger path="tablets" text="TABLETS" />
+        <NavLinkBurger path="accessories" text="ACCESSORIES" />
       </div>
 
       <div className={styles.burger__container__bottom}>
         <div className={styles.icon}>
-          <div className={styles.icon__action__favourites}>
+          <div className={styles.icon__action}>
             <NavLink
               to="favourites"
               className={({ isActive }) => classNames(styles.icon__action__favourites, {
-                [styles.is_active]: isActive,
+                [styles.is_active__bottom]: isActive,
               })}
-
             >
               <img src={favourites_heart} />
             </NavLink>
@@ -79,7 +56,7 @@ export const BurgerMenu: React.FC<Props> = ({ handleCloseBurger }) => {
             <NavLink
               to="cart"
               className={({ isActive }) => classNames(styles.icon__action__shop_bag, {[
-              styles.is_active]: isActive,
+              styles.is_active__bottom]: isActive,
               })}
             >
               <img src={bag} />

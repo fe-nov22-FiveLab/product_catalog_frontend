@@ -1,0 +1,115 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.filter-container {
+  display: flex;
+  margin-bottom: 24px;
+
+  &__sort {
+    margin-right: 16px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 12px;
+    color: $secondary-color;
+    padding-bottom: 4px;
+  }
+}
+
+.dropdown {
+  width: 136px;
+  height: 40px;
+  border: 1px solid $icons-color;
+  user-select: none;
+  position: relative;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+
+  @include onTablet {
+    width: 187px;
+  }
+
+  @include onDesktop {
+    width: 176px;
+  }
+
+  &:hover {
+    border: 1px solid $secondary-color;
+  }
+
+  &__btn {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 10px 12px;
+    color: $primary-color;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+  }
+
+  &__content {
+    position: absolute;
+    top: 110%;
+    font-weight: 400;
+    width: 100%;
+    border: 1px solid $elements-color;
+    background-color: $white-color;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.05);
+  }
+
+  &__item {
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      background: $hover-bg-color;
+    }
+
+    &:hover a {
+      color: $primary-color;
+    }
+
+    &__active {
+      display: none;
+    }
+  }
+
+  &__item a {
+    color: $secondary-color;
+    padding: 10px;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 11px;
+    right: 17px;
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    background: url('../../../public/img/icons/arrow_down.svg') no-repeat;
+
+    &__active {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: url('../../../public/img/icons/arrow-top.svg') no-repeat;
+    }
+  }
+}
+
+.dropdown-page {
+  width: 136px;
+
+  @include onTablet {
+    width: 128px;
+  }
+}
