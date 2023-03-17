@@ -4,6 +4,7 @@ import { Footer } from './components/Footer';
 import { PhonesPage } from './pages/PhonesPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { Header } from './components/Header';
+import { HomePage } from './pages/HomePage';
 
 const App: React.FC = () => {
   return (
@@ -12,7 +13,7 @@ const App: React.FC = () => {
 
       <div className="container">
         <Routes>
-          <Route path="/" element={<p>Welcome to Nice Gadgets store!</p>} />
+          <Route path="/" element={<HomePage />} />
           <Route path="home" element={<Navigate to="/" replace />} />
           <Route path="/phones" element={<PhonesPage />} />
           <Route path="*" element={<NotFoundPage />} />
