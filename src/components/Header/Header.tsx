@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom';
 import { Nav } from '../Nav/Nav';
 import styles from './Header.module.scss';
 import { BurgerMenu } from '../BurgerMenu/BurgerMenu';
-import favourites_heart from '../../assets/img/favourites_heart.svg';
-import bag from '../../assets/img/bag.svg';
+import favourites_heart from '../../assets/img/icons/favourites_heart.svg';
+import bag from '../../assets/img/icons/bag.svg';
 
 export const Header: React.FC = () => {
   return (

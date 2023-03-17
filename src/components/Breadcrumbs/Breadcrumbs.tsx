@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Breadcrumbs.module.scss';
 
-import home from '../../assets/img/home.svg';
-import arrow from '../../assets/img/arrow.svg';
+import home from '../../assets/img/icons/home.svg';
+import arrow from '../../assets/img/icons/arrow.svg';
 
 interface Props {
   location: string;

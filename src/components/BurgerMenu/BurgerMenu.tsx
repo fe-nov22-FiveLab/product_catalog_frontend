@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { NavLink } from 'react-router-dom';
 import styles from './BurgerMenu.module.scss';
-import logo from '../../assets/img/logo.svg';
-import cross from '../../assets/img/cross.svg';
-import favourites_heart from '../../assets/img/favourites_heart.svg';
-import bag from '../../assets/img/bag.svg';
+import logo from '../../assets/img/icons/logo.svg';
+import cross from '../../assets/img/icons/cross.svg';
+import favourites_heart from '../../assets/img/icons/favourites_heart.svg';
+import bag from '../../assets/img/icons/bag.svg';
 import { NavLinkBurger } from '../NavLinkBurger/NavLinkBurger';
-import burger from '../../assets/img/burger.svg';
+import burger from '../../assets/img/icons/burger.svg';
 
 export const BurgerMenu: React.FC = () => {
   const [isActiveBurger, setIsActiveBurger] = useState(false);
