@@ -2,37 +2,37 @@
 @import '../../styles/mixins.scss';
 
 .burger__button_icon {
+  display: none;
+
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  border: none;
+
+  background-color: $white-color;
+  cursor: pointer;
+
+  @media (max-width: 639px) {
+    display: flex;
+  }
+}
+
+.burger__icon {
+  border: 1px solid $elements-color;
+
+  @include onDesktop {
     display: none;
-
-    justify-content: center;
-    align-items: center;
-    width: 48px;
-    height: 48px;
-    border: none;
-
-    background-color: $white-color;
-    cursor: pointer;
-
-    @media (max-width: 639px) {
-      display: flex;
-    }
   }
 
-  .burger__icon {
-    border: 1px solid $elements-color;
-
-    @include onDesktop {
-      display: none;
-    }
-
-    @include onTablet {
-      display: none;
-    }
-
-    &:hover {
-      border-color:$primary-color;
-    }
+  @include onTablet {
+    display: none;
   }
+
+  &:hover {
+    border-color: $primary-color;
+  }
+}
 
 .burger {
   display: flex;

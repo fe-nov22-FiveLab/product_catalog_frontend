@@ -46,7 +46,7 @@ export const BurgerMenu: React.FC = () => {
                 type="button"
                 className={styles.burger__button}
               >
-                <img src={cross} alt="cross"/>
+                <img src={cross} alt="cross" />
               </button>
             </div>
 
@@ -77,9 +77,11 @@ export const BurgerMenu: React.FC = () => {
               <NavLink
                 to="favourites"
                 onClick={() => setIsActiveBurger(false)}
-                className={({ isActive }) => classNames(styles.burger__header__icon, {
-                  [styles.is_active]: isActive,
-                })}
+                className={({ isActive }) =>
+                  classNames(styles.burger__header__icon, {
+                    [styles.is_active]: isActive,
+                  })
+                }
               >
                 <img src={favourites_heart} alt="favourites" />
               </NavLink>
@@ -87,9 +89,11 @@ export const BurgerMenu: React.FC = () => {
               <NavLink
                 to="cart"
                 onClick={() => setIsActiveBurger(false)}
-                className={({ isActive }) => classNames(styles.burger__header__icon__bag, {[
-                styles.is_active]: isActive,
-                })}
+                className={({ isActive }) =>
+                  classNames(styles.burger__header__icon__bag, {
+                    [styles.is_active]: isActive,
+                  })
+                }
               >
                 <img src={bag} alt="shopping bag" />
               </NavLink>
