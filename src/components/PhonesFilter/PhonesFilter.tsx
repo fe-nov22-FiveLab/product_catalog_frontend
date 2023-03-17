@@ -1,16 +1,64 @@
 import classNames from 'classnames';
 import React, { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import styles from './PhonesFilter.module.scss';
+import { SearchLink } from '../SearchLink';
 
 export const PhonesFilter: React.FC = () => {
   const [isSortSelectActive, setIsSortSelectActive] = useState(false);
-  const [selectedSort, setSelectedSort] = useState('Newest');
   const [isPageSelectActive, setIsPageSelectActive] = useState(false);
-  const [selectedPageQuantity, setSelectedPageQuantity] = useState('16');
 
-  const sortOptions = ['Newest', 'Alphabetically', 'Cheapest'];
+  const [searchParams] = useSearchParams();
+  const perPage = searchParams.get('perPage') || null;
+  const sort = searchParams.get('sort') || null;
 
-  const pageOptions = ['4', '8', '16', 'all'];
+  const sortOptions = [
+    {
+      title: 'Newest',
+      value: 'age',
+    },
+    {
+      title: 'Alphabetically',
+      value: 'title',
+    },
+    {
+      title: 'Cheapest',
+      value: 'price',
+    },
+  ];
+
+  const pageOptions = [
+    {
+      title: '4',
+      value: '4',
+    },
+    {
+      title: '8',
+      value: '8',
+    },
+    {
+      title: '16',
+      value: '16',
+    },
+    {
+      title: 'all',
+      value: null,
+    },
+  ];
+
+  let sortTitle;
+
+  if (sort === 'title') {
+    sortTitle = 'Alphabetically';
+  }
+
+  if (sort === 'age') {
+    sortTitle = 'Newest';
+  }
+
+  if (sort === 'price') {
+    sortTitle = 'Cheapest';
+  }
 
   return (
     <div className={styles['filter-container']}>
@@ -22,30 +70,35 @@ export const PhonesFilter: React.FC = () => {
             className={styles.dropdown__btn}
             onClick={() => setIsSortSelectActive(!isSortSelectActive)}
           >
-            {selectedSort}
+            {sortTitle || 'Choose one'}
             <span
               className={classNames([styles.dropdown__arrow], {
                 [styles.dropdown__arrow__active]: isSortSelectActive,
               })}
             ></span>
           </div>
+
           {isSortSelectActive && (
             <ul className={styles.dropdown__content}>
-              {sortOptions.map((option) => (
+              {sortOptions.map(({ title, value }) => (
                 <li
-                  key={option}
+                  key={value}
                   className={classNames([styles.dropdown__item], {
-                    [styles.dropdown__item__active]: selectedSort === option,
+                    [styles.dropdown__item__active]: sort === value,
                   })}
                   onClick={(event) => {
                     event.preventDefault();
-                    setSelectedSort(option);
                     setIsSortSelectActive(false);
                   }}
                 >
-                  <a className={styles.dropdown__link} href="">
-                    {option}
-                  </a>
+                  <SearchLink
+                    className={styles.dropdown__link}
+                    params={{
+                      sort: value,
+                    }}
+                  >
+                    {title}
+                  </SearchLink>
                 </li>
               ))}
             </ul>
@@ -61,31 +114,35 @@ export const PhonesFilter: React.FC = () => {
             className={styles.dropdown__btn}
             onClick={() => setIsPageSelectActive(!isPageSelectActive)}
           >
-            {selectedPageQuantity}
+            {perPage || 'all'}
             <span
               className={classNames([styles.dropdown__arrow], {
                 [styles.dropdown__arrow__active]: isPageSelectActive,
               })}
             ></span>
           </div>
+
           {isPageSelectActive && (
             <ul className={styles.dropdown__content}>
-              {pageOptions.map((option) => (
+              {pageOptions.map(({ title, value }) => (
                 <li
-                  key={option}
+                  key={title}
                   className={classNames([styles.dropdown__item], {
-                    [styles.dropdown__item__active]:
-                      selectedPageQuantity === option,
+                    [styles.dropdown__item__active]: perPage === value,
                   })}
                   onClick={(event) => {
                     event.preventDefault();
-                    setSelectedPageQuantity(option);
                     setIsPageSelectActive(false);
                   }}
                 >
-                  <a className={styles.dropdown__link} href="">
-                    {option}
-                  </a>
+                  <SearchLink
+                    className={styles.dropdown__link}
+                    params={{
+                      perPage: value,
+                    }}
+                  >
+                    {title}
+                  </SearchLink>
                 </li>
               ))}
             </ul>
