@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from '../Header/Header.module.scss';
 import { NavigationLink } from '../NavigationLink/NavigationLink';
-import logo from '../../assets/img/logo.svg';
+import logo from '../../assets/img/icons/logo.svg';
 
 export const Nav: React.FC = () => {
   return (
