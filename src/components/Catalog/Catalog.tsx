@@ -1,38 +1,21 @@
 import React from 'react';
 import styles from './Catalog.module.scss';
 import { Card } from '../Card/Card';
+import { Phone } from '../../@types/Phone';
 
-export const Catalog: React.FC = () => {
+type Props = {
+  phones: Phone[];
+};
+
+export const Catalog: React.FC<Props> = ({ phones }) => {
   return (
     <>
       <div className={styles.catalog}>
-        <div className={styles.catalog__item}>
-          <Card />
-        </div>
-
-        <div className={styles.catalog__item}>
-          <Card />
-        </div>
-
-        <div className={styles.catalog__item}>
-          <Card />
-        </div>
-
-        <div className={styles.catalog__item}>
-          <Card />
-        </div>
-
-        <div className={styles.catalog__item}>
-          <Card />
-        </div>
-
-        <div className={styles.catalog__item}>
-          <Card />
-        </div>
-
-        <div className={styles.catalog__item}>
-          <Card />
-        </div>
+        {phones.map((phone) => (
+          <div key={phone.id} className={styles.catalog__item}>
+            <Card phone={phone} />
+          </div>
+        ))}
       </div>
     </>
   );

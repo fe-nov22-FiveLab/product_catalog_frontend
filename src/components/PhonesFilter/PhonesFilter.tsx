@@ -139,6 +139,7 @@ export const PhonesFilter: React.FC = () => {
                     className={styles.dropdown__link}
                     params={{
                       perPage: value,
+                      page: null,
                     }}
                   >
                     {title}
