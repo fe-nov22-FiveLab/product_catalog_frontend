@@ -1,0 +1,483 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.product {
+  color: $primary-color;
+  padding: 0 16px;
+
+  &__title {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 140%;
+    margin-top: 16px;
+
+    @include onTablet {
+      font-size: 32px;
+      line-height: 41px;
+    }
+  }
+
+  &__link {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-decoration: none;
+    color: $primary-color;
+    margin-bottom: 16px;
+
+    &__text {
+      color: $secondary-color;
+      padding-left: 9px;
+      font-weight: 700;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
+  &__photos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 32px;
+
+    @include onTablet {
+      flex-direction: row-reverse;
+      justify-content: left;
+    }
+
+    &__images {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      margin-top: 16px;
+
+      &__image {
+        border: 1px solid $elements-color;
+
+        &:hover {
+          border-color: $primary-color;
+        }
+      }
+
+      @include onTablet {
+        flex-direction: column;
+      }
+    }
+
+    &__container__main {
+      width: 100%;
+      height: 274px;
+      display: flex;
+      justify-content: center;
+
+      @include onTablet {
+        width: 287px;
+        height: 287px;
+        margin-right: 16px;
+      }
+
+      @include onDesktop {
+        width: 442px;
+        height: 442px;
+        margin-left: 28px;
+      }
+    }
+
+    &__main__image {
+      height: 100%;
+      width: auto;
+    }
+
+    &__container__image {
+      width: 51px;
+      height: 48px;
+      display: flex;
+      justify-content: center;
+
+      &__is_active {
+        width: 51px;
+        height: 48px;
+        display: flex;
+        justify-content: center;
+        border: 1px solid $primary-color;
+        box-sizing: border-box;
+
+        @include onTablet {
+          width: 34px;
+          height: 34px;
+        }
+
+        @include onDesktop {
+          width: 78px;
+          height: 78px;
+        }
+      }
+
+      @include onTablet {
+        width: 34px;
+        height: 34px;
+      }
+
+      @include onDesktop {
+        width: 78px;
+        height: 78px;
+      }
+    }
+
+    &__image {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  &__card {
+    font-size: 12px;
+    font-weight: 600;
+    font-style: normal;
+
+    @include onDesktop {
+      max-width: 320px;
+    }
+
+    &__color__button {
+      margin-right: 10px;
+      margin-top: 8px;
+      border: 2px solid $elements-color;
+      width: 30px;
+      height: 30px;
+      background-color: #fcdbc1;
+
+      border-radius: 36px;
+
+      &__is_active {
+        margin-right: 10px;
+        margin-top: 8px;
+        border: 1px solid $primary-color;
+        width: 30px;
+        height: 30px;
+
+        border-radius: 36px;
+      }
+
+      &:hover {
+        border: 2px solid $primary-color;
+      }
+    }
+
+    &__capacity__button {
+      color: $primary-color;
+      background-color: $white-color;
+      border: 1px solid $icons-color;
+      font-weight: 600;
+      font-size: 14px;
+      margin-right: 8px;
+      margin-top: 8px;
+      text-decoration: none;
+      padding: 8px;
+
+      &__is_active {
+        color: $white-color;
+        background-color: $primary-color;
+        border: 1px solid $elements-color;
+        font-weight: 600;
+        font-size: 14px;
+        margin-right: 8px;
+        margin-top: 8px;
+        text-decoration: none;
+        padding: 8px;
+      }
+
+      &:hover {
+        background-color: $primary-color;
+        color: $white-color;
+      }
+    }
+
+    &__buy__button {
+      height: 41px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      border: none;
+
+      background-color: $primary-color;
+      width: 100%;
+
+      line-height: 21px;
+      text-decoration: none;
+      color: $white-color;
+
+      transition: all 0.5s;
+
+      &__is_active {
+        cursor: pointer;
+        background-color: $elements-color;
+      }
+
+      &:hover {
+        background-color: $secondary-color;
+      }
+    }
+
+    &__fav__button {
+      height: 40px;
+      width: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid $icons-color;
+
+      text-decoration: none;
+      background-color: $white-color;
+      margin-left: 8px;
+
+      &:hover {
+        border-color: $primary-color;
+      }
+
+      &__red {
+        height: 40px;
+        width: 40px;
+        background-color: #93857e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 19px;
+
+        text-decoration: none;
+        background-color: #93857e;
+        margin-left: 8px;
+
+        transition: all 0.5s;
+        border: 1px $elements-color solid;
+      }
+    }
+
+    &__price {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 32px;
+
+      &__discount {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 32px;
+        line-height: 41px;
+        color: $primary-color;
+
+        &::before {
+          content: '$';
+        }
+      }
+
+      &__regular {
+        margin-left: 8px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 22px;
+        color: $secondary-color;
+        text-decoration: line-through;
+
+        &::before {
+          content: '$';
+        }
+      }
+    }
+
+    &__info {
+      margin-top: 32px;
+    }
+
+    &__colors {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &__capacity {
+      display: flex;
+      margin-top: 8px;
+    }
+  }
+
+  &__about {
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 56px;
+
+    @include onTablet {
+      margin-top: 56px;
+    }
+
+    @include onDesktop {
+      margin-top: 0;
+    }
+
+    &__header {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 26px;
+      color: $primary-color;
+
+      padding-bottom: 16px;
+      border-bottom: 1px solid $elements-color;
+
+      @include onTablet {
+        font-weight: 800;
+        font-size: 22px;
+        line-height: 31px;
+      }
+    }
+
+    &__title {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 20px;
+      color: $primary-color;
+
+      margin-top: 32px;
+
+      @include onTablet {
+        font-size: 20px;
+        line-height: 26px;
+      }
+    }
+
+    &__text {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 21px;
+
+      color: #89939a;
+      margin-top: 16px;
+    }
+  }
+
+  &__tech__specs {
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 56px;
+
+    @include onDesktop {
+      margin-top: 0;
+    }
+
+    &__header {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 26px;
+
+      padding-bottom: 16px;
+      border-bottom: 1px solid $elements-color;
+
+      @include onTablet {
+        font-weight: 800;
+        font-size: 22px;
+        line-height: 31px;
+      }
+    }
+
+    &__info {
+      margin-top: 25px;
+      font-weight: 500;
+
+      @include onMobile {
+        margin-top: 30px;
+      }
+    }
+  }
+}
+
+.text__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &__text {
+    color: $secondary-color;
+    margin-bottom: 8px;
+    font-weight: 500;
+
+    &__title {
+      font-weight: 600;
+      color: $secondary-color;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__num {
+    color: $primary-color;
+    text-align: right;
+    margin-bottom: 8px;
+  }
+
+  &__id {
+    color: $secondary-color;
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+}
+
+.product__container {
+  display: flex;
+  flex-direction: column;
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: 64px;
+  }
+
+  @include onDesktop {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: 64px;
+  }
+}
+
+.about__container {
+  display: flex;
+  flex-direction: column;
+
+  @include onDesktop {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: 64px;
+    margin-top: 80px;
+  }
+}
+
+.button__container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 16px;
+}
+
+.colors__container {
+  margin-top: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid $elements-color;
+}
+
+.capacity__container {
+  margin-top: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid $elements-color;
+}
+
+.slider__cards {
+  color: $primary-color;
+  font-weight: 800;
+  font-size: 32px;
+}
