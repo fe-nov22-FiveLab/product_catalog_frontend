@@ -16,19 +16,19 @@ export const PhonesPage: React.FC = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search).toString();
 
-  const loadPhonesData = async () => {
-    try {
-      const phonesData = await getPhones(searchParams);
-      setPhones(phonesData.phones);
-      setTotal(phonesData.total);
-
-      console.log(phonesData);
-    } catch {
-      setHasLoadingError(true);
-    }
-  };
-
   useEffect(() => {
+    const loadPhonesData = async () => {
+      try {
+        const phonesData = await getPhones(searchParams);
+        setPhones(phonesData.phones);
+        setTotal(phonesData.total);
+
+        console.log(phonesData);
+      } catch {
+        setHasLoadingError(true);
+      }
+    };
+
     loadPhonesData();
   }, [location.search]);
 

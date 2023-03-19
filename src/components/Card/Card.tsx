@@ -2,13 +2,22 @@ import React from 'react';
 import styles from './Card.module.scss';
 import { Link } from 'react-router-dom';
 import { Phone } from '../../@types/Phone';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import {
+  addPhoneToCart,
+  deletePhoneFromCart,
+  selectCart,
+} from '../../features/cart/cartSlice';
 
 type Props = {
   phone: Phone;
 };
 
 export const Card: React.FC<Props> = ({ phone }) => {
+  const { phones } = useAppSelector(selectCart);
+  const dispatch = useAppDispatch();
   const {
+    id,
     image: imageLink,
     name,
     price,
@@ -17,6 +26,8 @@ export const Card: React.FC<Props> = ({ phone }) => {
     capacity,
     ram,
   } = phone;
+
+  const hasAddedToCart = phones.find((phone) => phone.id === id);
 
   return (
     <>
@@ -48,13 +59,21 @@ export const Card: React.FC<Props> = ({ phone }) => {
           </div>
         </div>
         <div className={styles.buttons}>
-          <a
-            className={styles.button_add_to_card}
-            href="#button"
-            data-qa="hover"
-          >
-            Add to cart
-          </a>
+          {!hasAddedToCart ? (
+            <button
+              className={styles.button_add_to_card}
+              onClick={() => dispatch(addPhoneToCart(phone))}
+            >
+              Add to cart
+            </button>
+          ) : (
+            <button
+              className={styles.button_added_to_cart}
+              onClick={() => dispatch(deletePhoneFromCart(id))}
+            >
+              Added to Cart
+            </button>
+          )}
           <Link to="#" className={styles.add_to_favorite}></Link>
         </div>
       </div>

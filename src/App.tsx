@@ -4,7 +4,7 @@ import { Footer } from './components/Footer';
 import { PhonesPage } from './pages/PhonesPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { Header } from './components/Header';
-import { CartPage } from './components/CartPage/CartPage';
+import { CartPage } from './pages/CartPage/CartPage';
 
 const App: React.FC = () => {
   return (
