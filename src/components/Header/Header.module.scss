@@ -61,7 +61,7 @@
     align-items: center;
 
     text-decoration: none;
-    color: $primary-color;
+    color: $secondary-color;
 
     &:hover {
       color: $primary-color;
@@ -113,6 +113,7 @@
   width: 48px;
   height: 48px;
   border-left: 1px solid $elements-color;
+  transition: all 0.1s;
 
   &:hover {
     border: 1px solid $primary-color;
