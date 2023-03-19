@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "./static/css/main.41f6f9a0.css",
-    "main.js": "./static/js/main.18493156.js",
+    "main.css": "./static/css/main.6733d9e2.css",
+    "main.js": "./static/js/main.58352e09.js",
     "static/media/logo.svg": "./static/media/logo.d2f3622ca4d3c7f8d4dd2506e3e2fe46.svg",
+    "static/media/phone_image.png": "./static/media/phone_image.7414487278033104cf13.png",
     "static/media/Mont-Regular.otf": "./static/media/Mont-Regular.1d26d89f7339866d3133.otf",
     "static/media/Mont-SemiBold.otf": "./static/media/Mont-SemiBold.8979d71a3146ca1d761f.otf",
     "static/media/Mont-Bold.otf": "./static/media/Mont-Bold.03c8c2f6127c1da0fc39.otf",
@@ -15,20 +16,23 @@
     "static/media/cross.svg": "./static/media/cross.0594ac0ef702db8fbc790d4ba051d120.svg",
     "index.html": "./index.html",
     "static/media/burger.svg": "./static/media/burger.744ac0b04d84e4feeeb5288d215af5b2.svg",
+    "static/media/plus.svg": "./static/media/plus.dea157243cc9d361ac05ab671dbec40b.svg",
     "static/media/slider_button_default_up.svg": "./static/media/slider_button_default_up.4af7ffb2fb2e8321ec05.svg",
     "static/media/slider_button_hover_up.svg": "./static/media/slider_button_hover_up.0b972bce291f12e65e8d.svg",
     "static/media/arrow.svg": "./static/media/arrow.2a072ff1bf1fd396b30e9dec3a108dcb.svg",
+    "static/media/arrow-back.svg": "./static/media/arrow-back.f26374195e19e331e6ca021ec8218fbc.svg",
     "static/media/arrow-top.svg": "./static/media/arrow-top.df6c57d04d00127a56e0.svg",
     "static/media/arrow_left.svg": "./static/media/arrow_left.5c69c0ad05b7b7fe196d.svg",
     "static/media/arrow_left_gray.svg": "./static/media/arrow_left_gray.b49050e590925e2a17ec.svg",
     "static/media/arrow_right.svg": "./static/media/arrow_right.70f42d77d4895623e71b.svg",
     "static/media/arrow_right_gray.svg": "./static/media/arrow_right_gray.1254f6bc1d75626a25fb.svg",
     "static/media/arrow_down.svg": "./static/media/arrow_down.98c9dd6d98b47f2f1977.svg",
-    "main.41f6f9a0.css.map": "./static/css/main.41f6f9a0.css.map",
-    "main.18493156.js.map": "./static/js/main.18493156.js.map"
+    "static/media/minus.svg": "./static/media/minus.cecb4be39afa7b933ec169dd495a73ff.svg",
+    "main.6733d9e2.css.map": "./static/css/main.6733d9e2.css.map",
+    "main.58352e09.js.map": "./static/js/main.58352e09.js.map"
   },
   "entrypoints": [
-    "static/css/main.41f6f9a0.css",
-    "static/js/main.18493156.js"
+    "static/css/main.6733d9e2.css",
+    "static/js/main.58352e09.js"
   ]
 }
