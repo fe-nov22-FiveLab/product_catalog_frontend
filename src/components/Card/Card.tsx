@@ -18,6 +18,7 @@ export const Card: React.FC<Props> = ({ phone }) => {
   const dispatch = useAppDispatch();
   const {
     id,
+    phoneId,
     image: imageLink,
     name,
     price,
@@ -35,7 +36,9 @@ export const Card: React.FC<Props> = ({ phone }) => {
         <img className={styles.image} src={imageLink} alt={name} />
 
         <div className={styles.phone_infos}>
-          <p className={styles.content}>{name}</p>
+          <Link to={`/phone/${phoneId}`} className={styles.content}>
+            {name}
+          </Link>
           <div className={styles.prices}>
             <p className={styles.new_price}>{`$${price}`}</p>
             <p className={styles.old_price}>{`$${fullPrice}`}</p>

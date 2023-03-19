@@ -62,11 +62,17 @@
 }
 
 .content {
+  cursor: pointer;
   font-weight: 600;
   font-size: 14px;
   line-height: 21px;
   margin-bottom: 8px;
   color: $primary-color;
+  transition: font-weight 0.3s ease;
+
+  &:hover {
+    font-weight: 800;
+  }
 }
 
 .prices {

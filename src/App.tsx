@@ -15,11 +15,11 @@ const App: React.FC = () => {
       <div className="container">
         <Routes>
           <Route path="/" element={<p>Welcome to Nice Gadgets store!</p>} />
-          <Route path="home" element={<Navigate to="/" replace />} />
+          <Route path="/home" element={<Navigate to="/" replace />} />
           <Route path="/phones" element={<PhonesPage />} />
-          <Route path="*" element={<NotFoundPage />} />
           <Route path="/cart" element={<CartPage />} />
-          <Route path="/product" element={<ItemCard />} />
+          <Route path="/phone/:phoneId" element={<ItemCard />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </div>
 
