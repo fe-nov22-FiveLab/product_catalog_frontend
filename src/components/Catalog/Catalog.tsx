@@ -1,42 +1,25 @@
 import React from 'react';
 import styles from './Catalog.module.scss';
 import { Card } from '../Card/Card';
+import { Phone } from '../../@types/Phone';
 import { Link } from 'react-router-dom';
 
-export const Catalog: React.FC = () => {
+type Props = {
+  phones: Phone[];
+};
+
+export const Catalog: React.FC<Props> = ({ phones }) => {
   return (
     <>
-      <div className={styles.catalog}>
-        <Link to="/product">
-          <div className={styles.catalog__item}>
-            <Card />
-          </div>
-        </Link>
-
-        <div className={styles.catalog__item}>
-          <Card />
+      <Link to="/product">
+        <div className={styles.catalog}>
+          {phones.map((phone) => (
+            <div key={phone.id} className={styles.catalog__item}>
+              <Card phone={phone} />
+            </div>
+          ))}
         </div>
-
-        <div className={styles.catalog__item}>
-          <Card />
-        </div>
-
-        <div className={styles.catalog__item}>
-          <Card />
-        </div>
-
-        <div className={styles.catalog__item}>
-          <Card />
-        </div>
-
-        <div className={styles.catalog__item}>
-          <Card />
-        </div>
-
-        <div className={styles.catalog__item}>
-          <Card />
-        </div>
-      </div>
+      </Link>
     </>
   );
 };
