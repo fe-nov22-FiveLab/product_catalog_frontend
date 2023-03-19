@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import styles from './PhonesFilter.module.scss';
 import { SearchLink } from '../SearchLink';
@@ -7,6 +7,9 @@ import { SearchLink } from '../SearchLink';
 export const PhonesFilter: React.FC = () => {
   const [isSortSelectActive, setIsSortSelectActive] = useState(false);
   const [isPageSelectActive, setIsPageSelectActive] = useState(false);
+
+  const sortDropdownRef = useRef<HTMLDivElement>(null);
+  const pageDropdownRef = useRef<HTMLDivElement>(null);
 
   const [searchParams] = useSearchParams();
   const perPage = searchParams.get('perPage') || null;
@@ -60,12 +63,44 @@ export const PhonesFilter: React.FC = () => {
     sortTitle = 'Cheapest';
   }
 
+  useEffect(() => {
+    function handleClickOutsideSortFilter(event: MouseEvent) {
+      if (
+        sortDropdownRef.current &&
+        !sortDropdownRef.current.contains(event.target as HTMLElement)
+      ) {
+        setIsSortSelectActive(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutsideSortFilter);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutsideSortFilter);
+    };
+  }, [sortDropdownRef]);
+
+  useEffect(() => {
+    function handleClickOutsidePageFilter(event: MouseEvent) {
+      if (
+        pageDropdownRef.current &&
+        !pageDropdownRef.current.contains(event.target as HTMLElement)
+      ) {
+        setIsPageSelectActive(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutsidePageFilter);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutsidePageFilter);
+    };
+  }, [pageDropdownRef]);
+
   return (
     <div className={styles['filter-container']}>
       <div className={styles['filter-container__sort']}>
         <p className={styles['filter-container__title']}>Sort by</p>
 
-        <div className={styles.dropdown}>
+        <div className={styles.dropdown} ref={sortDropdownRef}>
           <div
             className={styles.dropdown__btn}
             onClick={() => setIsSortSelectActive(!isSortSelectActive)}
@@ -109,7 +144,10 @@ export const PhonesFilter: React.FC = () => {
       <div className={styles['filter-container__page']}>
         <p className={styles['filter-container__title']}>Items on page</p>
 
-        <div className={`${styles.dropdown} ${styles['dropdown-page']}`}>
+        <div
+          className={`${styles.dropdown} ${styles['dropdown-page']}`}
+          ref={pageDropdownRef}
+        >
           <div
             className={styles.dropdown__btn}
             onClick={() => setIsPageSelectActive(!isPageSelectActive)}
