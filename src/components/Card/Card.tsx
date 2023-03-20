@@ -1,51 +1,84 @@
 import React from 'react';
 import styles from './Card.module.scss';
 import { Link } from 'react-router-dom';
+import { Phone } from '../../@types/Phone';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import {
+  addPhoneToCart,
+  deletePhoneFromCart,
+  selectCart,
+} from '../../features/cart/cartSlice';
 
-export const Card: React.FC = () => {
+type Props = {
+  phone: Phone;
+};
+
+export const Card: React.FC<Props> = ({ phone }) => {
+  const { phones } = useAppSelector(selectCart);
+  const dispatch = useAppDispatch();
+  const {
+    id,
+    phoneId,
+    image: imageLink,
+    name,
+    price,
+    fullPrice,
+    screen,
+    capacity,
+    ram,
+  } = phone;
+
+  const hasAddedToCart = phones.find((phone) => phone.id === id);
+
   return (
     <>
       <div className={styles.card}>
-        <img
-          className={styles.image}
-          src="img/phones/apple-iphone-xs/spacegray/00.jpg"
-          alt="Apple iPhone Xs 64GB Silver (iMT9G2FS/A)"
-        />
+        <Link to={`/phone/${phoneId}`}>
+          <img className={styles.image} src={imageLink} alt={name} />
+        </Link>
 
         <div className={styles.phone_infos}>
-          <p className={styles.content}>
-            Apple iPhone Xs 64GB Silver (iMT9G2FS/A)
-          </p>
+          <Link to={`/phone/${phoneId}`} className={styles.content}>
+            {name}
+          </Link>
           <div className={styles.prices}>
-            <p className={styles.new_price}>$799</p>
-            <p className={styles.old_price}>$899</p>
+            <p className={styles.new_price}>{`$${price}`}</p>
+            <p className={styles.old_price}>{`$${fullPrice}`}</p>
           </div>
 
           <div className={styles.line}></div>
 
           <div className={styles.screen_info}>
             <p className={styles.screen}>Screen</p>
-            <p className={styles.screen_type}>5.8” OLED</p>
+            <p className={styles.screen_type}>{screen}</p>
           </div>
 
           <div className={styles.capacity_info}>
             <p className={styles.capacity}>Capacity</p>
-            <p className={styles.capacity_type}>64 GB</p>
+            <p className={styles.capacity_type}>{capacity}</p>
           </div>
 
           <div className={styles.ram_info}>
             <p className={styles.ram}>RAM</p>
-            <p className={styles.ram_type}>4 GB</p>
+            <p className={styles.ram_type}>{ram}</p>
           </div>
         </div>
         <div className={styles.buttons}>
-          <a
-            className={styles.button_add_to_card}
-            href="#button"
-            data-qa="hover"
-          >
-            Add to cart
-          </a>
+          {!hasAddedToCart ? (
+            <button
+              className={styles.button_add_to_card}
+              onClick={() => dispatch(addPhoneToCart(phone))}
+            >
+              Add to cart
+            </button>
+          ) : (
+            <button
+              className={styles.button_added_to_cart}
+              onClick={() => dispatch(deletePhoneFromCart(id))}
+            >
+              Added
+            </button>
+          )}
           <Link to="#" className={styles.add_to_favorite}></Link>
         </div>
       </div>

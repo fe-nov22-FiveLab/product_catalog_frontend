@@ -15,7 +15,7 @@
   &__item {
     width: 32px;
     height: 32px;
-    border: 1px solid $elements-color;
+    border: 1px solid $icons-color;
     margin-right: 8px;
     user-select: none;
 
@@ -24,15 +24,29 @@
     }
 
     &-arrow-left {
-      background: url(../../../public/img/icons/arrow_left.svg) no-repeat;
+      background: url(../../assets/img/icons/arrow_left.svg) no-repeat;
       background-position: center;
       margin-right: 16px;
+
+      &-disabled {
+        border: 1px solid $elements-color;
+        background: url(../../assets/img/icons/arrow_left_gray.svg) no-repeat;
+        background-position: center;
+        margin-left: 8px;
+      }
     }
 
     &-arrow-right {
-      background: url(../../../public/img/icons/arrow_right.svg) no-repeat;
+      background: url(../../assets/img/icons/arrow_right.svg) no-repeat;
       background-position: center;
       margin-left: 8px;
+
+      &-disabled {
+        border: 1px solid $elements-color;
+        background: url(../../assets/img/icons/arrow_right_gray.svg) no-repeat;
+        background-position: center;
+        margin-left: 8px;
+      }
     }
   }
 
@@ -45,11 +59,6 @@
     align-items: center;
     justify-content: center;
   }
-}
-
-.disabled {
-  border: 1px solid $elements-color;
-  // background: url();
 }
 
 .active {

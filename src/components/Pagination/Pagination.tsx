@@ -27,7 +27,7 @@ export const Pagination: React.FC<Props> = ({ total }) => {
           styles.pagination__item,
           styles['pagination__item-arrow-left'],
           {
-            [styles.disabled]: isFirstPage,
+            [styles['pagination__item-arrow-left-disabled']]: isFirstPage,
           },
         )}
       >
@@ -64,7 +64,7 @@ export const Pagination: React.FC<Props> = ({ total }) => {
           styles.pagination__item,
           styles['pagination__item-arrow-right'],
           {
-            [styles.disabled]: isLastPage,
+            [styles['pagination__item-arrow-right-disabled']]: isLastPage,
           },
         )}
       >
