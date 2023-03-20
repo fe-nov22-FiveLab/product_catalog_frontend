@@ -11,7 +11,6 @@ import buttonLeft from '../../assets/img/icons/arrow-left-small.svg';
 import buttonRight from '../../assets/img/icons/arrow-right-small.svg';
 
 export const SimpleSlider: React.FC = () => {
-
   const slider = React.useRef<Slider>(null);
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -27,22 +26,22 @@ export const SimpleSlider: React.FC = () => {
     beforeChange: (prev: number, next: number) => {
       setCurrentSlide(next);
     },
-    appendDots: (dots:  number[] )  => (
+    appendDots: (dots: number[]) => (
       <div>
         <ul> {dots} </ul>
       </div>
     ),
     customPaging: (i: number) => (
-      <div
-        className={styles.dots_list}
-      >
-        {<div className={cn(
-          styles.dots,
-          { [styles.dots_active]: i === currentSlide }) }
-        >
-        </div>}
+      <div className={styles.dots_list}>
+        {
+          <div
+            className={cn(styles.dots, {
+              [styles.dots_active]: i === currentSlide,
+            })}
+          ></div>
+        }
       </div>
-    )
+    ),
   };
 
   const goToNext = () => {
@@ -55,10 +54,7 @@ export const SimpleSlider: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <div
-        className={styles.button}
-        onClick={goToPrev}
-      >
+      <div className={styles.button} onClick={goToPrev}>
         <img
           src={buttonLeft}
           alt="prev slide"
@@ -67,36 +63,20 @@ export const SimpleSlider: React.FC = () => {
       </div>
 
       <div className={styles.content}>
-
         <Slider ref={slider} {...settings}>
           <div>
-            <img
-              src={banner}
-              alt="banner"
-              className={styles.image}
-            />
+            <img src={banner} alt="banner" className={styles.image} />
           </div>
           <div>
-            <img
-              src={banner}
-              alt="banner"
-              className={styles.image}
-            />
+            <img src={banner} alt="banner" className={styles.image} />
           </div>
           <div>
-            <img
-              src={banner}
-              alt="banner"
-              className={styles.image}
-            />
+            <img src={banner} alt="banner" className={styles.image} />
           </div>
         </Slider>
       </div>
 
-      <div
-        className={styles.button}
-        onClick={goToNext}
-      >
+      <div className={styles.button} onClick={goToNext}>
         <img
           src={buttonRight}
           alt="next slide"
@@ -106,4 +86,3 @@ export const SimpleSlider: React.FC = () => {
     </div>
   );
 };
-

@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import styles from './Pagination.module.scss';
 import { useSearchParams } from 'react-router-dom';
 import { SearchLink } from '../SearchLink';
-import { countNumberOfPages } from '../../utils/countNumberOfPages';
 
 type Props = {
   total: number;
@@ -15,10 +14,22 @@ export const Pagination: React.FC<Props> = ({ total }) => {
   const page = searchParams.get('page') || '1';
 
   const pageLinkCount = Math.ceil(total / (Number(perPage) || total));
-  const pageLinkData = countNumberOfPages(pageLinkCount);
 
   const isFirstPage = page === '1';
   const isLastPage = Number(page) === pageLinkCount;
+
+  const MAX_PAGES = 5;
+  const currentPage = Number(page);
+  const lastPage = pageLinkCount;
+
+  let startPage = currentPage - Math.floor(MAX_PAGES / 2);
+  startPage = Math.max(startPage, 1);
+  startPage = Math.min(startPage, lastPage - MAX_PAGES + 1);
+
+  const pageLinkData = Array.from(
+    { length: Math.min(MAX_PAGES, lastPage) },
+    (_, i) => startPage + i,
+  );
 
   return pageLinkData.length > 1 ? (
     <ul className={styles.pagination}>
