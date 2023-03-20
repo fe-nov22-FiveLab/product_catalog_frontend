@@ -38,7 +38,7 @@ export const PhonesPage: React.FC = () => {
       <h1 className={styles.title}>Mobile phones</h1>
       <PhonesFilter />
       {hasLoadingError ? (
-        'Cannot load data from server'
+        <p>Cannot load data from server</p>
       ) : (
         <Catalog phones={phones} />
       )}

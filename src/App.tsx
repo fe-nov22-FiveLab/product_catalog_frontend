@@ -7,6 +7,7 @@ import { Header } from './components/Header';
 import { HomePage } from './pages/HomePage';
 import { CartPage } from './pages/CartPage/CartPage';
 import { ItemCard } from './pages/ItemCard/ItemCard';
+import { FavouritesPage } from './pages/FavouritesPage';
 
 const App: React.FC = () => {
   return (
@@ -19,6 +20,7 @@ const App: React.FC = () => {
           <Route path="/home" element={<Navigate to="/" replace />} />
           <Route path="/phones" element={<PhonesPage />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/favourites" element={<FavouritesPage />} />
           <Route path="/phone/:phoneId" element={<ItemCard />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
