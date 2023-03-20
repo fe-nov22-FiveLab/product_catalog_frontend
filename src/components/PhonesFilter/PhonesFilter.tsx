@@ -18,7 +18,7 @@ export const PhonesFilter: React.FC = () => {
   const sortOptions = [
     {
       title: 'Newest',
-      value: 'age',
+      value: 'year',
     },
     {
       title: 'Alphabetically',
@@ -55,7 +55,7 @@ export const PhonesFilter: React.FC = () => {
     sortTitle = 'Alphabetically';
   }
 
-  if (sort === 'age') {
+  if (sort === 'year') {
     sortTitle = 'Newest';
   }
 
