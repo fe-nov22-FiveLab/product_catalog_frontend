@@ -32,6 +32,8 @@ export const CartCheckout: React.FC = () => {
           </p>
           <div className={styles.line}></div>
 
+          
+
           <button
             className={styles.button_checkout} data-qa="hover"
             onClick={handleModal}
