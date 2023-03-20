@@ -1,20 +1,23 @@
 import React from 'react';
-import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs';
 import { Catalog } from '../../components/Catalog';
 import styles from './FavouritesPage.module.scss';
+import { useAppSelector } from '../../app/hooks';
+import { selectFavourites } from '../../features/favourites/favourites';
 
 export const FavouritesPage: React.FC = () => {
+  const { phones } = useAppSelector(selectFavourites);
+  const phonesAmount = phones.length;
+
   return (
     <>
       <h1 className={styles.title}>Favourites</h1>
+      <p className={styles['items-amount']}>{phonesAmount} items</p>
 
-      {/* {favouritePhones.lenght === 0
-        ? (
-          <p>You don't have favourites yet</p>
-        )
-        : (
-          <Catalog phones={favouritePhones} />
-        )} */}
+      {phones.length === 0 ? (
+        <p>You don&apos;t have favourites yet</p>
+      ) : (
+        <Catalog phones={phones} isLoading={false} />
+      )}
     </>
   );
 };
