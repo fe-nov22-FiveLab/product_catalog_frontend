@@ -93,7 +93,6 @@
 
 .nav__is_active::after {
   top: 35px;
-
   height: 3px;
 
   @include onDesktop {
@@ -129,14 +128,13 @@
   }
 }
 
-
 .cartCounter {
   display: flex;
   position: absolute;
   justify-content: center;
   align-items: center;
   top: 18px;
-  right: 18px;
+  right: 10px;
   width: 15px;
   height: 15px;
   border-radius: 10px;
