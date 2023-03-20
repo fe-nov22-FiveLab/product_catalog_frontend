@@ -59,7 +59,7 @@ export const PhonesSlider: React.FC = () => {
         </div>
       </div>
 
-      <div className={styles.slider}>
+      {/* <div className={styles.slider}>
         <Slider ref={slider} {...settings}>
           <div>
             <Card />
@@ -86,7 +86,7 @@ export const PhonesSlider: React.FC = () => {
             <Card />
           </div>
         </Slider>
-      </div>
+      </div> */}
 
 
     </div>

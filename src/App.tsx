@@ -15,7 +15,7 @@ const App: React.FC = () => {
 
       <div className="container">
         <Routes>
-          <Route path="/" element={<p>Welcome to Nice Gadgets store!</p>} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<Navigate to="/" replace />} />
           <Route path="/phones" element={<PhonesPage />} />
           <Route path="/cart" element={<CartPage />} />
