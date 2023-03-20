@@ -10,9 +10,7 @@ export const Breadcrumbs: React.FC = () => {
   const breadcrumbs = useBreadcrumbs();
   const location = useLocation();
 
-  if (location.pathname === '/'
-    || location.pathname === '/cart') {
-
+  if (location.pathname === '/' || location.pathname === '/cart') {
     return null;
   }
 
@@ -22,21 +20,23 @@ export const Breadcrumbs: React.FC = () => {
         <img src={home} alt="Go Home" />
       </Link>
 
-      {breadcrumbs.map(( {
-        match,
-        location,
-        breadcrumb
-      }, ind) =>
+      {breadcrumbs.map(({ match, location, breadcrumb }, ind) =>
         !ind ? (
           ''
         ) : (
           <React.Fragment key={ind}>
-            <img src={arrow} alt="arrow" className={styles.breadcrumbs__arrow}/>
+            <img
+              src={arrow}
+              alt="arrow"
+              className={styles.breadcrumbs__arrow}
+            />
 
             <Link
               to={match.pathname}
               key={match.pathname}
-              className={classNames(styles.breadcrumbs__nav, { [styles.breadcrumbs__nav__is_active]: match.pathname === location.pathname,
+              className={classNames(styles.breadcrumbs__nav, {
+                [styles.breadcrumbs__nav__is_active]:
+                  match.pathname === location.pathname,
               })}
             >
               {breadcrumb}

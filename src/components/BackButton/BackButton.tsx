@@ -12,9 +12,7 @@ export const BackButton: React.FC = () => {
   return (
     <div className={styles.button} onClick={goBack}>
       <img className={styles.button__image} src={arrowBack} alt="Back arrow" />
-      <span className={styles.button__text}>
-        Back
-      </span>
+      <span className={styles.button__text}>Back</span>
     </div>
   );
 };
