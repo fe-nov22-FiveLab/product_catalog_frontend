@@ -8,6 +8,8 @@ import favourites_heart from '../../assets/img/icons/favourites_heart.svg';
 import bag from '../../assets/img/icons/bag.svg';
 import { NavLinkBurger } from '../NavLinkBurger/NavLinkBurger';
 import burger from '../../assets/img/icons/burger.svg';
+import { useAppSelector } from '../../app/hooks';
+import { selectCart } from '../../features/cart/cartSlice';
 
 export const BurgerMenu: React.FC = () => {
   const [isActiveBurger, setIsActiveBurger] = useState(false);
@@ -19,6 +21,13 @@ export const BurgerMenu: React.FC = () => {
       document.body.classList.remove(styles.burger__with__menu);
     }
   }, [isActiveBurger]);
+
+  const { phones } = useAppSelector(selectCart);
+
+  const totalPhones = phones.reduce(
+    (sum, phone) => (phone.count as number) + sum,
+    0,
+  );
 
   return (
     <>
@@ -95,7 +104,11 @@ export const BurgerMenu: React.FC = () => {
                   })
                 }
               >
-                <img src={bag} alt="shopping bag" />
+                <div className={styles.cart_logo}>
+                  <div className={styles.cartCounter}>{totalPhones}</div>
+                  <img src={bag} alt="shopping bag" />
+                </div>
+
               </NavLink>
             </div>
           </nav>
