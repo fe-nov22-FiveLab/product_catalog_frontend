@@ -33,7 +33,8 @@ export const CartCheckout: React.FC = () => {
           <div className={styles.line}></div>
 
           <button
-            className={styles.button_checkout} data-qa="hover"
+            className={styles.button_checkout}
+            data-qa="hover"
             onClick={handleModal}
           >
             Checkout
@@ -41,12 +42,7 @@ export const CartCheckout: React.FC = () => {
         </div>
       </div>
 
-      {isShown && (
-        <CheckoutModal
-          isShown={isShown}
-          setIsShown={setIsShown}/>
-      )}
-
+      {isShown && <CheckoutModal isShown={isShown} setIsShown={setIsShown} />}
     </>
   );
 };

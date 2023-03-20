@@ -13,16 +13,15 @@
   justify-content: center;
 }
 
-
 .modal_content {
   width: 288px;
   background-color: $white-color;
 
-  @include onTablet{
+  @include onTablet {
     width: 400px;
   }
 
-  @include onDesktop{
+  @include onDesktop {
     width: 600px;
   }
 }
@@ -34,7 +33,7 @@
 .modal_footer {
   display: flex;
   padding: 10px;
-  justify-content:space-around;
+  justify-content: space-around;
   gap: 10px;
 }
 
@@ -50,7 +49,6 @@
   margin: 0 10px 10px;
   height: 0;
   border: 1px solid $elements-color;
-
 }
 
 .modal_button {
