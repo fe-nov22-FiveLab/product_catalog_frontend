@@ -10,6 +10,7 @@ import { useLocation } from 'react-router-dom';
 export const PhonesPage: React.FC = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
   const [hasLoadingError, setHasLoadingError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [total, setTotal] = useState(0);
 
   const location = useLocation();
@@ -18,6 +19,7 @@ export const PhonesPage: React.FC = () => {
   useEffect(() => {
     const loadPhonesData = async () => {
       try {
+        setIsLoading(true);
         const phonesData = await getPhones(searchParams);
         setPhones(phonesData.phones);
         setTotal(phonesData.total);
@@ -25,6 +27,8 @@ export const PhonesPage: React.FC = () => {
         console.log(phonesData);
       } catch {
         setHasLoadingError(true);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -38,7 +42,7 @@ export const PhonesPage: React.FC = () => {
       {hasLoadingError ? (
         <p>Cannot load data from server</p>
       ) : (
-        <Catalog phones={phones} />
+        <Catalog phones={phones} isLoading={isLoading} />
       )}
       <Pagination total={total} />
     </>

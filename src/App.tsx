@@ -10,7 +10,6 @@ import { ItemCard } from './pages/ItemCard/ItemCard';
 import { FavouritesPage } from './pages/FavouritesPage';
 import { Breadcrumbs } from './components/Breadcrumbs/Breadcrumbs';
 
-
 const App: React.FC = () => {
   return (
     <div className="App">
