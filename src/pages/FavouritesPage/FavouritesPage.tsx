@@ -6,8 +6,6 @@ import styles from './FavouritesPage.module.scss';
 export const FavouritesPage: React.FC = () => {
   return (
     <>
-      <Breadcrumbs location={'favourites'} />
-
       <h1 className={styles.title}>Favourites</h1>
 
       {/* {favouritePhones.lenght === 0

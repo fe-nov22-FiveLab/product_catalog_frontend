@@ -3,7 +3,6 @@ import styles from './PhonesPage.module.scss';
 import { Catalog } from '../../components/Catalog';
 import { PhonesFilter } from '../../components/PhonesFilter';
 import { Pagination } from '../../components/Pagination';
-import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs';
 import { getPhones } from '../../utils/fetchData';
 import { Phone } from '../../@types/Phone';
 import { useLocation } from 'react-router-dom';
@@ -38,7 +37,6 @@ export const PhonesPage: React.FC = () => {
 
   return (
     <>
-      <Breadcrumbs location="phones" />
       <h1 className={styles.title}>Mobile phones</h1>
       <PhonesFilter />
       {hasLoadingError ? (

@@ -8,6 +8,8 @@ import { HomePage } from './pages/HomePage';
 import { CartPage } from './pages/CartPage/CartPage';
 import { ItemCard } from './pages/ItemCard/ItemCard';
 import { FavouritesPage } from './pages/FavouritesPage';
+import { Breadcrumbs } from './components/Breadcrumbs/Breadcrumbs';
+
 
 const App: React.FC = () => {
   return (
@@ -15,13 +17,16 @@ const App: React.FC = () => {
       <Header />
 
       <div className="container">
+        <Breadcrumbs />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<Navigate to="/" replace />} />
-          <Route path="/phones" element={<PhonesPage />} />
+          <Route path="/phones">
+            <Route index element={<PhonesPage />} />
+            <Route path=":phoneId" element={<ItemCard />} />
+          </Route>
           <Route path="/cart" element={<CartPage />} />
           <Route path="/favourites" element={<FavouritesPage />} />
-          <Route path="/phone/:phoneId" element={<ItemCard />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </div>
