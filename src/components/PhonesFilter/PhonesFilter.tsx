@@ -22,7 +22,7 @@ export const PhonesFilter: React.FC = () => {
     },
     {
       title: 'Alphabetically',
-      value: 'title',
+      value: 'name',
     },
     {
       title: 'Cheapest',
@@ -51,7 +51,7 @@ export const PhonesFilter: React.FC = () => {
 
   let sortTitle;
 
-  if (sort === 'title') {
+  if (sort === 'name') {
     sortTitle = 'Alphabetically';
   }
 
