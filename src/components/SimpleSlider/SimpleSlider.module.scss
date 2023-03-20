@@ -1,0 +1,82 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.container {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 50px;
+
+  max-width: 320px;
+
+  @include onTablet {
+    max-width: 640px;
+  }
+
+  @include onTablet {
+    max-width: 1200px;
+  }
+}
+
+.content {
+  width: 320px;
+  height: 320px;
+
+  @include onTablet {
+    width: 490px;
+    height: 189px;
+  }
+
+  @include onDesktop {
+    width: 1040px;
+    height: 400px;
+  }
+}
+
+.image {
+  width: 320px;
+  height: 320px;
+
+  @include onTablet {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.button {
+  display: none;
+  height: 189px;
+  width: 32px;
+
+  border: 1px solid $secondary-color;
+
+  &:hover {
+    border: 1px solid $primary-color;
+  }
+  @include onTablet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 189px;
+  }
+
+  @include onDesktop {
+    height: 400px;
+  }
+
+  cursor: pointer;
+}
+
+.dots_list {
+  margin-bottom: 40px;
+}
+
+.dots {
+  width: 14px;
+  height: 4px;
+  margin-top: 12px;
+  background-color: $secondary-color;
+
+  &_active {
+    background-color: $primary-color;
+  }
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './CartItem.module.scss';
 import icon_minus from '../../assets/img/icons/minus.svg';
 import icon_plus from '../../assets/img/icons/plus.svg';
+import icon_close from '../../assets/img/icons/close.svg';
 import { Phone } from '../../@types/Phone';
 import { useAppDispatch } from '../../app/hooks';
 import {
@@ -27,7 +28,7 @@ export const CartItem: React.FC<Props> = ({ phone }) => {
         >
           <img
             className={styles.delete_button_img}
-            src="/img/icons/close_grey.svg"
+            src={icon_close}
             alt="remove phone"
           />
         </button>
