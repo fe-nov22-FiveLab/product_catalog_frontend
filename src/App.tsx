@@ -4,8 +4,9 @@ import { Footer } from './components/Footer';
 import { PhonesPage } from './pages/PhonesPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { Header } from './components/Header';
-import { CartPage } from './components/CartPage/CartPage';
+import { CartPage } from './pages/CartPage/CartPage';
 import { ItemCard } from './pages/ItemCard/ItemCard';
+import { Breadcrumbs } from './components/Breadcrumbs/Breadcrumbs';
 
 const App: React.FC = () => {
   return (
@@ -13,13 +14,16 @@ const App: React.FC = () => {
       <Header />
 
       <div className="container">
+        <Breadcrumbs />
         <Routes>
           <Route path="/" element={<p>Welcome to Nice Gadgets store!</p>} />
-          <Route path="home" element={<Navigate to="/" replace />} />
-          <Route path="/phones" element={<PhonesPage />} />
-          <Route path="*" element={<NotFoundPage />} />
+          <Route path="/home" element={<Navigate to="/" replace />} />
+          <Route path="/phones">
+            <Route index element={<PhonesPage />} />
+            <Route path=":phoneId" element={<ItemCard />} />
+          </Route>
           <Route path="/cart" element={<CartPage />} />
-          <Route path="/product" element={<ItemCard />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </div>
 

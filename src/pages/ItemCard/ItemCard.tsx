@@ -1,22 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styles from './ItemCard.module.scss';
 import phone from '../../assets/img/phone_image.png';
 import phone1 from '../../assets/img/phone1.png';
 import phone2 from '../../assets/img/phone3.png';
 import phone3 from '../../assets/img/phone4.png';
-import arrowBack from '../../assets/img/icons/arrow-back.svg';
 import favourites from '../../assets/img/icons/favourites_heart.svg';
+import { BackButton } from '../../components/BackButton/BackButton';
 
 export const ItemCard: React.FC = () => {
   return (
     <>
-      <div className={styles.product__link}>
-        <Link to="/phones">
-          <img src={arrowBack} alt="Back arrow" />
-          <span className={styles.product__link__text}>Back</span>
-        </Link>
-      </div>
+      <BackButton />
       <main className={styles.product}>
         <h1>Apple iPhone 11 Pro Max 64GB Gold (iMT9G2FS/A)</h1>
 
