@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Catalog.module.scss';
 import { Card } from '../Card/Card';
 import { Phone } from '../../@types/Phone';
-import { Loader } from '../Loader/Loader';
+import { Loader } from '../Loader';
 
 type Props = {
   phones: Phone[];

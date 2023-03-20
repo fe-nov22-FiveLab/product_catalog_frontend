@@ -8,14 +8,21 @@ import {
   deletePhoneFromCart,
   selectCart,
 } from '../../features/cart/cartSlice';
+import {
+  addPhoneToFavourites,
+  deletePhoneFromFavourites,
+  selectFavourites,
+} from '../../features/favourites/favourites';
 
 type Props = {
   phone: Phone;
 };
 
 export const Card: React.FC<Props> = ({ phone }) => {
-  const { phones } = useAppSelector(selectCart);
+  const { phones: phonesInCart } = useAppSelector(selectCart);
+  const { phones: phonesInFavourites } = useAppSelector(selectFavourites);
   const dispatch = useAppDispatch();
+
   const {
     id,
     phoneId,
@@ -28,7 +35,10 @@ export const Card: React.FC<Props> = ({ phone }) => {
     ram,
   } = phone;
 
-  const hasAddedToCart = phones.find((phone) => phone.id === id);
+  const hasAddedToCart = phonesInCart.find((phone) => phone.id === id);
+  const hasAddedToFavourites = phonesInFavourites.find(
+    (phone) => phone.id === id,
+  );
 
   return (
     <>
@@ -79,7 +89,20 @@ export const Card: React.FC<Props> = ({ phone }) => {
               Added
             </button>
           )}
-          <Link to="#" className={styles.add_to_favorite}></Link>
+          {!hasAddedToFavourites ? (
+            <Link
+              to="#"
+              className={styles.add_to_favorite}
+              onClick={() => dispatch(addPhoneToFavourites(phone))}
+            ></Link>
+          ) : (
+            <Link
+              to="#"
+              className={`${styles.add_to_favorite} ${styles['add_to_favorite-selected']}`}
+              onClick={() => dispatch(deletePhoneFromFavourites(id))}
+            ></Link>
+          )}
+          {/* <Link to="#" className={styles.add_to_favorite}></Link> */}
         </div>
       </div>
     </>

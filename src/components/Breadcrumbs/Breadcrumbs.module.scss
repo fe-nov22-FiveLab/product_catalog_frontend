@@ -27,13 +27,11 @@
     margin-right: 13px;
 
     &__is_active {
-    color: $secondary-color;
-
-    &:hover {
       color: $secondary-color;
+
+      &:hover {
+        color: $secondary-color;
+      }
     }
-  }
-
-
   }
 }

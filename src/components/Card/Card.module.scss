@@ -215,4 +215,9 @@
     background: url('../../../public/img/buttons/to_favourites_hover.svg')
       no-repeat;
   }
+
+  &-selected {
+    background: url('../../../public/img/buttons/added_to_favourites.png')
+      no-repeat;
+  }
 }
