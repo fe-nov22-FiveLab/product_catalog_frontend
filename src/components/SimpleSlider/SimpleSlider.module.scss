@@ -1,7 +1,7 @@
 @import '../../styles/variables.scss';
 @import '../../styles/mixins.scss';
 
-.container{
+.container {
   display: flex;
   gap: 16px;
   margin-bottom: 50px;
@@ -9,16 +9,16 @@
   max-width: 320px;
 
   @include onTablet {
-  max-width: 640px;
+    max-width: 640px;
   }
 
   @include onTablet {
     max-width: 1200px;
-    }
+  }
 }
 
-.content{
-  width : 320px;
+.content {
+  width: 320px;
   height: 320px;
 
   @include onTablet {
@@ -50,14 +50,13 @@
   border: 1px solid $secondary-color;
 
   &:hover {
-  border: 1px solid $primary-color;
-
+    border: 1px solid $primary-color;
   }
   @include onTablet {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 189px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 189px;
   }
 
   @include onDesktop {
@@ -78,7 +77,6 @@
   background-color: $secondary-color;
 
   &_active {
-  background-color: $primary-color;
+    background-color: $primary-color;
   }
 }
-
