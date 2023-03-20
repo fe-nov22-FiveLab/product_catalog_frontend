@@ -7,11 +7,11 @@
   justify-content: space-between;
 }
 
-.buttons{
+.buttons {
   display: flex;
 }
 
-.slick-dots li:nth-child(1) button:before{
-  background: url("../../assets/img/home.svg") no-repeat;
-  background-size: contain!important;
+.slick-dots li:nth-child(1) button:before {
+  background: url('../../assets/img/home.svg') no-repeat;
+  background-size: contain !important;
 }
