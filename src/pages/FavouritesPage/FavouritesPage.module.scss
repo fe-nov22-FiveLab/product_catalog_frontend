@@ -11,3 +11,14 @@
     font-size: 48px;
   }
 }
+
+.items-amount {
+  font-weight: 600;
+  font-size: 14px;
+  color: $secondary-color;
+  margin-bottom: 32px;
+
+  @include onTablet {
+    margin-bottom: 40px;
+  }
+}
