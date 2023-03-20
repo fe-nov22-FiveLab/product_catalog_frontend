@@ -33,7 +33,9 @@ export const Card: React.FC<Props> = ({ phone }) => {
   return (
     <>
       <div className={styles.card}>
-        <img className={styles.image} src={imageLink} alt={name} />
+        <Link to={`/phone/${phoneId}`}>
+          <img className={styles.image} src={imageLink} alt={name} />
+        </Link>
 
         <div className={styles.phone_infos}>
           <Link to={`/phone/${phoneId}`} className={styles.content}>
@@ -74,7 +76,7 @@ export const Card: React.FC<Props> = ({ phone }) => {
               className={styles.button_added_to_cart}
               onClick={() => dispatch(deletePhoneFromCart(id))}
             >
-              Added to Cart
+              Added
             </button>
           )}
           <Link to="#" className={styles.add_to_favorite}></Link>
