@@ -26,6 +26,7 @@ export const CartPage: React.FC = () => {
         <span className={styles.button__text}>Back</span>
       </div>
       <div className={styles.cart_page}>
+
         <div>
           {phones.length > 0 ? (
             phones.map((phone) => <CartItem key={phone.id} phone={phone} />)
