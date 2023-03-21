@@ -9,6 +9,8 @@ import { CartPage } from './pages/CartPage/CartPage';
 import { ItemCard } from './pages/ItemCard/ItemCard';
 import { FavouritesPage } from './pages/FavouritesPage';
 import { Breadcrumbs } from './components/Breadcrumbs/Breadcrumbs';
+import { TabletsPage } from './pages/TabletsPage';
+import { AccessoriesPage } from './pages/AccessoriesPage';
 
 const App: React.FC = () => {
   return (
@@ -25,6 +27,8 @@ const App: React.FC = () => {
         </Route>
         <Route path="/cart" element={<CartPage />} />
         <Route path="/favourites" element={<FavouritesPage />} />
+        <Route path="/tablets" element={<TabletsPage />} />
+        <Route path="/accessories" element={<AccessoriesPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
 

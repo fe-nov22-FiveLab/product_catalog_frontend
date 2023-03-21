@@ -10,7 +10,7 @@ import styles from './HomePage.module.scss';
 export const HomePage: React.FC = () => {
   return (
     <div className={styles.container}>
-      <p>Welcome to Nice Gadgets store!</p>
+      <p className={styles.title}>Welcome to Nice Gadgets store!</p>
 
       <HomeSwiper />
 
