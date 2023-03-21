@@ -18,6 +18,7 @@ import banner_tablets from '../../assets/img/banner-tablets.jpg';
 import smallBanner_tablets from '../../assets/img/banner-tablets-mobile.jpg';
 import buttonLeft from '../../assets/img/icons/arrow-left-small.svg';
 import buttonRight from '../../assets/img/icons/arrow-right-small.svg';
+import { Link } from 'react-router-dom';
 
 export const HomeSwiper: React.FC = () => {
   const [swiperRef, setSwiperRef] = useState<SwiperClass>();
@@ -63,24 +64,30 @@ export const HomeSwiper: React.FC = () => {
           observer
         >
           <SwiperSlide>
-            <picture className='image' >
-              <source className='image' srcSet={banner} media="(min-width: 640px)" />
-              <img className='image' src={smallBanner} />
-            </picture>
+            <Link to="/phones">
+              <picture className='image' >
+                <source className='image' srcSet={banner} media="(min-width: 640px)" />
+                <img className='image' src={smallBanner} />
+              </picture>
+            </Link>
           </SwiperSlide>
 
           <SwiperSlide>
-            <picture className='image' >
-              <source className='image' srcSet={banner_phones} media="(min-width: 640px)" />
-              <img className='image' src={smallBanner_phones} />
-            </picture>
+            <Link to="/phones">
+              <picture className='image' >
+                <source className='image' srcSet={banner_phones} media="(min-width: 640px)" />
+                <img className='image' src={smallBanner_phones} />
+              </picture>
+            </Link>
           </SwiperSlide>
 
           <SwiperSlide>
-            <picture className='image' >
-              <source className='image' srcSet={banner_tablets} media="(min-width: 640px)" />
-              <img className='image' src={smallBanner_tablets} />
-            </picture>
+            <Link to="/tablets">
+              <picture className='image' >
+                <source className='image' srcSet={banner_tablets} media="(min-width: 640px)" />
+                <img className='image' src={smallBanner_tablets} />
+              </picture>
+            </Link>
           </SwiperSlide>
         </Swiper>
 
