@@ -211,7 +211,8 @@
   height: 40px;
   border: 1px solid $icons-color;
   cursor: pointer;
-  background: center url('../../assets/img/icons/favourites_heart.svg') no-repeat;
+  background: center url('../../assets/img/icons/favourites_heart.svg')
+    no-repeat;
 
   &:hover {
     border: 1px solid $primary-color;
@@ -219,7 +220,6 @@
 
   &-selected {
     border: 1px solid $elements-color;
-    background: center url('../../assets/img/icons/red_heart.svg')
-      no-repeat;
+    background: center url('../../assets/img/icons/red_heart.svg') no-repeat;
   }
 }

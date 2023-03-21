@@ -21,6 +21,28 @@
   color: $primary-color;
   padding: 0 16px;
 
+  &__back__button {
+    margin-bottom: 16px;
+    cursor: pointer;
+
+    &__image {
+      height: 9px;
+      margin-right: 9px;
+    }
+
+    &__text {
+      font-size: 12px;
+      color: $secondary-color;
+      font-weight: 700;
+      margin-left: 9px;
+      margin-bottom: 16px;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
   &__title {
     font-style: normal;
     font-weight: 800;
@@ -215,7 +237,6 @@
     }
 
     &__buy__button {
-      height: 41px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -228,28 +249,44 @@
       line-height: 21px;
       text-decoration: none;
       color: $white-color;
+      cursor: pointer;
 
       transition: all 0.5s;
 
-      &__is_active {
-        cursor: pointer;
-        background-color: $elements-color;
+      &:hover {
+        box-shadow: 0px 3px 13px rgba(23, 32, 49, 0.4);
       }
 
-      &:hover {
-        background-color: $secondary-color;
+      &__is_active {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        border: none;
+
+        color: $green-color;
+        font-weight: 700;
+        background-color: $white-color;
+        width: 100%;
+        border: 1px solid $secondary-color;
+        cursor: pointer;
+
+        &:hover {
+          box-shadow: 0px 3px 13px rgba(23, 32, 49, 0.4);
+        }
       }
     }
 
     &__fav__button {
-      height: 40px;
-      width: 40px;
+      height: 38px;
+      width: 38px;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 20px;
       box-sizing: border-box;
       border: 1px solid $icons-color;
+      cursor: pointer;
 
       text-decoration: none;
       background-color: $white-color;
@@ -257,23 +294,27 @@
 
       &:hover {
         border-color: $primary-color;
+        transition: all 0.5s;
+        cursor: pointer;
       }
 
       &__red {
         height: 40px;
         width: 40px;
-        background-color: #93857e;
+        background-color: $white-color;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 19px;
+        padding: 20px;
+        box-sizing: border-box;
+        border: 1px solid $icons-color;
+        cursor: pointer;
 
         text-decoration: none;
-        background-color: #93857e;
         margin-left: 8px;
 
         transition: all 0.5s;
-        border: 1px $elements-color solid;
+        border-color: $icons-color;
       }
     }
 
@@ -497,4 +538,30 @@
   color: $primary-color;
   font-weight: 800;
   font-size: 32px;
+}
+
+.loader {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    margin: 1em auto;
+    border: 0.3em solid $elements-color;
+    border-left-color: $elements-color;
+    animation: load8 1.2s infinite linear;
+  }
+}
+
+@keyframes load8 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

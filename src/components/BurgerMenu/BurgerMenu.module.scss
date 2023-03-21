@@ -46,7 +46,7 @@
 
   &__nav {
     position: absolute;
-    z-index: 2;
+    z-index: 99;
 
     display: flex;
     flex-direction: column;
@@ -188,5 +188,4 @@
   line-height: 12px;
   text-align: center;
   color: $white-color;
-
 }
