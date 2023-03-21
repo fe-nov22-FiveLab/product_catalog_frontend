@@ -9,7 +9,7 @@ export const FavouritesPage: React.FC = () => {
   const phonesAmount = phones.length;
 
   return (
-    <>
+    <div className={styles.container}>
       <h1 className={styles.title}>Favourites</h1>
       <p className={styles['items-amount']}>{phonesAmount} items</p>
 
@@ -18,6 +18,6 @@ export const FavouritesPage: React.FC = () => {
       ) : (
         <Catalog phones={phones} isLoading={false} />
       )}
-    </>
+    </div>
   );
 };
