@@ -1,4 +1,5 @@
-import { PhoneDetails } from '../@types/PhoneDetails';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Phone } from '../@types/Phone';
 import { PhonesData } from '../@types/PhonesData';
 import { RequestMethod } from '../@types/Request';
 
@@ -7,7 +8,6 @@ const BASE_URL = 'https://product-catalog-api-sc0v.onrender.com';
 async function request<T>(
   url: string,
   method: RequestMethod = 'GET',
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data: any = null,
 ): Promise<T> {
   const options: RequestInit = { method };
@@ -39,5 +39,5 @@ export const getPhones = (searchParams: string) => {
 };
 
 export const getPhoneDetails = (phoneId: string) => {
-  return client.get<PhoneDetails>(`/phones/${phoneId}`);
+  return client.get<Phone>(`/phones/${phoneId}`);
 };
