@@ -102,7 +102,7 @@ export const ItemCard: React.FC = () => {
   const phoneToAdd = phonesData.find((phone) => phone.phoneId === phoneId);
 
   return (
-    <>
+    <div className={styles.container}>
       <BackButton />
 
       {!phoneDetails ? (
@@ -377,6 +377,6 @@ export const ItemCard: React.FC = () => {
           </div>
         </main>
       )}
-    </>
+    </div>
   );
 };

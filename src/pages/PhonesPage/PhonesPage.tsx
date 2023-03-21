@@ -36,15 +36,16 @@ export const PhonesPage: React.FC = () => {
   }, [location.search]);
 
   return (
-    <>
+    <div className={styles.container}>
       <h1 className={styles.title}>Mobile phones</h1>
+      <p className={styles.amount}>{total} models</p>
       <PhonesFilter />
       {hasLoadingError ? (
-        <p>Cannot load data from server</p>
+        <p className={styles.error}>Cannot load data from server</p>
       ) : (
         <Catalog phones={phones} isLoading={isLoading} />
       )}
       <Pagination total={total} />
-    </>
+    </div>
   );
 };

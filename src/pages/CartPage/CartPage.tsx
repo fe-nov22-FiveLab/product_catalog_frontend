@@ -10,7 +10,7 @@ export const CartPage: React.FC = () => {
   const { phones } = useAppSelector(selectCart);
 
   return (
-    <>
+    <div className={styles.container}>
       <BackButton />
       <div className={styles.cart_page}>
         <div>
@@ -22,6 +22,6 @@ export const CartPage: React.FC = () => {
         </div>
         <CartCheckout />
       </div>
-    </>
+    </div>
   );
 };

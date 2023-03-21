@@ -1,0 +1,33 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.container {
+  flex-grow: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @include onTablet {
+    padding: 0 24px;
+  }
+
+  @include onDesktop {
+    padding: 0 32px;
+  }
+}
+
+.title {
+  font-weight: 800;
+  font-size: 32px;
+  margin-bottom: 24px;
+  color: $primary-color;
+
+  @include onTablet {
+    font-size: 48px;
+    margin-bottom: 32px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 56px;
+  }
+}

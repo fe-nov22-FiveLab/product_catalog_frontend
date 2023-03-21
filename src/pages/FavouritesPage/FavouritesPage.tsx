@@ -9,15 +9,15 @@ export const FavouritesPage: React.FC = () => {
   const phonesAmount = phones.length;
 
   return (
-    <>
+    <div className={styles.container}>
       <h1 className={styles.title}>Favourites</h1>
       <p className={styles['items-amount']}>{phonesAmount} items</p>
 
       {phones.length === 0 ? (
-        <p>You don&apos;t have favourites yet</p>
+        <p className={styles.message}>You don&apos;t have favourites yet</p>
       ) : (
         <Catalog phones={phones} isLoading={false} />
       )}
-    </>
+    </div>
   );
 };
