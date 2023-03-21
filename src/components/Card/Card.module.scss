@@ -204,19 +204,22 @@
 }
 
 .add_to_favorite {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 40px;
   height: 40px;
-  background: url('../../../public/img/buttons/to_favourites.svg') no-repeat;
-  display: inline-block;
+  border: 1px solid $icons-color;
   cursor: pointer;
+  background: center url('../../assets/img/icons/favourites_heart.svg') no-repeat;
 
   &:hover {
-    background: url('../../../public/img/buttons/to_favourites_hover.svg')
-      no-repeat;
+    border: 1px solid $primary-color;
   }
 
   &-selected {
-    background: url('../../../public/img/buttons/added_to_favourites.png')
+    border: 1px solid $elements-color;
+    background: center url('../../assets/img/icons/red_heart.svg')
       no-repeat;
   }
 }
