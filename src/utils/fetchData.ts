@@ -1,3 +1,4 @@
+import { Phone } from '../@types/Phone';
 import { PhoneDetails } from '../@types/PhoneDetails';
 import { PhonesData } from '../@types/PhonesData';
 import { RequestMethod } from '../@types/Request';
@@ -39,5 +40,5 @@ export const getPhones = (searchParams: string) => {
 };
 
 export const getPhoneDetails = (phoneId: string) => {
-  return client.get<PhoneDetails>(`/phones/${phoneId}`);
+  return client.get<Phone>(`/phones/${phoneId}`);
 };

@@ -18,7 +18,7 @@ import { PhoneColor, PhoneColors } from '../../@types/PhoneColors';
 import { Phone } from '../../@types/Phone';
 
 export const ItemCard: React.FC = () => {
-  const [phoneDetails, setPhoneDetails] = useState<PhoneDetails | null>(null);
+  const [phone, setPhone] = useState<Phone | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [hasError, setHasError] = useState<boolean>(false);
   const [mainPhoto, setMainPhoto] = useState('');
@@ -40,7 +40,7 @@ export const ItemCard: React.FC = () => {
         const loadedPhone = await getPhoneDetails(phoneId);
 
         if (loadedPhone) {
-          setPhoneDetails(loadedPhone);
+          setPhone(loadedPhone);
         }
       } catch (error) {
         setHasError(true);
@@ -69,10 +69,10 @@ export const ItemCard: React.FC = () => {
   }, [location.search]);
 
   useEffect(() => {
-    if (phoneDetails) {
-      setMainPhoto(`${phoneDetails.images[0]}`);
+    if (phone) {
+      setMainPhoto(`${phone.phoneDetails.images[0]}`);
     }
-  }, [phoneDetails?.images[0]]);
+  }, [phone?.phoneDetails.images[0]]);
 
   const switchColor = (color: string) => {
     if (phoneId) {
@@ -105,11 +105,11 @@ export const ItemCard: React.FC = () => {
     <div className={styles.container}>
       <BackButton />
 
-      {!phoneDetails ? (
+      {!phone ? (
         isLoading
       ) : (
         <main className={styles.product}>
-          <h1>{`${phoneDetails.name} (iMT9G2FS/A)`}</h1>
+          <h1>{`${phone.phoneDetails.name} (iMT9G2FS/A)`}</h1>
 
           <div className={styles.product__container}>
             <article className={styles.product__photos}>
@@ -122,7 +122,7 @@ export const ItemCard: React.FC = () => {
               </div>
 
               <div className={styles.product__photos__images}>
-                {phoneDetails.images.map((image) => {
+                {phone.phoneDetails.images.map((image) => {
                   const imageId = image.split('/').reverse()[0];
 
                   return (
@@ -157,7 +157,7 @@ export const ItemCard: React.FC = () => {
                 </div>
 
                 <div className={styles.product__card__colors}>
-                  {phoneDetails.colorsAvailable.map((color) => {
+                  {phone.phoneDetails.colorsAvailable.map((color) => {
                     const style = {
                       background: PhoneColors[color as PhoneColor],
                     };
@@ -167,7 +167,7 @@ export const ItemCard: React.FC = () => {
                         to={`/phones/${switchColor(color)}`}
                         key={color}
                         className={classNames(
-                          color !== phoneDetails.color
+                          color !== phone.phoneDetails.color
                             ? styles.product__card__color__button
                             : styles.product__card__color__button__is_active,
                         )}
@@ -186,14 +186,14 @@ export const ItemCard: React.FC = () => {
                 </div>
 
                 <div className="product__card__capacity">
-                  {phoneDetails.capacityAvailable.map((capacity) => {
+                  {phone.phoneDetails.capacityAvailable.map((capacity) => {
                     return (
                       <Link
                         to={`/phones/${switchCapacity(capacity)}`}
                         key={capacity}
                         type="button"
                         className={classNames(
-                          capacity !== phoneDetails.capacity
+                          capacity !== phone.phoneDetails.capacity
                             ? styles.product__card__capacity__button
                             : styles.product__card__capacity__button__is_active,
                         )}
@@ -207,10 +207,10 @@ export const ItemCard: React.FC = () => {
 
               <div className={styles.product__card__price}>
                 <p className={styles.product__card__price__discount}>
-                  {phoneDetails.priceDiscount}
+                  {phone.phoneDetails.priceDiscount}
                 </p>
                 <p className={styles.product__card__price__regular}>
-                  {phoneDetails.priceRegular}
+                  {phone.phoneDetails.priceRegular}
                 </p>
               </div>
 
@@ -250,28 +250,28 @@ export const ItemCard: React.FC = () => {
                 <div className={styles.text__container}>
                   <p className={styles.text__container__text}>Screen</p>
                   <p className={styles.text__container__num}>
-                    {phoneDetails.screen}
+                    {phone.phoneDetails.screen}
                   </p>
                 </div>
 
                 <div className={styles.text__container}>
                   <p className={styles.text__container__text}>Resolution</p>
                   <p className={styles.text__container__num}>
-                    {phoneDetails.resolution}
+                    {phone.phoneDetails.resolution}
                   </p>
                 </div>
 
                 <div className={styles.text__container}>
                   <p className={styles.text__container__text}>Processor</p>
                   <p className={styles.text__container__num}>
-                    {phoneDetails.processor}
+                    {phone.phoneDetails.processor}
                   </p>
                 </div>
 
                 <div className={styles.text__container}>
                   <p className={styles.text__container__text}>RAM</p>
                   <p className={styles.text__container__num}>
-                    {phoneDetails.ram}
+                    {phone.phoneDetails.ram}
                   </p>
                 </div>
               </div>
@@ -282,27 +282,27 @@ export const ItemCard: React.FC = () => {
             <article className={styles.product__about}>
               <h2 className={styles.product__about__header}>About</h2>
               <h3 className={styles.product__about__title}>
-                {phoneDetails.description[0].title}
+                {phone.phoneDetails.description[0].title}
               </h3>
               <p className={styles.product__about__text}>
-                {phoneDetails.description[0].text[0]}
+                {phone.phoneDetails.description[0].text[0]}
               </p>
               <p className={styles.product__about__text}>
-                {phoneDetails.description[0].text[1]}
-              </p>
-
-              <h3 className={styles.product__about__title}>
-                {phoneDetails.description[1].title}
-              </h3>
-              <p className={styles.product__about__text}>
-                {phoneDetails.description[1].text[0]}
+                {phone.phoneDetails.description[0].text[1]}
               </p>
 
               <h3 className={styles.product__about__title}>
-                {phoneDetails.description[2].title}
+                {phone.phoneDetails.description[1].title}
               </h3>
               <p className={styles.product__about__text}>
-                {phoneDetails.description[2].text[0]}
+                {phone.phoneDetails.description[1].text[0]}
+              </p>
+
+              <h3 className={styles.product__about__title}>
+                {phone.phoneDetails.description[2].title}
+              </h3>
+              <p className={styles.product__about__text}>
+                {phone.phoneDetails.description[2].text[0]}
               </p>
             </article>
 
@@ -314,28 +314,28 @@ export const ItemCard: React.FC = () => {
                 <div className={styles.text__container}>
                   <p className={styles.text__container__text}>Screen</p>
                   <p className={styles.text__container__num}>
-                    {phoneDetails.screen}
+                    {phone.phoneDetails.screen}
                   </p>
                 </div>
 
                 <div className={styles.text__container}>
                   <p className={styles.text__container__text}>Resolution</p>
                   <p className={styles.text__container__num}>
-                    {phoneDetails.resolution}
+                    {phone.phoneDetails.resolution}
                   </p>
                 </div>
 
                 <div className={styles.text__container}>
                   <p className={styles.text__container__text}>Processor</p>
                   <p className={styles.text__container__num}>
-                    {phoneDetails.processor}
+                    {phone.phoneDetails.processor}
                   </p>
                 </div>
 
                 <div className={styles.text__container}>
                   <p className={styles.text__container__text}>RAM</p>
                   <p className={styles.text__container__num}>
-                    {phoneDetails.ram}
+                    {phone.phoneDetails.ram}
                   </p>
                 </div>
 
@@ -344,28 +344,28 @@ export const ItemCard: React.FC = () => {
                     Built in memory
                   </p>
                   <p className={styles.text__container__num}>
-                    {phoneDetails.capacity}
+                    {phone.phoneDetails.capacity}
                   </p>
                 </div>
 
                 <div className={styles.text__container}>
                   <p className={styles.text__container__text}>Camera</p>
                   <p className={styles.text__container__num}>
-                    {phoneDetails.camera}
+                    {phone.phoneDetails.camera}
                   </p>
                 </div>
 
                 <div className={styles.text__container}>
                   <p className={styles.text__container__text}>Zoom</p>
                   <p className={styles.text__container__num}>
-                    {phoneDetails.zoom}
+                    {phone.phoneDetails.zoom}
                   </p>
                 </div>
 
                 <div className={styles.text__container}>
                   <p className={styles.text__container__text}>Cell</p>
                   <p className={styles.text__container__num}>
-                    {phoneDetails.cell.join(', ')}
+                    {phone.phoneDetails.cell.join(', ')}
                   </p>
                 </div>
               </div>
