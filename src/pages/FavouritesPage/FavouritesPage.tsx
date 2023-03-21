@@ -14,7 +14,7 @@ export const FavouritesPage: React.FC = () => {
       <p className={styles['items-amount']}>{phonesAmount} items</p>
 
       {phones.length === 0 ? (
-        <p>You don&apos;t have favourites yet</p>
+        <p className={styles.message}>You don&apos;t have favourites yet</p>
       ) : (
         <Catalog phones={phones} isLoading={false} />
       )}
