@@ -16,7 +16,7 @@ export const CartPage: React.FC = () => {
   };
 
   return (
-    <>
+    <div className={styles.container}>
       <div className={styles.button} onClick={goBack}>
         <img
           className={styles.button__image}
@@ -35,6 +35,6 @@ export const CartPage: React.FC = () => {
         </div>
         <CartCheckout />
       </div>
-    </>
+    </div>
   );
 };
