@@ -1,4 +1,4 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore, Middleware } from '@reduxjs/toolkit';
 import {
   persistReducer,
   persistStore,
@@ -10,6 +10,7 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+
 import cartReducer from '../features/cart/cartSlice';
 import favouritesReducer from '../features/favourites/favourites';
 
@@ -18,20 +19,26 @@ const rootReducer = combineReducers({
   favourites: favouritesReducer,
 });
 
+const persistConfig = {
+  key: 'root',
+  storage,
+  whitelist: ['cart', 'favourites'],
+};
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+const persistMiddleware: Middleware = (store) => (next) => (action) => {
+  const result = next(action);
+  store.getState();
+  return result;
+};
+
 // export const store = configureStore({
 //   reducer: {
 //     cart: cartReducer,
 //     favourites: favouritesReducer,
 //   },
 // });
-
-const persistConfig = {
-  key: 'root',
-  storage: storage,
-  whitelist: ['cart', 'favourites'],
-};
-
-const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = configureStore({
   reducer: persistedReducer,
@@ -40,7 +47,7 @@ const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }),
+    }).concat(persistMiddleware),
 });
 
 export const persistor = persistStore(store);

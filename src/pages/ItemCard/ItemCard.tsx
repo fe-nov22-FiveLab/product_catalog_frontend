@@ -9,7 +9,6 @@ import {
   removeOnePhoneFromCart,
   selectCart,
 } from '../../features/cart/cartSlice';
-import { PhoneDetails } from '../../@types/PhoneDetails';
 import { getPhoneDetails, getPhones } from '../../utils/fetchData';
 import { useParams } from 'react-router';
 import classNames from 'classnames';

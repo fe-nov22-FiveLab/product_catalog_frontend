@@ -13,7 +13,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <Provider store={store}>
-    <PersistGate persistor={persistor}>
+    <PersistGate loading={null} persistor={persistor}>
       <HashRouter>
         <App />
       </HashRouter>
