@@ -10,6 +10,7 @@ import { NavLinkBurger } from '../NavLinkBurger/NavLinkBurger';
 import burger from '../../assets/img/icons/burger.svg';
 import { useAppSelector } from '../../app/hooks';
 import { selectCart } from '../../features/cart/cartSlice';
+import { selectFavourites } from '../../features/favourites/favourites';
 
 export const BurgerMenu: React.FC = () => {
   const [isActiveBurger, setIsActiveBurger] = useState(false);
@@ -23,6 +24,12 @@ export const BurgerMenu: React.FC = () => {
   }, [isActiveBurger]);
 
   const { phones } = useAppSelector(selectCart);
+  const { phones: favoritePhones } = useAppSelector(selectFavourites);
+
+  const totalFavoritesPhones = favoritePhones.reduce(
+    (sum, phone) => (phone.count as number || 1) + sum,
+    0,
+  );
 
   const totalPhones = phones.reduce(
     (sum, phone) => (phone.count as number) + sum,
@@ -92,6 +99,7 @@ export const BurgerMenu: React.FC = () => {
                   })
                 }
               >
+                <div className={styles.cartCounter}>{totalFavoritesPhones}</div>
                 <img src={favourites_heart} alt="favourites" />
               </NavLink>
 

@@ -128,7 +128,36 @@
   }
 }
 
-.cartCounter {
+.favorites_counter {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top: 18px;
+  right: 18px;
+  width: 15px;
+  height: 15px;
+  border-radius: 10px;
+  border: 1px solid $white-color;
+  background-color: $red-color;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 12px;
+  text-align: center;
+  color: $white-color;
+
+  @include onTablet {
+    top: 10px;
+    right: 58%;
+  }
+
+  @include onDesktop {
+    top: 18px;
+    right: 63%;
+  }
+}
+
+.cart_counter {
   display: flex;
   position: absolute;
   justify-content: center;
