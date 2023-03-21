@@ -15,7 +15,7 @@ export const Breadcrumbs: React.FC = () => {
   }
 
   return (
-    <div className={styles.conainer}>
+    <div className={styles.container}>
       <div className={styles.breadcrumbs}>
         <Link to="/home" className={styles.breadcrumbs__home}>
           <img src={home} alt="Go Home" />
@@ -37,7 +37,7 @@ export const Breadcrumbs: React.FC = () => {
                 key={match.pathname}
                 className={classNames(styles.breadcrumbs__nav, {
                   [styles.breadcrumbs__nav__is_active]:
-                  match.pathname === location.pathname,
+                    match.pathname === location.pathname,
                 })}
               >
                 {breadcrumb}
