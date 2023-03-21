@@ -1,8 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Swiper as SwiperClass } from 'swiper/types';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Autoplay, Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { useSwiper } from 'swiper/react';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -43,7 +42,7 @@ export const HomeSwiper: React.FC = () => {
         </div>
 
         <Swiper
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={50}
           slidesPerView={1}
           pagination= {{
@@ -52,6 +51,10 @@ export const HomeSwiper: React.FC = () => {
           onSwiper={setSwiperRef}
           onSlideChange={() => console.log('slide change')}
           loop
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
         >
           <SwiperSlide>
             <picture className='image' >
