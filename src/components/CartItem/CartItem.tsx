@@ -18,7 +18,7 @@ type Props = {
 export const CartItem: React.FC<Props> = ({ phone }) => {
   const dispatch = useAppDispatch();
   const { id, name, image, fullPrice, count } = phone;
-
+  console.log(dispatch);
   return (
     <div className={styles.cart}>
       <div className={styles.cart_info}>

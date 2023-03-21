@@ -59,6 +59,7 @@
     flex-direction: column;
     justify-content: center;
     margin-top: 32px;
+    cursor: pointer;
 
     @include onTablet {
       flex-direction: row-reverse;
