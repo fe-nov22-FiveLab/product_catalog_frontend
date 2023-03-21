@@ -5,6 +5,11 @@
   display: flex;
   margin-bottom: 24px;
 
+  @include onTablet {
+    margin-bottom: 0px;
+    margin-right: 40px;
+  }
+
   &__sort {
     margin-right: 16px;
   }

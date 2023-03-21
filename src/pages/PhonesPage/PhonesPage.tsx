@@ -6,6 +6,7 @@ import { Pagination } from '../../components/Pagination';
 import { getPhones } from '../../utils/fetchData';
 import { Phone } from '../../@types/Phone';
 import { useLocation } from 'react-router-dom';
+import { PhonesSearch } from '../../components/PhonesSearch';
 
 export const PhonesPage: React.FC = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
@@ -39,9 +40,16 @@ export const PhonesPage: React.FC = () => {
     <div className={styles.container}>
       <h1 className={styles.title}>Mobile phones</h1>
       <p className={styles.amount}>{total} models</p>
-      <PhonesFilter />
+      <div className={styles.filters}>
+        <div>
+          <PhonesFilter />
+        </div>
+        <div className={styles.filters__search}>
+          <PhonesSearch />
+        </div>
+      </div>
       {hasLoadingError ? (
-        <p className={styles.error}>Cannot load data from server</p>
+        <p className={styles.error}>Can&apos;t load data from server</p>
       ) : (
         <Catalog phones={phones} isLoading={isLoading} />
       )}
