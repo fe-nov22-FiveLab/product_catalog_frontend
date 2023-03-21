@@ -43,7 +43,7 @@ export const Card: React.FC<Props> = ({ phone }) => {
   return (
     <>
       <div className={styles.card}>
-        <Link to={`/phone/${phoneId}`}>
+        <Link to={`/phones/${phoneId}`}>
           <img className={styles.image} src={imageLink} alt={name} />
         </Link>
 
