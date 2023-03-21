@@ -1,10 +1,22 @@
 @import '../../styles/variables.scss';
 @import '../../styles/mixins.scss';
 
+.home_slider {
+  margin-bottom: 66px;
+
+  @include onTablet {
+    margin-bottom: 74px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 92px;
+  }
+}
+
 .container {
   display: flex;
   gap: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .button {
@@ -17,11 +29,11 @@
     display: flex;
   }
 
-  border: 1px solid $secondary-color;
+  cursor: pointer;
+  border: 1px solid $elements-color;
+  transition: all 0.3s;
 
   &:hover {
-  border: 1px solid $primary-color;
+    border: 1px solid $primary-color;
   }
-
-  cursor: pointer;
 }

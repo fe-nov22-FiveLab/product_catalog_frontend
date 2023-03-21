@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Swiper as SwiperClass } from 'swiper/types';
 import { Autoplay, Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -7,9 +7,9 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import '../../styles/Swiper.scss';
 import styles from './HomeSwiper.module.scss';
 
-import '../../styles/HomeSiper.scss';
 import banner from '../../assets/img/Banner.png';
 import smallBanner from '../../assets/img/banner-320.png';
 import buttonLeft from '../../assets/img/icons/arrow-left-small.svg';
@@ -17,8 +17,6 @@ import buttonRight from '../../assets/img/icons/arrow-right-small.svg';
 
 export const HomeSwiper: React.FC = () => {
   const [swiperRef, setSwiperRef] = useState<SwiperClass>();
-
-  // const theSlides = useMemo(()=> ['slide one', 'slide two'], []);
 
   const handlePrevious = useCallback(() => {
     swiperRef?.slidePrev();
@@ -29,7 +27,7 @@ export const HomeSwiper: React.FC = () => {
   }, [swiperRef]);
 
   return (
-    <>
+    <div className={styles.home_slider}>
       <div className={styles.container}>
         <div
           className={styles.button}
@@ -38,23 +36,27 @@ export const HomeSwiper: React.FC = () => {
           <img
             src={buttonLeft}
             alt="prev slide"
+            className={styles.button_image}
           />
         </div>
 
         <Swiper
           modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
           spaceBetween={50}
           slidesPerView={1}
           pagination= {{
+            clickable: true,
             el: '.swiper-custom-pagination',
           }}
           onSwiper={setSwiperRef}
           onSlideChange={() => console.log('slide change')}
           loop
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-          }}
+          observeParents
+          observer
         >
           <SwiperSlide>
             <picture className='image' >
@@ -90,6 +92,6 @@ export const HomeSwiper: React.FC = () => {
         </div>
       </div>
       <div className="swiper-custom-pagination"/>
-    </>
+    </div>
   );
 };

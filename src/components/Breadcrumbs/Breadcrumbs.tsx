@@ -15,7 +15,7 @@ export const Breadcrumbs: React.FC = () => {
   }
 
   return (
-    <div className={styles.conainer}>
+    <div className={styles.container}>
       <div className={styles.breadcrumbs}>
         <Link to="/home" className={styles.breadcrumbs__home}>
           <img src={home} alt="Go Home" />

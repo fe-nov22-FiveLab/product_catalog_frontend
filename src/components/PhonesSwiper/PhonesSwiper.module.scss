@@ -1,0 +1,80 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.phones_slider {
+  margin-bottom: 56px;
+  overflow: hidden;
+
+  @include onTablet {
+    margin-bottom: 64px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 80px;
+  }
+}
+
+.swiper_container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  @include onTablet {
+    padding: 0 24px;
+  }
+
+  @include onDesktop {
+    padding: 0 32px;
+  }
+}
+
+.top_panel {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding: 0 16px;
+
+  @include onTablet {
+    padding: 0 24px;
+  }
+
+  @include onDesktop {
+    padding: 0 32px;
+  }
+}
+
+.buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+
+  border: 1px solid $elements-color;
+
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    border: 1px solid $primary-color;
+  }
+}
+
+.title {
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 800;
+  color: $primary-color;
+
+  @include onTablet {
+    font-size: 32px;
+    line-height: 41px;
+  }
+}
