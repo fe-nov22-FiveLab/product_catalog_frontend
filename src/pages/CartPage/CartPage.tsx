@@ -5,6 +5,7 @@ import { CartCheckout } from '../../components/CartCheckout/CartCheckout';
 import { CartItem } from '../../components/CartItem/CartItem';
 import styles from './CartPage.module.scss';
 import arrowBack from '../../assets/img/icons/arrow-back.svg';
+import empty_cart from '../../assets/img/empty-cart.png';
 import { useNavigate } from 'react-router-dom';
 
 export const CartPage: React.FC = () => {
@@ -25,12 +26,13 @@ export const CartPage: React.FC = () => {
         />
         <span className={styles.button__text}>Back</span>
       </div>
+      <h1 className={styles.title}>Cart</h1>
       <div className={styles.cart_page}>
-        <div>
+        <div className={styles.cart_list}>
           {phones.length > 0 ? (
             phones.map((phone) => <CartItem key={phone.id} phone={phone} />)
           ) : (
-            <h2 style={{ textAlign: 'center' }}>Cart is Empty</h2>
+            <div className={styles.wrapper_cart_image}></div>
           )}
         </div>
         <CartCheckout />
