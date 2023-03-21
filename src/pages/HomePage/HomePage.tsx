@@ -1,6 +1,6 @@
 import React from 'react';
-import { PhonesFilter } from '../../components/PhonesFilter';
 import { PhonesSlider } from '../../components/PhonesSlider';
+import { ShopByCategory } from '../../components/ShopByCategory';
 import { SimpleSlider } from '../../components/SimpleSlider';
 
 export const HomePage: React.FC = () => {
@@ -11,6 +11,7 @@ export const HomePage: React.FC = () => {
       <SimpleSlider />
 
       {/* <PhonesSlider /> */}
+      <ShopByCategory />
     </>
   );
 };
