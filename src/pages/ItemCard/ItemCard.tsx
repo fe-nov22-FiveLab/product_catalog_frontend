@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import styles from './ItemCard.module.scss';
+import arrowBack from '../../assets/img/icons/arrow-back.svg';
 import favourites from '../../assets/img/icons/favourites_heart.svg';
 import favourites_heart_red from '../../assets/img/icons/favourites_heart_red.svg';
-import { BackButton } from '../../components/BackButton/BackButton';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import {
   addPhoneToCart,
+  deletePhoneFromCart,
   removeOnePhoneFromCart,
   selectCart,
 } from '../../features/cart/cartSlice';
@@ -68,6 +69,7 @@ export const ItemCard: React.FC = () => {
     loadPhonesData();
   }, [location.search]);
 
+
   useEffect(() => {
     if (phoneDetails) {
       setMainPhoto(`${phoneDetails.images[0]}`);
@@ -101,9 +103,16 @@ export const ItemCard: React.FC = () => {
   const phonesData = Object.values(phonesFromServer);
   const phoneToAdd = phonesData.find((phone) => phone.phoneId === phoneId);
 
+  console.log(phoneDetails);
+
   return (
     <>
-      <BackButton />
+      <div className={styles.product__back__button}>
+        <Link to="/phones">
+          <img src={arrowBack} className={styles.product__back__image} alt="Back arrow" />
+          <span className={styles.product__back__button__text}>Back</span>
+        </Link>
+      </div>
 
       {!phoneDetails ? (
         isLoading
@@ -215,23 +224,27 @@ export const ItemCard: React.FC = () => {
               </div>
 
               <div className={styles.button__container}>
-                <button
-                  type="button"
-                  className={classNames(styles.product__card__buy__button, {
-                    [styles.product__card__buy__button__is_active]:
-                      isAddedToCart,
-                  })}
-                  //onClick={() => dispatch(addPhoneToCart(phoneToAdd))}
-                  //disabled={isAddedToCart}
-                >
-                  {' '}
-                  {isAddedToCart ? 'Added' : 'Add to cart'}{' '}
-                </button>
+                {!isAddedToCart ? (
+                  <button
+                    className={styles.product__card__buy__button}
+                    //onClick={() => dispatch(addPhoneToCart(phone))}
+                  >
+                    Add to cart
+                  </button>
+                ) : (
+                  <button
+                    className={styles.product__card__buy__button__is_active}
+                    //onClick={() => dispatch(deletePhoneFromCart(id))}
+                  >
+                    Added
+                  </button>
+                )}
 
                 {!isAddedToFavourites ? (
                   <button
                     type="button"
                     className={styles.product__card__fav__button}
+                    //onClick={() => dispatch(addPhoneToFavourites(phone))}
                   >
                     <img src={favourites} alt="favorites" />
                   </button>
@@ -239,7 +252,7 @@ export const ItemCard: React.FC = () => {
                   <button
                     type="button"
                     className={styles.product__card__fav__button__red}
-                    //onClick={() => dispatch(removeOnePhoneFromCart(phones.phoneId))}
+                    //onClick={() => dispatch(deletePhoneFromFavourites(id))}
                   >
                     <img src={favourites_heart_red} alt="favourites" />
                   </button>

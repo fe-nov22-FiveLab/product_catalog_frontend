@@ -5,6 +5,28 @@
   color: $primary-color;
   padding: 0 16px;
 
+  &__back__button {
+    margin-bottom: 16px;
+    cursor: pointer;
+
+  &__image {
+    height: 9px;
+    margin-right: 9px;
+  }
+
+  &__text {
+    font-size: 12px;
+    color: $secondary-color;
+    font-weight: 700;
+    margin-left: 9px;
+    margin-bottom: 16px;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
   &__title {
     font-style: normal;
     font-weight: 800;
@@ -212,18 +234,33 @@
       line-height: 21px;
       text-decoration: none;
       color: $white-color;
+      cursor: pointer;
 
       transition: all 0.5s;
 
-      &__is_active {
-        cursor: pointer;
-        background-color: $elements-color;
+      &:hover {
+        box-shadow: 0px 3px 13px rgba(23, 32, 49, 0.4);
       }
 
+      &__is_active {
+        width: 100px;
+        height: 40px;
+        background-color: $white-color;
+        border: 1px solid $secondary-color;
+        cursor: pointer;
+        margin-right: 8px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 40px;
+        text-align: center;
+        text-decoration: none;
+        color: $green-color;
+
       &:hover {
-        background-color: $secondary-color;
+        box-shadow: 0px 3px 13px rgba(23, 32, 49, 0.4);
       }
     }
+  }
 
     &__fav__button {
       height: 40px;
@@ -241,23 +278,23 @@
 
       &:hover {
         border-color: $primary-color;
+        transition: all 0.5s;
       }
 
       &__red {
         height: 40px;
         width: 40px;
-        background-color: #93857e;
+        background-color: $white-color;
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 19px;
 
         text-decoration: none;
-        background-color: #93857e;
         margin-left: 8px;
 
         transition: all 0.5s;
-        border: 1px $elements-color solid;
+        border-color: $icons-color;
       }
     }
 

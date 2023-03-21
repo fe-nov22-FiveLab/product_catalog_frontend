@@ -1,6 +1,26 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
+.button {
+  margin-bottom: 16px;
+  color: $secondary-color;
+  cursor: pointer;
+
+  &__image {
+    height: 9px;
+    margin-right: 9px;
+  }
+
+  &__text {
+    font-size: 12px;
+    font-weight: 700;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
 .cart_page {
   display: flex;
   flex-direction: column;
