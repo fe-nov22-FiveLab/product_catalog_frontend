@@ -37,7 +37,7 @@ export const Breadcrumbs: React.FC = () => {
                 key={match.pathname}
                 className={classNames(styles.breadcrumbs__nav, {
                   [styles.breadcrumbs__nav__is_active]:
-                  match.pathname === location.pathname,
+                    match.pathname === location.pathname,
                 })}
               >
                 {breadcrumb}

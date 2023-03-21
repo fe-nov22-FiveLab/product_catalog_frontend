@@ -70,10 +70,10 @@
     max-width: 368px;
     width: 100%;
     margin-bottom: 24px;
-    transition: transform 0.3s;
+    transition: box-shadow 0.3s ease;
 
     &:hover {
-      transform: scale(1.02);
+      box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.3);
     }
   }
 }

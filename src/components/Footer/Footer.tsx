@@ -23,21 +23,36 @@ export const Footer: React.FC = () => {
 
           <ul className={styles.footer_list}>
             <li className={styles.footer_item}>
-              <Link to={'/github'} className={styles.footer_link}>
+              <a
+                href="https://github.com/fe-nov22-FiveLab/product_catalog_frontend"
+                className={styles.footer_link}
+                target="_blank"
+                rel="noreferrer"
+              >
                 github
-              </Link>
+              </a>
             </li>
 
             <li className={styles.footer_item}>
-              <Link to={'/contacts'} className={styles.footer_link}>
+              <a
+                href="https://github.com/fe-nov22-FiveLab/product_catalog_frontend"
+                className={styles.footer_link}
+                target="_blank"
+                rel="noreferrer"
+              >
                 contacts
-              </Link>
+              </a>
             </li>
 
             <li className={styles.footer_item}>
-              <Link to={'/rights'} className={styles.footer_link}>
+              <a
+                href="https://github.com/fe-nov22-FiveLab/product_catalog_frontend"
+                className={styles.footer_link}
+                target="_blank"
+                rel="noreferrer"
+              >
                 rights
-              </Link>
+              </a>
             </li>
           </ul>
 
