@@ -36,7 +36,7 @@ export const PhonesPage: React.FC = () => {
   }, [location.search]);
 
   return (
-    <>
+    <div className={styles.container}>
       <h1 className={styles.title}>Mobile phones</h1>
       <PhonesFilter />
       {hasLoadingError ? (
@@ -45,6 +45,6 @@ export const PhonesPage: React.FC = () => {
         <Catalog phones={phones} isLoading={isLoading} />
       )}
       <Pagination total={total} />
-    </>
+    </div>
   );
 };

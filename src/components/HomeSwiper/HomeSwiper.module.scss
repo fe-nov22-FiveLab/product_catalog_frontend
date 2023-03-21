@@ -1,0 +1,27 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.container {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.button {
+  display: none;
+  justify-content: center;
+  width: 32px;
+  padding: 0 10px;
+
+  @include onTablet {
+    display: flex;
+  }
+
+  border: 1px solid $secondary-color;
+
+  &:hover {
+  border: 1px solid $primary-color;
+  }
+
+  cursor: pointer;
+}

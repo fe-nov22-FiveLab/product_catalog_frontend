@@ -15,35 +15,37 @@ export const Breadcrumbs: React.FC = () => {
   }
 
   return (
-    <div className={styles.breadcrumbs}>
-      <Link to="/home" className={styles.breadcrumbs__home}>
-        <img src={home} alt="Go Home" />
-      </Link>
+    <div className={styles.conainer}>
+      <div className={styles.breadcrumbs}>
+        <Link to="/home" className={styles.breadcrumbs__home}>
+          <img src={home} alt="Go Home" />
+        </Link>
 
-      {breadcrumbs.map(({ match, location, breadcrumb }, ind) =>
-        !ind ? (
-          ''
-        ) : (
-          <React.Fragment key={ind}>
-            <img
-              src={arrow}
-              alt="arrow"
-              className={styles.breadcrumbs__arrow}
-            />
+        {breadcrumbs.map(({ match, location, breadcrumb }, ind) =>
+          !ind ? (
+            ''
+          ) : (
+            <React.Fragment key={ind}>
+              <img
+                src={arrow}
+                alt="arrow"
+                className={styles.breadcrumbs__arrow}
+              />
 
-            <Link
-              to={match.pathname}
-              key={match.pathname}
-              className={classNames(styles.breadcrumbs__nav, {
-                [styles.breadcrumbs__nav__is_active]:
+              <Link
+                to={match.pathname}
+                key={match.pathname}
+                className={classNames(styles.breadcrumbs__nav, {
+                  [styles.breadcrumbs__nav__is_active]:
                   match.pathname === location.pathname,
-              })}
-            >
-              {breadcrumb}
-            </Link>
-          </React.Fragment>
-        ),
-      )}
+                })}
+              >
+                {breadcrumb}
+              </Link>
+            </React.Fragment>
+          ),
+        )}
+      </div>
     </div>
   );
 };

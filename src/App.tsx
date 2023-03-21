@@ -15,20 +15,18 @@ const App: React.FC = () => {
     <div className="App">
       <Header />
 
-      <div className="container">
-        <Breadcrumbs />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/home" element={<Navigate to="/" replace />} />
-          <Route path="/phones">
-            <Route index element={<PhonesPage />} />
-            <Route path=":phoneId" element={<ItemCard />} />
-          </Route>
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="/favourites" element={<FavouritesPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </div>
+      <Breadcrumbs />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/home" element={<Navigate to="/" replace />} />
+        <Route path="/phones">
+          <Route index element={<PhonesPage />} />
+          <Route path=":phoneId" element={<ItemCard />} />
+        </Route>
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/favourites" element={<FavouritesPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
 
       <Footer />
     </div>
