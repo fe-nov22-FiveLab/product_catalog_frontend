@@ -12,6 +12,10 @@ import styles from './HomeSwiper.module.scss';
 
 import banner from '../../assets/img/Banner.png';
 import smallBanner from '../../assets/img/banner-320.png';
+import banner_phones from '../../assets/img/banner-phones.png';
+import smallBanner_phones from '../../assets/img/banner-phones-mobile.png';
+import banner_tablets from '../../assets/img/banner-tablets.jpg';
+import smallBanner_tablets from '../../assets/img/banner-tablets-mobile.jpg';
 import buttonLeft from '../../assets/img/icons/arrow-left-small.svg';
 import buttonRight from '../../assets/img/icons/arrow-right-small.svg';
 
@@ -67,15 +71,15 @@ export const HomeSwiper: React.FC = () => {
 
           <SwiperSlide>
             <picture className='image' >
-              <source className='image' srcSet={banner} media="(min-width: 640px)" />
-              <img className='image' src={smallBanner} />
+              <source className='image' srcSet={banner_phones} media="(min-width: 640px)" />
+              <img className='image' src={smallBanner_phones} />
             </picture>
           </SwiperSlide>
 
           <SwiperSlide>
             <picture className='image' >
-              <source className='image' srcSet={banner} media="(min-width: 640px)" />
-              <img className='image' src={smallBanner} />
+              <source className='image' srcSet={banner_tablets} media="(min-width: 640px)" />
+              <img className='image' src={smallBanner_tablets} />
             </picture>
           </SwiperSlide>
         </Swiper>

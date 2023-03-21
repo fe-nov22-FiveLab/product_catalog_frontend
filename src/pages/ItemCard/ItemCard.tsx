@@ -16,6 +16,7 @@ import { Link } from 'react-router-dom';
 import { PhoneColor, PhoneColors } from '../../@types/PhoneColors';
 import { Phone } from '../../@types/Phone';
 import { addPhoneToFavourites, deletePhoneFromFavourites, selectFavourites } from '../../features/favourites/favourites';
+import { PhonesSwiper } from '../../components/PhonesSwiper';
 
 export const ItemCard: React.FC = () => {
   const [phone, setPhone] = useState<Phone | null>(null);
@@ -81,12 +82,12 @@ export const ItemCard: React.FC = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <><div className={styles.container}>
       {!phone?.phoneDetails ? (
         isLoading &&
-          <div className={styles.loader}>
-            <div className={styles.loader__content} />
-          </div>
+        <div className={styles.loader}>
+          <div className={styles.loader__content} />
+        </div>
       ) : (
         <main className={styles.product}>
           <div className={styles.product__back__button}>
@@ -103,8 +104,7 @@ export const ItemCard: React.FC = () => {
                 <img
                   src={mainPhoto}
                   alt={styles.phone__image}
-                  className={styles.product__photos__main__image}
-                />
+                  className={styles.product__photos__main__image} />
               </div>
 
               <div className={styles.product__photos__images}>
@@ -117,7 +117,7 @@ export const ItemCard: React.FC = () => {
                       className={classNames(
                         image === mainPhoto
                           ? styles.product__photos__container__image__is_active
-                          : styles.product__photos__container__image,
+                          : styles.product__photos__container__image
                       )}
                     >
                       <img
@@ -125,8 +125,7 @@ export const ItemCard: React.FC = () => {
                         src={image}
                         alt="phone__image"
                         className={styles.product__photos__image}
-                        onClick={() => setMainPhoto(image)}
-                      />
+                        onClick={() => setMainPhoto(image)} />
                     </div>
                   );
                 })}
@@ -155,10 +154,9 @@ export const ItemCard: React.FC = () => {
                         className={classNames(
                           color !== phone.phoneDetails.color
                             ? styles.product__card__color__button
-                            : styles.product__card__color__button__is_active,
+                            : styles.product__card__color__button__is_active
                         )}
-                        style={style}
-                      />
+                        style={style} />
                     );
                   })}
                 </div>
@@ -181,7 +179,7 @@ export const ItemCard: React.FC = () => {
                         className={classNames(
                           capacity !== phone.phoneDetails.capacity
                             ? styles.product__card__capacity__button
-                            : styles.product__card__capacity__button__is_active,
+                            : styles.product__card__capacity__button__is_active
                         )}
                       >
                         {`${capacity}`}
@@ -360,13 +358,14 @@ export const ItemCard: React.FC = () => {
                 </div>
               </div>
             </article>
-
-            <article>
-              <h2 className={styles.slider__cards}>You may also like</h2>
-            </article>
           </div>
+
+
         </main>
       )}
     </div>
+    <div className={styles.slider__cards}>
+      <PhonesSwiper title='You may also like' sort='year' />
+    </div></>
   );
 };
