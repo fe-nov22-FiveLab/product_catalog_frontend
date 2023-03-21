@@ -27,3 +27,20 @@
     font-size: 48px;
   }
 }
+
+.amount {
+  font-weight: 600;
+  font-size: 14px;
+  color: $secondary-color;
+  margin-bottom: 32px;
+
+  @include onTablet {
+    margin-bottom: 40px;
+  }
+}
+
+.error {
+  font-weight: 700;
+  font-size: 24px;
+  color: $primary-color;
+}
