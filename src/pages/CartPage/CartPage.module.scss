@@ -1,19 +1,23 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
-.container {
-  flex-grow: 1;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 16px;
+.button {
+  margin-bottom: 16px;
+  color: $secondary-color;
+  cursor: pointer;
 
-  @include onTablet {
-    padding: 0 24px;
+  &__image {
+    height: 9px;
+    margin-right: 9px;
   }
 
-  @include onDesktop {
-    padding: 0 32px;
+  &__text {
+    font-size: 12px;
+    font-weight: 700;
+
+    &:hover {
+      color: $primary-color;
+    }
   }
 }
 

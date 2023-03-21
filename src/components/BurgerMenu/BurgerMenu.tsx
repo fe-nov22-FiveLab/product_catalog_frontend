@@ -27,7 +27,7 @@ export const BurgerMenu: React.FC = () => {
   const { phones: favoritePhones } = useAppSelector(selectFavourites);
 
   const totalFavoritesPhones = favoritePhones.reduce(
-    (sum, phone) => (phone.count as number || 1) + sum,
+    (sum, phone) => ((phone.count as number) || 1) + sum,
     0,
   );
 
@@ -116,7 +116,6 @@ export const BurgerMenu: React.FC = () => {
                   <div className={styles.cartCounter}>{totalPhones}</div>
                   <img src={bag} alt="shopping bag" />
                 </div>
-
               </NavLink>
             </div>
           </nav>

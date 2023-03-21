@@ -19,7 +19,7 @@ export const Header: React.FC = () => {
   );
 
   const totalFavoritesPhones = favoritePhones.reduce(
-    (sum, phone) => (phone.count as number || 1) + sum,
+    (sum, phone) => ((phone.count as number) || 1) + sum,
     0,
   );
 
@@ -32,15 +32,15 @@ export const Header: React.FC = () => {
           <NavLink to="favourites">
             <div>
               <div className={styles.icon__action}>
-                <div className={styles.favorites_counter}>{totalFavoritesPhones}</div>
+                <div className={styles.favorites_counter}>
+                  {totalFavoritesPhones}
+                </div>
                 <img src={favourites_heart} alt="favourites" />
               </div>
             </div>
-
           </NavLink>
 
           <NavLink to="cart">
-
             <div className={styles.icon__action}>
               <div className={styles.cart_counter}>{totalPhones}</div>
               <img src={bag} />
