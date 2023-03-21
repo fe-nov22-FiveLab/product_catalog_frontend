@@ -39,5 +39,5 @@ export const getPhones = (searchParams: string) => {
 };
 
 export const getPhoneDetails = (phoneId: string) => {
-  return client.get<PhoneDetails>(`/phone/${phoneId}`);
+  return client.get<PhoneDetails>(`/phoneInfo/${phoneId}`);
 };

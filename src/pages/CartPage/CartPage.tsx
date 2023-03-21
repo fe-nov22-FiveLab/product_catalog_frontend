@@ -4,12 +4,14 @@ import { selectCart } from '../../features/cart/cartSlice';
 import { CartCheckout } from '../../components/CartCheckout/CartCheckout';
 import { CartItem } from '../../components/CartItem/CartItem';
 import styles from './CartPage.module.scss';
+import { BackButton } from '../../components/BackButton/BackButton';
 
 export const CartPage: React.FC = () => {
   const { phones } = useAppSelector(selectCart);
 
   return (
     <div className={styles.container}>
+      <BackButton />
       <div className={styles.cart_page}>
         <div>
           {phones.length > 0 ? (

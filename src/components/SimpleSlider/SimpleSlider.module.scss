@@ -1,55 +1,46 @@
 @import '../../styles/variables.scss';
 @import '../../styles/mixins.scss';
 
-.container{
+.container {
   display: flex;
   gap: 16px;
-  justify-content: space-between;
-  align-items: center;
   margin-bottom: 50px;
-  // overflow: hidden;
-  // min-height: 0px; min-width: 0px;
 
   max-width: 320px;
 
   @include onTablet {
-  max-width: 640px;
+    max-width: 640px;
   }
 
-  @include onDesktop {
+  @include onTablet {
     max-width: 1200px;
-    }
+  }
 }
 
-.content{
-  // min-height: 0px; min-width: 0px;
-  // height: 100%; width: 100%;
-  width: 100%;
-  max-width: 320px;
-
-//   width : 320px;
-//   height: 320px;
+.content {
+  width: 320px;
+  height: 320px;
 
   @include onTablet {
-    max-width: 490px;
-    // height: 189px;
+    width: 490px;
+    height: 189px;
   }
 
   @include onDesktop {
-    max-width: 1040px;
-    // height: 400px;
+    width: 1040px;
+    height: 400px;
   }
 }
 
-// .image {
-//   width: 320px;
-//   height: 320px;
+.image {
+  width: 320px;
+  height: 320px;
 
-//   @include onTablet {
-//     width: 100%;
-//     height: auto;
-//   }
-// }
+  @include onTablet {
+    width: 100%;
+    height: auto;
+  }
+}
 
 .button {
   display: none;
@@ -59,14 +50,13 @@
   border: 1px solid $secondary-color;
 
   &:hover {
-  border: 1px solid $primary-color;
-
+    border: 1px solid $primary-color;
   }
   @include onTablet {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 189px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 189px;
   }
 
   @include onDesktop {
@@ -87,22 +77,6 @@
   background-color: $secondary-color;
 
   &_active {
-  background-color: $primary-color;
+    background-color: $primary-color;
   }
 }
-
-.prevArrow {
-  &::before {
-    content: '';
-    height: 32px;
-    display: block;
-height: 32px;
-left: 50%;
-position: absolute;
-top: 50%;
-transform: translate(-50%,-50%);
-width: 32px;
-background-image: url('../../assets/img/slider-button-left.svg');
-  }
-}
-

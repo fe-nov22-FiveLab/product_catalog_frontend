@@ -9,7 +9,6 @@ import buttonRight from '../../assets/img/icons/button-right-disabled.svg';
 import { Card } from '../Card/Card';
 
 export const PhonesSlider: React.FC = () => {
-
   const slider = React.useRef<Slider>(null);
 
   const settings = {
@@ -36,20 +35,14 @@ export const PhonesSlider: React.FC = () => {
         <h2>Brand new models</h2>
 
         <div className={styles.buttons}>
-          <div
-            className={styles.button}
-            onClick={goToPrev}
-          >
+          <div className={styles.button} onClick={goToPrev}>
             <img
               src={buttonLeft}
               alt="prev slide"
               className={styles.button_image}
             />
           </div>
-          <div
-            className={styles.button}
-            onClick={goToNext}
-          >
+          <div className={styles.button} onClick={goToNext}>
             <img
               src={buttonRight}
               alt="next slide"
@@ -87,9 +80,6 @@ export const PhonesSlider: React.FC = () => {
           </div>
         </Slider>
       </div> */}
-
-
     </div>
   );
 };
-
