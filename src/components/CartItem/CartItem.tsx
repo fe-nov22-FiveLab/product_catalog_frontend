@@ -29,12 +29,14 @@ export const CartItem: React.FC<Props> = ({ phone }) => {
           <img
             className={styles.delete_button_img}
             src={icon_close}
-            alt="remove phone" />
+            alt="remove phone"
+          />
         </button>
         <img
           className={styles.phone_image}
           src={image}
-          alt="Apple iPhone Xs 64GB Silver (iMT9G2FS/A)" />
+          alt="Apple iPhone Xs 64GB Silver (iMT9G2FS/A)"
+        />
         <a className={styles.content}>{name}</a>
       </div>
 
@@ -48,7 +50,8 @@ export const CartItem: React.FC<Props> = ({ phone }) => {
             <img
               className={styles.quantity_minus_img}
               src={icon_minus}
-              alt="x" />
+              alt="x"
+            />
           </button>
 
           <p className={styles.quantity_buttons_number}>{count}</p>

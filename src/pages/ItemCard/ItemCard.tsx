@@ -7,7 +7,6 @@ import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import {
   addPhoneToCart,
   deletePhoneFromCart,
-  removeOnePhoneFromCart,
   selectCart,
 } from '../../features/cart/cartSlice';
 import { getPhoneDetails} from '../../utils/fetchData';
