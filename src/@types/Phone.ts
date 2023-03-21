@@ -1,3 +1,5 @@
+import { PhoneDetails } from './PhoneDetails';
+
 export interface Phone {
   id: number;
   categoryId: number;
@@ -12,5 +14,6 @@ export interface Phone {
   ram: string;
   year: number;
   image: string;
+  phoneDetails: PhoneDetails;
   count?: number;
 }
