@@ -10,6 +10,28 @@ import banner from '../../assets/img/Banner.png';
 import buttonLeft from '../../assets/img/icons/arrow-left-small.svg';
 import buttonRight from '../../assets/img/icons/arrow-right-small.svg';
 
+const SampleNextArrow = () => {
+  // const { className, style, onClick } = props;
+  return (
+    <div
+      // className={className}
+      // style={{ ...styles, display: 'block', background: 'red' }}
+      // onClick={onClick}
+    />
+  );
+};
+
+const SamplePrevArrow = () => {
+  // const { className, style, onClick } = props;
+  return (
+    <div
+      // className={styles.prevArrow}
+      // style={{ background: 'red' }}
+      // onClick={onClick}
+    />
+  );
+};
+
 export const SimpleSlider: React.FC = () => {
 
   const slider = React.useRef<Slider>(null);
@@ -23,7 +45,9 @@ export const SimpleSlider: React.FC = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: false,
+    // nextArrow: <SampleNextArrow />,
+    // prevArrow: <SamplePrevArrow />,
+    // arrows: true,
     beforeChange: (prev: number, next: number) => {
       setCurrentSlide(next);
     },
@@ -66,32 +90,35 @@ export const SimpleSlider: React.FC = () => {
         />
       </div>
 
-      <div className={styles.content}>
+      {/* <div className={styles.content}> */}
+      {/* <SamplePrevArrow /> */}
 
-        <Slider ref={slider} {...settings}>
-          <div>
-            <img
-              src={banner}
-              alt="banner"
-              className={styles.image}
-            />
-          </div>
-          <div>
-            <img
-              src={banner}
-              alt="banner"
-              className={styles.image}
-            />
-          </div>
-          <div>
-            <img
-              src={banner}
-              alt="banner"
-              className={styles.image}
-            />
-          </div>
-        </Slider>
-      </div>
+      <Slider className={styles.content}
+        // className='slick-initialized slick-slider'
+        ref={slider} {...settings}>
+        <div>
+          <img
+            src={banner}
+            alt="banner"
+            className={styles.image}
+          />
+        </div>
+        <div>
+          <img
+            src={banner}
+            alt="banner"
+            className={styles.image}
+          />
+        </div>
+        <div>
+          <img
+            src={banner}
+            alt="banner"
+            className={styles.image}
+          />
+        </div>
+      </Slider>
+      {/* </div> */}
 
       <div
         className={styles.button}

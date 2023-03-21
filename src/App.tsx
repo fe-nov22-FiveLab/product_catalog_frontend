@@ -13,16 +13,16 @@ const App: React.FC = () => {
     <div className="App">
       <Header />
 
-      <div className="container">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/home" element={<Navigate to="/" replace />} />
-          <Route path="/phones" element={<PhonesPage />} />
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="/phone/:phoneId" element={<ItemCard />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </div>
+      {/* <div className="container"> */}
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/home" element={<Navigate to="/" replace />} />
+        <Route path="/phones" element={<PhonesPage />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/phone/:phoneId" element={<ItemCard />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+      {/* </div> */}
 
       <Footer />
     </div>

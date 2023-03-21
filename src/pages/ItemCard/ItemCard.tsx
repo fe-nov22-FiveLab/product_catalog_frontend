@@ -10,7 +10,7 @@ import favourites from '../../assets/img/icons/favourites_heart.svg';
 
 export const ItemCard: React.FC = () => {
   return (
-    <>
+    <div className={styles.container}>
       <div className={styles.product__link}>
         <Link to="/phones">
           <img src={arrowBack} alt="Back arrow" />
@@ -229,6 +229,6 @@ export const ItemCard: React.FC = () => {
           </article>
         </div>
       </main>
-    </>
+    </div>
   );
 };

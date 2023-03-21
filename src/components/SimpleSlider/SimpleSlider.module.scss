@@ -4,7 +4,11 @@
 .container{
   display: flex;
   gap: 16px;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 50px;
+  // overflow: hidden;
+  // min-height: 0px; min-width: 0px;
 
   max-width: 320px;
 
@@ -12,35 +16,40 @@
   max-width: 640px;
   }
 
-  @include onTablet {
+  @include onDesktop {
     max-width: 1200px;
     }
 }
 
 .content{
-  width : 320px;
-  height: 320px;
+  // min-height: 0px; min-width: 0px;
+  // height: 100%; width: 100%;
+  width: 100%;
+  max-width: 320px;
+
+//   width : 320px;
+//   height: 320px;
 
   @include onTablet {
-    width: 490px;
-    height: 189px;
+    max-width: 490px;
+    // height: 189px;
   }
 
   @include onDesktop {
-    width: 1040px;
-    height: 400px;
+    max-width: 1040px;
+    // height: 400px;
   }
 }
 
-.image {
-  width: 320px;
-  height: 320px;
+// .image {
+//   width: 320px;
+//   height: 320px;
 
-  @include onTablet {
-    width: 100%;
-    height: auto;
-  }
-}
+//   @include onTablet {
+//     width: 100%;
+//     height: auto;
+//   }
+// }
 
 .button {
   display: none;
@@ -79,6 +88,21 @@
 
   &_active {
   background-color: $primary-color;
+  }
+}
+
+.prevArrow {
+  &::before {
+    content: '';
+    height: 32px;
+    display: block;
+height: 32px;
+left: 50%;
+position: absolute;
+top: 50%;
+transform: translate(-50%,-50%);
+width: 32px;
+background-image: url('../../assets/img/slider-button-left.svg');
   }
 }
 

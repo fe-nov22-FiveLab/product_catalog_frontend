@@ -33,7 +33,7 @@ export const PhonesPage: React.FC = () => {
   }, [location.search]);
 
   return (
-    <>
+    <div className={styles.container}>
       <Breadcrumbs location="phones" />
       <h1 className={styles.title}>Mobile phones</h1>
       <PhonesFilter />
@@ -43,6 +43,6 @@ export const PhonesPage: React.FC = () => {
         <Catalog phones={phones} />
       )}
       <Pagination total={total} />
-    </>
+    </div>
   );
 };
