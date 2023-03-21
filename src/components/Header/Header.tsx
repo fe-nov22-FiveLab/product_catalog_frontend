@@ -32,7 +32,9 @@ export const Header: React.FC = () => {
           <NavLink to="favourites">
             <div>
               <div className={styles.icon__action}>
-                <div className={styles.favorites_counter}>{totalFavoritesPhones}</div>
+                {(totalFavoritesPhones > 0) && (
+                  <div className={styles.favorites_counter}>{totalFavoritesPhones}</div>
+                )}
                 <img src={favourites_heart} alt="favourites" />
               </div>
             </div>
@@ -42,7 +44,11 @@ export const Header: React.FC = () => {
           <NavLink to="cart">
 
             <div className={styles.icon__action}>
-              <div className={styles.cart_counter}>{totalPhones}</div>
+              {(totalPhones > 0) &&(
+                <div className={styles.cart_counter}>{totalPhones}</div>
+              )
+              }
+
               <img src={bag} />
             </div>
           </NavLink>

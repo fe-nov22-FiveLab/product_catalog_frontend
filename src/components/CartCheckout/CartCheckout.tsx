@@ -24,6 +24,7 @@ export const CartCheckout: React.FC = () => {
   return (
     <>
       <div className={styles.total_checkout}>
+
         <div className={styles.info}>
           <p className={styles.total_price}>${totalPrice}</p>
           <p className={styles.number_of_items}>
@@ -32,7 +33,7 @@ export const CartCheckout: React.FC = () => {
           </p>
           <div className={styles.line}></div>
 
-          
+
 
           <button
             className={styles.button_checkout}

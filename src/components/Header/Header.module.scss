@@ -113,6 +113,9 @@
   height: 48px;
   border-left: 1px solid $elements-color;
   transition: all 0.1s;
+  border: 1px solid #e2e6e9;
+  border-bottom-color: transparent;
+
 
   &:hover {
     border: 1px solid $primary-color;

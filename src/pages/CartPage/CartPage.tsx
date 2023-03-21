@@ -12,7 +12,9 @@ export const CartPage: React.FC = () => {
   return (
     <div className={styles.container}>
       <BackButton />
+      <div className={styles.cart_header}>Cart</div>
       <div className={styles.cart_page}>
+
         <div>
           {phones.length > 0 ? (
             phones.map((phone) => <CartItem key={phone.id} phone={phone} />)
