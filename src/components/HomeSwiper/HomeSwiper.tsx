@@ -34,10 +34,7 @@ export const HomeSwiper: React.FC = () => {
   return (
     <div className={styles.home_slider}>
       <div className={styles.container}>
-        <div
-          className={styles.button}
-          onClick={handlePrevious}
-        >
+        <div className={styles.button} onClick={handlePrevious}>
           <img
             src={buttonLeft}
             alt="prev slide"
@@ -53,7 +50,7 @@ export const HomeSwiper: React.FC = () => {
           }}
           spaceBetween={50}
           slidesPerView={1}
-          pagination= {{
+          pagination={{
             clickable: true,
             el: '.swiper-custom-pagination',
           }}
@@ -65,36 +62,45 @@ export const HomeSwiper: React.FC = () => {
         >
           <SwiperSlide>
             <Link to="/phones">
-              <picture className='image' >
-                <source className='image' srcSet={banner} media="(min-width: 640px)" />
-                <img className='image' src={smallBanner} />
+              <picture className="image">
+                <source
+                  className="image"
+                  srcSet={banner}
+                  media="(min-width: 640px)"
+                />
+                <img className="image" src={smallBanner} />
               </picture>
             </Link>
           </SwiperSlide>
 
           <SwiperSlide>
             <Link to="/phones">
-              <picture className='image' >
-                <source className='image' srcSet={banner_phones} media="(min-width: 640px)" />
-                <img className='image' src={smallBanner_phones} />
+              <picture className="image">
+                <source
+                  className="image"
+                  srcSet={banner_phones}
+                  media="(min-width: 640px)"
+                />
+                <img className="image" src={smallBanner_phones} />
               </picture>
             </Link>
           </SwiperSlide>
 
           <SwiperSlide>
             <Link to="/tablets">
-              <picture className='image' >
-                <source className='image' srcSet={banner_tablets} media="(min-width: 640px)" />
-                <img className='image' src={smallBanner_tablets} />
+              <picture className="image">
+                <source
+                  className="image"
+                  srcSet={banner_tablets}
+                  media="(min-width: 640px)"
+                />
+                <img className="image" src={smallBanner_tablets} />
               </picture>
             </Link>
           </SwiperSlide>
         </Swiper>
 
-        <div
-          className={styles.button}
-          onClick={handleNext}
-        >
+        <div className={styles.button} onClick={handleNext}>
           <img
             src={buttonRight}
             alt="next slide"
@@ -102,7 +108,7 @@ export const HomeSwiper: React.FC = () => {
           />
         </div>
       </div>
-      <div className="swiper-custom-pagination"/>
+      <div className="swiper-custom-pagination" />
     </div>
   );
 };

@@ -23,8 +23,12 @@ export const Pagination: React.FC<Props> = ({ total }) => {
   const lastPage = pageLinkCount;
 
   let startPage = currentPage - Math.floor(MAX_PAGES / 2);
-  startPage = Math.max(startPage, 1);
-  startPage = Math.min(startPage, lastPage - MAX_PAGES + 1);
+  if (lastPage < MAX_PAGES) {
+    startPage = 1;
+  } else {
+    startPage = Math.max(startPage, 1);
+    startPage = Math.min(startPage, lastPage - MAX_PAGES + 1);
+  }
 
   const pageLinkData = Array.from(
     { length: Math.min(MAX_PAGES, lastPage) },
