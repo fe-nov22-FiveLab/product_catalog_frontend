@@ -24,8 +24,6 @@ export const PhonesPage: React.FC = () => {
         const phonesData = await getPhones(searchParams);
         setPhones(phonesData.phones);
         setTotal(phonesData.total);
-
-        console.log(phonesData);
       } catch {
         setHasLoadingError(true);
       } finally {
@@ -51,9 +49,11 @@ export const PhonesPage: React.FC = () => {
       {hasLoadingError ? (
         <p className={styles.error}>Can&apos;t load data from server</p>
       ) : (
-        <Catalog phones={phones} isLoading={isLoading} />
+        <>
+          <Catalog phones={phones} isLoading={isLoading} />
+          <Pagination total={total} />
+        </>
       )}
-      <Pagination total={total} />
     </div>
   );
 };
