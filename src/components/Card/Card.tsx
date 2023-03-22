@@ -90,19 +90,16 @@ export const Card: React.FC<Props> = ({ phone }) => {
             </button>
           )}
           {!hasAddedToFavourites ? (
-            <Link
-              to="#"
+            <button
               className={styles.add_to_favorite}
               onClick={() => dispatch(addPhoneToFavourites(phone))}
-            ></Link>
+            ></button>
           ) : (
-            <Link
-              to="#"
+            <button
               className={`${styles.add_to_favorite} ${styles['add_to_favorite-selected']}`}
               onClick={() => dispatch(deletePhoneFromFavourites(id))}
-            ></Link>
+            ></button>
           )}
-          {/* <Link to="#" className={styles.add_to_favorite}></Link> */}
         </div>
       </div>
     </>
