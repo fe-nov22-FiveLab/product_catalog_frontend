@@ -85,25 +85,38 @@
 
     @include onTablet {
       flex-direction: row-reverse;
-      justify-content: left;
+      justify-content: center;
     }
 
     &__images {
       display: flex;
       flex-direction: row;
       justify-content: space-around;
-      margin-top: 16px;
 
-      &__image {
-        border: 1px solid $elements-color;
-
-        &:hover {
-          border-color: $primary-color;
-        }
+      @include onMobile {
+        margin-top: 16px;
       }
 
       @include onTablet {
         flex-direction: column;
+        height: 287px;
+        margin-top: 0;
+      }
+
+      @include onDesktop {
+        height: 442px;
+      }
+
+      &__image {
+        border: 1px solid $elements-color;
+
+        @include onTablet {
+          flex-direction: column;
+        }
+
+        &:hover {
+          border-color: $primary-color;
+        }
       }
     }
 
@@ -567,4 +580,10 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+.error {
+  font-weight: 700;
+  font-size: 24px;
+  color: $primary-color;
 }

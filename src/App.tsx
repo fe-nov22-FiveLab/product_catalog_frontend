@@ -11,6 +11,7 @@ import { FavouritesPage } from './pages/FavouritesPage';
 import { Breadcrumbs } from './components/Breadcrumbs/Breadcrumbs';
 import { TabletsPage } from './pages/TabletsPage';
 import { AccessoriesPage } from './pages/AccessoriesPage';
+import ScrollTop from './components/Scroll';
 
 const App: React.FC = () => {
   return (
@@ -18,20 +19,21 @@ const App: React.FC = () => {
       <Header />
 
       <Breadcrumbs />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/home" element={<Navigate to="/" replace />} />
-        <Route path="/phones">
-          <Route index element={<PhonesPage />} />
-          <Route path=":phoneId" element={<ItemCard />} />
-        </Route>
-        <Route path="/cart" element={<CartPage />} />
-        <Route path="/favourites" element={<FavouritesPage />} />
-        <Route path="/tablets" element={<TabletsPage />} />
-        <Route path="/accessories" element={<AccessoriesPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-
+      <ScrollTop>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/home" element={<Navigate to="/" replace />} />
+          <Route path="/phones">
+            <Route index element={<PhonesPage />} />
+            <Route path=":phoneId" element={<ItemCard />} />
+          </Route>
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/favourites" element={<FavouritesPage />} />
+          <Route path="/tablets" element={<TabletsPage />} />
+          <Route path="/accessories" element={<AccessoriesPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </ScrollTop>
       <Footer />
     </div>
   );

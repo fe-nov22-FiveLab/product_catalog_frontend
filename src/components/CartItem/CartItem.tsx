@@ -41,7 +41,6 @@ export const CartItem: React.FC<Props> = ({ phone }) => {
         <Link to={`/phones/${phoneId}`} className={styles.content}>
           {name}
         </Link>
-        {/* <a className={styles.content}>{name}</a> */}
       </div>
 
       <div className={styles.quantity_and_price}>
@@ -62,6 +61,7 @@ export const CartItem: React.FC<Props> = ({ phone }) => {
 
           <button
             className={styles.quantity_buttons_plus}
+            disabled={(count as number) >= 10}
             onClick={() => dispatch(addPhoneToCart(phone))}
           >
             <img className={styles.quantity_lus_img} src={icon_plus} alt="x" />

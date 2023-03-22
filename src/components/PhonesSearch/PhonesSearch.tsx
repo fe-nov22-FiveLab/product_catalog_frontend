@@ -22,6 +22,7 @@ export const PhonesSearch: React.FC = () => {
 
     const newSearchParams = getSearchWith(searchParams, {
       query: normalizedValue || null,
+      page: null,
     });
 
     debouncedSetSearchParams(newSearchParams);

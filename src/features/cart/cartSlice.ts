@@ -23,6 +23,9 @@ export const cartSlice = createSlice({
       );
 
       if (foundPhone && foundPhone.count) {
+        if (foundPhone.count >= 10) {
+          return state;
+        }
         foundPhone.count++;
       } else {
         state.phones.push({
