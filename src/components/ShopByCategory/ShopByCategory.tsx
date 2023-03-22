@@ -18,7 +18,7 @@ export const ShopByCategory: React.FC = () => {
           <Link to={'/phones'} className={styles.category__subtitle}>
             Mobile phones
           </Link>
-          <p className={styles.category__amount}>95 models</p>
+          <p className={styles.category__amount}>71 models</p>
         </div>
 
         <div className={styles.category__item}>
@@ -28,7 +28,7 @@ export const ShopByCategory: React.FC = () => {
           <Link to={'/tablets'} className={styles.category__subtitle}>
             Tablets
           </Link>
-          <p className={styles.category__amount}>24 models</p>
+          <p className={styles.category__amount}>0 models</p>
         </div>
 
         <div className={styles.category__item}>
@@ -38,7 +38,7 @@ export const ShopByCategory: React.FC = () => {
           <Link to={'/accessories'} className={styles.category__subtitle}>
             Accessories
           </Link>
-          <p className={styles.category__amount}>100 models</p>
+          <p className={styles.category__amount}>0 models</p>
         </div>
       </div>
     </div>

@@ -2,6 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { Swiper as SwiperClass } from 'swiper/types';
 import { Autoplay, Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Link } from 'react-router-dom';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -18,7 +19,6 @@ import banner_tablets from '../../assets/img/banner-tablets.jpg';
 import smallBanner_tablets from '../../assets/img/banner-tablets-mobile.jpg';
 import buttonLeft from '../../assets/img/icons/arrow-left-small.svg';
 import buttonRight from '../../assets/img/icons/arrow-right-small.svg';
-import { Link } from 'react-router-dom';
 
 export const HomeSwiper: React.FC = () => {
   const [swiperRef, setSwiperRef] = useState<SwiperClass>();
@@ -34,10 +34,7 @@ export const HomeSwiper: React.FC = () => {
   return (
     <div className={styles.home_slider}>
       <div className={styles.container}>
-        <div
-          className={styles.button}
-          onClick={handlePrevious}
-        >
+        <div className={styles.button} onClick={handlePrevious}>
           <img
             src={buttonLeft}
             alt="prev slide"
@@ -53,48 +50,56 @@ export const HomeSwiper: React.FC = () => {
           }}
           spaceBetween={50}
           slidesPerView={1}
-          pagination= {{
+          pagination={{
             clickable: true,
             el: '.swiper-custom-pagination',
           }}
           onSwiper={setSwiperRef}
-          onSlideChange={() => console.log('slide change')}
           loop
           observeParents
           observer
         >
           <SwiperSlide>
-            <Link to="/phones">
-              <picture className='image' >
-                <source className='image' srcSet={banner} media="(min-width: 640px)" />
-                <img className='image' src={smallBanner} />
+            <Link className={styles.link} to="/phones">
+              <picture className="image">
+                <source
+                  className="image"
+                  srcSet={banner}
+                  media="(min-width: 640px)"
+                />
+                <img className="image" src={smallBanner} />
               </picture>
             </Link>
           </SwiperSlide>
 
           <SwiperSlide>
-            <Link to="/phones">
-              <picture className='image' >
-                <source className='image' srcSet={banner_phones} media="(min-width: 640px)" />
-                <img className='image' src={smallBanner_phones} />
+            <Link className={styles.link} to="/phones">
+              <picture className="image">
+                <source
+                  className="image"
+                  srcSet={banner_phones}
+                  media="(min-width: 640px)"
+                />
+                <img className="image" src={smallBanner_phones} />
               </picture>
             </Link>
           </SwiperSlide>
 
           <SwiperSlide>
-            <Link to="/tablets">
-              <picture className='image' >
-                <source className='image' srcSet={banner_tablets} media="(min-width: 640px)" />
-                <img className='image' src={smallBanner_tablets} />
+            <Link className={styles.link} to="/tablets">
+              <picture className="image">
+                <source
+                  className="image"
+                  srcSet={banner_tablets}
+                  media="(min-width: 640px)"
+                />
+                <img className="image" src={smallBanner_tablets} />
               </picture>
             </Link>
           </SwiperSlide>
         </Swiper>
 
-        <div
-          className={styles.button}
-          onClick={handleNext}
-        >
+        <div className={styles.button} onClick={handleNext}>
           <img
             src={buttonRight}
             alt="next slide"
@@ -102,7 +107,7 @@ export const HomeSwiper: React.FC = () => {
           />
         </div>
       </div>
-      <div className="swiper-custom-pagination"/>
+      <div className="swiper-custom-pagination" />
     </div>
   );
 };
