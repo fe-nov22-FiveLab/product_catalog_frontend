@@ -33,11 +33,14 @@ export const CartItem: React.FC<Props> = ({ phone }) => {
             alt="remove phone"
           />
         </button>
-        <img
+        <Link to={`/phones/${phoneId}`}>
+          <img className={styles.phone_image} src={image} alt={name} />
+        </Link>
+        {/* <img
           className={styles.phone_image}
           src={image}
           alt="Apple iPhone Xs 64GB Silver (iMT9G2FS/A)"
-        />
+        /> */}
         <Link to={`/phones/${phoneId}`} className={styles.content}>
           {name}
         </Link>
