@@ -1,0 +1,36 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.is_active {
+  color: $primary-color;
+  position: relative;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    display: block;
+    top: 135%;
+
+    height: 2px;
+    width: 100%;
+
+    background-color: $primary-color;
+
+    @include onDesktop {
+      top: 145%;
+    }
+  }
+}
+
+.nav__link {
+  display: flex;
+  align-items: center;
+
+  text-decoration: none;
+  color: $secondary-color;
+
+  &:hover {
+    color: $primary-color;
+  }
+}

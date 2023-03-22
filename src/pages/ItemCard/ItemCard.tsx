@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './ItemCard.module.scss';
 import arrowBack from '../../assets/img/icons/arrow-back.svg';
 import favourites from '../../assets/img/icons/favourites_heart.svg';
