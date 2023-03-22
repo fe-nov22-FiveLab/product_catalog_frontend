@@ -13,7 +13,7 @@ export const Breadcrumbs: React.FC = () => {
   if (location.pathname === '/' || location.pathname === '/cart') {
     return null;
   }
-
+  
   return (
     <div className={styles.container}>
       <div className={styles.breadcrumbs}>
