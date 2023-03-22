@@ -5,6 +5,7 @@ import icon_plus from '../../assets/img/icons/plus.svg';
 import icon_close from '../../assets/img/icons/close.svg';
 import { Phone } from '../../@types/Phone';
 import { useAppDispatch } from '../../app/hooks';
+import { Link } from 'react-router-dom';
 import {
   addPhoneToCart,
   deletePhoneFromCart,
@@ -17,7 +18,7 @@ type Props = {
 
 export const CartItem: React.FC<Props> = ({ phone }) => {
   const dispatch = useAppDispatch();
-  const { id, name, image, fullPrice, count } = phone;
+  const { id, name, image, fullPrice, count, phoneId } = phone;
   console.log(dispatch);
   return (
     <div className={styles.cart}>
@@ -37,7 +38,10 @@ export const CartItem: React.FC<Props> = ({ phone }) => {
           src={image}
           alt="Apple iPhone Xs 64GB Silver (iMT9G2FS/A)"
         />
-        <a className={styles.content}>{name}</a>
+        <Link to={`/phones/${phoneId}`} className={styles.content}>
+          {name}
+        </Link>
+        {/* <a className={styles.content}>{name}</a> */}
       </div>
 
       <div className={styles.quantity_and_price}>

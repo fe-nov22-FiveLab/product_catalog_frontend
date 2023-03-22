@@ -96,6 +96,31 @@
   }
 }
 
+.is_active_icons {
+  color: $primary-color;
+  position: relative;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    display: block;
+    top: 135%;
+
+    height: 2px;
+    width: 100%;
+
+    background-color: $primary-color;
+
+    @include onTablet {
+      top: 96%;
+    }
+    @include onDesktop {
+      top: 97%;
+    }
+  }
+}
+
 .nav__is_active::after {
   top: 35px;
   height: 3px;
@@ -108,6 +133,19 @@
 .icon {
   display: flex;
   position: relative;
+}
+
+.icon__is_active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  border-bottom: 2px solid $primary-color;
+
+  @include onDesktop {
+    top: 20px;
+  }
 }
 
 .icon__action {
