@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Swiper as SwiperClass } from 'swiper/types';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -47,7 +47,6 @@ export const PhonesSwiper: React.FC<Props> = ({ title, sort }) => {
 
   const handlePrevious = useCallback(() => {
     swiperRef?.slidePrev();
-    console.log('previous');
   }, [swiperRef]);
 
   const handleNext = useCallback(() => {
@@ -83,7 +82,6 @@ export const PhonesSwiper: React.FC<Props> = ({ title, sort }) => {
           spaceBetween={16}
           slidesPerView={4}
           onSwiper={setSwiperRef}
-          onSlideChange={() => console.log('slide change')}
           loop
         >
           {isLoading

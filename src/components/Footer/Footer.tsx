@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './Footer.module.scss';
 import logo from '../../assets/img/icons/logo.svg';
-import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
   const goToTop = () => {
@@ -19,6 +18,7 @@ export const Footer: React.FC = () => {
             className={styles.footer_logo}
             src={logo}
             alt="logo nice gadgets"
+            onClick={goToTop}
           />
 
           <ul className={styles.footer_list}>
