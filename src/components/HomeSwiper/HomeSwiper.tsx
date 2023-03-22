@@ -2,6 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { Swiper as SwiperClass } from 'swiper/types';
 import { Autoplay, Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Link } from 'react-router-dom';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -18,7 +19,6 @@ import banner_tablets from '../../assets/img/banner-tablets.jpg';
 import smallBanner_tablets from '../../assets/img/banner-tablets-mobile.jpg';
 import buttonLeft from '../../assets/img/icons/arrow-left-small.svg';
 import buttonRight from '../../assets/img/icons/arrow-right-small.svg';
-import { Link } from 'react-router-dom';
 
 export const HomeSwiper: React.FC = () => {
   const [swiperRef, setSwiperRef] = useState<SwiperClass>();
@@ -58,13 +58,12 @@ export const HomeSwiper: React.FC = () => {
             el: '.swiper-custom-pagination',
           }}
           onSwiper={setSwiperRef}
-          onSlideChange={() => console.log('slide change')}
           loop
           observeParents
           observer
         >
           <SwiperSlide>
-            <Link to="/phones">
+            <Link className={styles.link} to="/phones">
               <picture className='image' >
                 <source className='image' srcSet={banner} media="(min-width: 640px)" />
                 <img className='image' src={smallBanner} />
@@ -73,7 +72,7 @@ export const HomeSwiper: React.FC = () => {
           </SwiperSlide>
 
           <SwiperSlide>
-            <Link to="/phones">
+            <Link className={styles.link} to="/phones">
               <picture className='image' >
                 <source className='image' srcSet={banner_phones} media="(min-width: 640px)" />
                 <img className='image' src={smallBanner_phones} />
@@ -82,7 +81,7 @@ export const HomeSwiper: React.FC = () => {
           </SwiperSlide>
 
           <SwiperSlide>
-            <Link to="/tablets">
+            <Link className={styles.link} to="/tablets">
               <picture className='image' >
                 <source className='image' srcSet={banner_tablets} media="(min-width: 640px)" />
                 <img className='image' src={smallBanner_tablets} />

@@ -14,7 +14,7 @@ export const CartPage: React.FC = () => {
   const navigate = useNavigate();
   const goBack = () => {
     navigate(-1);
-  };
+  }; 
 
   return (
     <div className={styles.container}>
