@@ -1,0 +1,42 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.nav {
+  display: flex;
+
+  &__logo {
+    padding-left: 16px;
+    padding-right: 16px;
+
+    &__image {
+      height: 20px;
+      width: 64px;
+
+      @include onDesktop {
+        height: 26px;
+        width: 80px;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+
+    @media (max-width: 639px) {
+      display: none;
+    }
+  }
+
+  &__item {
+    display: flex;
+    padding-left: 32px;
+
+    line-height: 11px;
+    font-size: 12px;
+    font-weight: 800;
+
+    @include onDesktop {
+      padding-left: 64px;
+    }
+  }
+}
