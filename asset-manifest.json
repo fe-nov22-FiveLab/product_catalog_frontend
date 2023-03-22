@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.0e240b46.css",
-    "main.js": "./static/js/main.71fe54c3.js",
+    "main.css": "./static/css/main.8d480848.css",
+    "main.js": "./static/js/main.fa9baae6.js",
     "static/media/banner-phones.png": "./static/media/banner-phones.b4eeda8bd82b712057a2.png",
     "static/media/logo.svg": "./static/media/logo.d2f3622ca4d3c7f8d4dd2506e3e2fe46.svg",
     "static/media/Mont-Regular.otf": "./static/media/Mont-Regular.1d26d89f7339866d3133.otf",
@@ -42,11 +42,11 @@
     "static/media/arrow_down.svg": "./static/media/arrow_down.98c9dd6d98b47f2f1977.svg",
     "static/media/search.svg": "./static/media/search.3c9b3dc1aa77a9452298.svg",
     "static/media/minus.svg": "./static/media/minus.cecb4be39afa7b933ec169dd495a73ff.svg",
-    "main.0e240b46.css.map": "./static/css/main.0e240b46.css.map",
-    "main.71fe54c3.js.map": "./static/js/main.71fe54c3.js.map"
+    "main.8d480848.css.map": "./static/css/main.8d480848.css.map",
+    "main.fa9baae6.js.map": "./static/js/main.fa9baae6.js.map"
   },
   "entrypoints": [
-    "static/css/main.0e240b46.css",
-    "static/js/main.71fe54c3.js"
+    "static/css/main.8d480848.css",
+    "static/js/main.fa9baae6.js"
   ]
 }
