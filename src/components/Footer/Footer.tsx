@@ -19,6 +19,7 @@ export const Footer: React.FC = () => {
             className={styles.footer_logo}
             src={logo}
             alt="logo nice gadgets"
+            onClick={goToTop}
           />
 
           <ul className={styles.footer_list}>
