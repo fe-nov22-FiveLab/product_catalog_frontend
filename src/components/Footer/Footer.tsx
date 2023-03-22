@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './Footer.module.scss';
 import logo from '../../assets/img/icons/logo.svg';
-import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
   const goToTop = () => {

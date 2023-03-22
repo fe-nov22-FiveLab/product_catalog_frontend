@@ -58,7 +58,6 @@ export const HomeSwiper: React.FC = () => {
             el: '.swiper-custom-pagination',
           }}
           onSwiper={setSwiperRef}
-          onSlideChange={() => console.log('slide change')}
           loop
           observeParents
           observer
