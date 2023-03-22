@@ -2,7 +2,9 @@
 @import '../../styles/mixins.scss';
 
 .header {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 99;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,6 +36,19 @@
 .icon {
   display: flex;
   position: relative;
+}
+
+.icon__is_active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  border-bottom: 2px solid $primary-color;
+
+  @include onDesktop {
+    top: 20px;
+  }
 }
 
 .icon__action {
@@ -81,12 +96,12 @@
 
   @include onTablet {
     top: 10px;
-    right: 58%;
+    right: 18%;
   }
 
   @include onDesktop {
     top: 18px;
-    right: 63%;
+    right: 26%;
   }
 }
 
