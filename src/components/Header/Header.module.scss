@@ -2,7 +2,9 @@
 @import '../../styles/mixins.scss';
 
 .header {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 99;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -193,12 +195,12 @@
 
   @include onTablet {
     top: 10px;
-    right: 58%;
+    right: 18%;
   }
 
   @include onDesktop {
     top: 18px;
-    right: 63%;
+    right: 26%;
   }
 }
 

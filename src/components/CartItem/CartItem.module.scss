@@ -54,6 +54,12 @@
   max-width: 100%;
   padding: 7px;
   margin-right: 23px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 }
 
 .content {
