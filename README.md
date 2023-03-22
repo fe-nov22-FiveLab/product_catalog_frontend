@@ -10,7 +10,8 @@ Technologies Used
 - React
 - React-Router
 - TypeScript
-- Redux
+- Redux Toolkit
+- Redux persist
 - Sass
 - Sequelize
 - Express
