@@ -15,11 +15,10 @@ export const NotFoundPage: React.FC = () => {
       <CowGame />
 
       <div className={styles.button_container}>
-        <Link to='/'>
+        <Link to="/">
           <button className={styles.button_back}>Back to home</button>
         </Link>
       </div>
     </div>
   );
 };
-

@@ -17,13 +17,13 @@ export const HomePage: React.FC = () => {
         <HomeSwiper />
       </div>
 
-      <PhonesSwiper title='Brand new models' sort='year' />
+      <PhonesSwiper title="Brand new models" sort="year" />
 
       <div className={styles.container}>
         <ShopByCategory />
       </div>
 
-      <PhonesSwiper title='Hot prices' sort='price' />
+      <PhonesSwiper title="Hot prices" sort="price" />
     </>
   );
 };

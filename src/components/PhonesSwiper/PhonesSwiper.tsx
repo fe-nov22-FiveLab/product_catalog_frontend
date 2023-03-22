@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Swiper as SwiperClass } from 'swiper/types';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -18,7 +18,7 @@ import { Phone } from '../../@types/Phone';
 import { Card } from '../Card/Card';
 import { Loader } from '../Loader';
 
-interface Props  {
+interface Props {
   title: string;
   sort: string;
 }
@@ -47,7 +47,6 @@ export const PhonesSwiper: React.FC<Props> = ({ title, sort }) => {
 
   const handlePrevious = useCallback(() => {
     swiperRef?.slidePrev();
-    console.log('previous');
   }, [swiperRef]);
 
   const handleNext = useCallback(() => {
@@ -79,24 +78,23 @@ export const PhonesSwiper: React.FC<Props> = ({ title, sort }) => {
 
       <div className={styles.swiper_container}>
         <Swiper
-          modules={[ Navigation, Pagination, Scrollbar, A11y]}
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={16}
           slidesPerView={4}
           onSwiper={setSwiperRef}
-          onSlideChange={() => console.log('slide change')}
           loop
         >
           {isLoading
             ? Array.from({ length: 10 }).map((_, i) => (
               <SwiperSlide key={i}>
                 <Loader />
-              </SwiperSlide> ))
+              </SwiperSlide>
+            ))
             : phones.map((phone) => (
               <SwiperSlide key={phone.id}>
                 <Card phone={phone} />
               </SwiperSlide>
-            ))
-          }
+            ))}
         </Swiper>
       </div>
     </div>
