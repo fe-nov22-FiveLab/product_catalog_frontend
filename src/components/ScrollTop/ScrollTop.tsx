@@ -8,7 +8,7 @@ const ScrollTop = ({ children }: { children: React.ReactNode }) => {
     window.scrollTo(0, 0);
   }, [location]);
 
-  return <main>{children}</main>;
+  return <>{children}</>;
 };
 
 export default ScrollTop;
