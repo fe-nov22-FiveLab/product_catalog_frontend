@@ -40,6 +40,10 @@
     align-items: center;
   }
 
+  &_logo {
+    cursor: pointer;
+  }
+
   &_list {
     display: flex;
     flex-direction: column;
@@ -66,6 +70,12 @@
     align-items: center;
     gap: 16px;
 
+
+
+  }
+
+  &_top_title {
+    padding: 7px 0;
     cursor: pointer;
   }
 
@@ -78,6 +88,8 @@
     background: url('../../../public/img/buttons/slider_button_default_up.svg')
       no-repeat;
     transform: rotate(90);
+    cursor: pointer;
+
 
     transition: all 0.3s;
 
