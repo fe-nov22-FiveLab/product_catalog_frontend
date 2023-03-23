@@ -33,7 +33,8 @@ export const Header: React.FC = () => {
           <NavLink
             to="favourites"
             className={({ isActive }) =>
-              classNames (styles.icon, { [styles.is_active_icons]: isActive })}
+              classNames(styles.icon, { [styles.is_active_icons]: isActive })
+            }
           >
             <div>
               <div className={styles.icon__action}>
@@ -50,7 +51,8 @@ export const Header: React.FC = () => {
           <NavLink
             to="cart"
             className={({ isActive }) =>
-              classNames (styles.icon, { [styles.is_active_icons]: isActive })}
+              classNames(styles.icon, { [styles.is_active_icons]: isActive })
+            }
           >
             <div className={styles.icon__action}>
               {totalPhones > 0 && (

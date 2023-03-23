@@ -9,7 +9,7 @@ export const HomePage: React.FC = () => {
   return (
     <>
       <div className={styles.container}>
-        <h1 className={styles.title}>Welcome to Nice Gadgets store!</h1>
+        <h1 className={styles.title}>Nice Gadgets store</h1>
       </div>
 
       <div className={styles.home_slider_container}>

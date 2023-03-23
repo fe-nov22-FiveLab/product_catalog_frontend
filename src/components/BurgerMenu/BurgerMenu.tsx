@@ -7,7 +7,6 @@ import cross from '../../assets/img/icons/cross.svg';
 import favourites_heart from '../../assets/img/icons/favourites_heart.svg';
 import bag from '../../assets/img/icons/bag.svg';
 import { NavLinkBurger } from '../NavLinkBurger/NavLinkBurger';
-import burger from '../../assets/img/icons/burger.svg';
 import { useAppSelector } from '../../app/hooks';
 import { selectCart } from '../../features/cart/cartSlice';
 import { selectFavourites } from '../../features/favourites/favourites';
@@ -17,9 +16,13 @@ export const BurgerMenu: React.FC = () => {
 
   useEffect(() => {
     if (isActiveBurger) {
-      document.body.classList.add(styles.burger__with__menu);
+      document.body.classList.add(styles.burger__icon_open);
     } else {
-      document.body.classList.remove(styles.burger__with__menu);
+      document.body.classList.remove(styles.burger__icon_open);
+      document.body.classList.add(styles.burger__icon_close);
+      setTimeout(() => {
+        document.body.classList.remove(styles.burger__icon_close);
+      }, 300);
     }
   }, [isActiveBurger]);
 
@@ -38,14 +41,15 @@ export const BurgerMenu: React.FC = () => {
 
   return (
     <>
-      <div className={styles.burger__icon}>
-        <button
-          onClick={() => setIsActiveBurger(true)}
-          type="button"
-          className={styles.burger__button_icon}
-        >
-          <img src={burger} alt="shopping bag" />
-        </button>
+      <div
+        className={styles.burger__icon}
+        onClick={() => setIsActiveBurger(true)}
+      >
+        <div>
+          <div className={styles.btn_line}></div>
+          <div className={styles.btn_line}></div>
+          <div className={styles.btn_line}></div>
+        </div>
       </div>
 
       {isActiveBurger && (

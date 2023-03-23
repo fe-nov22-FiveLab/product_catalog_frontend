@@ -40,6 +40,9 @@
     line-height: 15px;
     color: $primary-color;
     margin-right: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     &__is_active {
       color: $secondary-color;

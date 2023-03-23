@@ -18,5 +18,3 @@ Technologies Used
 - Node.js
 
 ## [Demo](https://fe-nov22-fivelab.github.io/product_catalog_frontend/#/)
-
-
