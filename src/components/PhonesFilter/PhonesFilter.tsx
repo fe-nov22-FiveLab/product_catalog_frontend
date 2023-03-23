@@ -152,7 +152,7 @@ export const PhonesFilter: React.FC = () => {
             className={styles.dropdown__btn}
             onClick={() => setIsPageSelectActive(!isPageSelectActive)}
           >
-            {perPage || 'all'}
+            {!perPage || !['4', '8', '16'].includes(perPage) ? 'all' : perPage}
             <span
               className={classNames([styles.dropdown__arrow], {
                 [styles.dropdown__arrow__active]: isPageSelectActive,

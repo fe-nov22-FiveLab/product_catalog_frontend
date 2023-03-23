@@ -1,6 +1,5 @@
 import React from 'react';
 import { HomeSwiper } from '../../components/HomeSwiper';
-import { PhonesFilter } from '../../components/PhonesFilter';
 import { PhonesSwiper } from '../../components/PhonesSwiper';
 import { ShopByCategory } from '../../components/ShopByCategory';
 
