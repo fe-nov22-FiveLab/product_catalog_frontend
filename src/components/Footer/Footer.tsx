@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Footer.module.scss';
 import logo from '../../assets/img/icons/logo.svg';
+import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
   const goToTop = () => {
@@ -34,14 +35,15 @@ export const Footer: React.FC = () => {
             </li>
 
             <li className={styles.footer_item}>
-              <a
-                href="https://github.com/fe-nov22-FiveLab/product_catalog_frontend"
+              <Link
+                to="/contacts"
+                // href="https://github.com/fe-nov22-FiveLab/product_catalog_frontend"
                 className={styles.footer_link}
                 target="_blank"
                 rel="noreferrer"
               >
                 contacts
-              </a>
+              </Link>
             </li>
 
             <li className={styles.footer_item}>

@@ -11,6 +11,7 @@ import { FavouritesPage } from './pages/FavouritesPage';
 import { Breadcrumbs } from './components/Breadcrumbs/Breadcrumbs';
 import { TabletsPage } from './pages/TabletsPage';
 import { AccessoriesPage } from './pages/AccessoriesPage';
+import { ContactsPage } from './pages/ContactsPage';
 
 const App: React.FC = () => {
   return (
@@ -29,6 +30,7 @@ const App: React.FC = () => {
         <Route path="/favourites" element={<FavouritesPage />} />
         <Route path="/tablets" element={<TabletsPage />} />
         <Route path="/accessories" element={<AccessoriesPage />} />
+        <Route path="/contacts" element={<ContactsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
 

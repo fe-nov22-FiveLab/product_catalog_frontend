@@ -1,0 +1,48 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.container {
+  flex-grow: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  margin-bottom: 60px;
+
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 40px;
+
+  @include onTablet {
+    padding: 0 24px;
+  }
+
+  @include onDesktop {
+    padding: 0 32px;
+  }
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @include onTablet {
+    flex-direction: row;
+  }
+}
+
+// .cards-a {
+//   display: flex;
+//   flex-direction: column;
+// justify-content: center;
+// align-items: center;
+// }
+
+// .cards_b {
+//   display: flex;
+// justify-content: center;
+// }
