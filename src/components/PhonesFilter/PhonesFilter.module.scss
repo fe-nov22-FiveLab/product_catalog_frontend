@@ -101,13 +101,13 @@
     display: inline-block;
     height: 15px;
     width: 15px;
-    background: url('../../../public/img/icons/arrow_down.svg') no-repeat;
+    background: url('../../assets/img/icons/arrow_down.svg') no-repeat;
 
     &__active {
       position: absolute;
       top: 15px;
       right: 15px;
-      background: url('../../../public/img/icons/arrow-top.svg') no-repeat;
+      background: url('../../assets/img/icons/arrow-top.svg') no-repeat;
     }
   }
 }
