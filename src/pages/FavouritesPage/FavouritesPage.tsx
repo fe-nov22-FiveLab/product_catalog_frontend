@@ -11,7 +11,12 @@ export const FavouritesPage: React.FC = () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Favourites</h1>
-      <p className={styles['items-amount']}>{phonesAmount} items</p>
+      {phonesAmount > 1 || phonesAmount === 0 ? (
+        <p className={styles['items-amount']}>{phonesAmount} items</p>
+      ) : (
+        <p className={styles['items-amount']}>{phonesAmount} item</p>
+      )}
+
 
       {phones.length === 0 ? (
         <p className={styles.message}>You don&apos;t have favourites yet</p>
