@@ -13,6 +13,7 @@ import { TabletsPage } from './pages/TabletsPage';
 import { AccessoriesPage } from './pages/AccessoriesPage';
 import ScrollTop from './components/ScrollTop/ScrollTop';
 import { RightsPage } from './pages/RightsPage/RightsPage';
+import { ContactsPage } from './pages/ContactsPage';
 
 const App: React.FC = () => {
   return (
@@ -32,6 +33,7 @@ const App: React.FC = () => {
           <Route path="/favourites" element={<FavouritesPage />} />
           <Route path="/tablets" element={<TabletsPage />} />
           <Route path="/accessories" element={<AccessoriesPage />} />
+          <Route path="/contacts" element={<ContactsPage />} />
           <Route path="/rights" element={<RightsPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
