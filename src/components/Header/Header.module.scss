@@ -24,6 +24,31 @@
   }
 }
 
+.is_active_icons {
+  color: $primary-color;
+  position: relative;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    display: block;
+    top: 135%;
+
+    height: 2px;
+    width: 100%;
+
+    background-color: $primary-color;
+
+    @include onTablet {
+      top: 96%;
+    }
+    @include onDesktop {
+      top: 97%;
+    }
+  }
+}
+
 .nav__is_active::after {
   top: 35px;
   height: 3px;

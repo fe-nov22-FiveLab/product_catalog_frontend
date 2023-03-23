@@ -82,7 +82,7 @@
     display: inline-block;
 
     border: none;
-    background: url('../../../public/img/buttons/slider_button_default_up.svg')
+    background: url('../../assets/img/icons/slider_button_default_up.svg')
       no-repeat;
     transform: rotate(90);
     cursor: pointer;
@@ -90,7 +90,7 @@
     transition: all 0.3s;
 
     &:hover {
-      background: url('../../../public/img/buttons/slider_button_hover_up.svg')
+      background: url('../../assets/img/icons/slider_button_hover_up.svg')
         no-repeat;
     }
   }
