@@ -55,6 +55,9 @@
 
 .phone_infos {
   width: 148px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   @include onTablet {
     width: 173px;
