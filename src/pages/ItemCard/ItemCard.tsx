@@ -12,7 +12,7 @@ import {
 import { getPhoneDetails } from '../../utils/fetchData';
 import { useParams } from 'react-router';
 import classNames from 'classnames';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { PhoneColor, PhoneColors } from '../../@types/PhoneColors';
 import { Phone } from '../../@types/Phone';
 import {
@@ -88,12 +88,22 @@ export const ItemCard: React.FC = () => {
     return null;
   };
 
+  const navigate = useNavigate();
+  const goBack = () => {
+    navigate(-1);
+  };
+
   if (hasError) {
     return (
       <>
-        <div className={styles.container}>
+        <div className={styles.product_error}>
           <p className={styles.error}>Product not found</p>
+
+          <div className={styles.button_container} onClick={goBack} >
+            <button className={styles.button_back}>Back to phones</button>
+          </div>
         </div>
+
         <div className={styles.slider__cards}>
           <PhonesSwiper title="You may also like" sort="year" />
         </div>
