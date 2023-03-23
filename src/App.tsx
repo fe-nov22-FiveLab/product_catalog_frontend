@@ -11,9 +11,9 @@ import { FavouritesPage } from './pages/FavouritesPage';
 import { Breadcrumbs } from './components/Breadcrumbs/Breadcrumbs';
 import { TabletsPage } from './pages/TabletsPage';
 import { AccessoriesPage } from './pages/AccessoriesPage';
-import { ContactsPage } from './pages/ContactsPage';
 import ScrollTop from './components/ScrollTop/ScrollTop';
 import { RightsPage } from './pages/RightsPage/RightsPage';
+import { ContactsPage } from './pages/ContactsPage';
 
 const App: React.FC = () => {
   return (
