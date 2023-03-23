@@ -144,21 +144,6 @@
     padding: 0;
     margin: 0;
   }
-
-  &__link {
-    display: block;
-    margin-top: 32px;
-    line-height: 11px;
-
-    font-size: 12px;
-    font-weight: 800;
-    text-decoration: none;
-    color: $secondary-color;
-
-    &:hover {
-      color: $primary-color;
-    }
-  }
 }
 
 .burger__with__menu {

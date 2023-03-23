@@ -8,6 +8,7 @@ import bag from '../../assets/img/icons/bag.svg';
 import { useAppSelector } from '../../app/hooks';
 import { selectCart } from '../../features/cart/cartSlice';
 import { selectFavourites } from '../../features/favourites/favourites';
+import classNames from 'classnames';
 
 export const Header: React.FC = () => {
   const { phones } = useAppSelector(selectCart);
@@ -29,7 +30,11 @@ export const Header: React.FC = () => {
         <Nav />
 
         <div className={styles.icon}>
-          <NavLink to="favourites">
+          <NavLink
+            to="favourites"
+            className={({ isActive }) =>
+              classNames (styles.icon, { [styles.is_active_icons]: isActive })}
+          >
             <div>
               <div className={styles.icon__action}>
                 {totalFavoritesPhones > 0 && (
@@ -42,7 +47,11 @@ export const Header: React.FC = () => {
             </div>
           </NavLink>
 
-          <NavLink to="cart">
+          <NavLink
+            to="cart"
+            className={({ isActive }) =>
+              classNames (styles.icon, { [styles.is_active_icons]: isActive })}
+          >
             <div className={styles.icon__action}>
               {totalPhones > 0 && (
                 <div className={styles.cart_counter}>{totalPhones}</div>

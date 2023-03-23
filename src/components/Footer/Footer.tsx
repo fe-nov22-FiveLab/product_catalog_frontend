@@ -47,14 +47,9 @@ export const Footer: React.FC = () => {
             </li>
 
             <li className={styles.footer_item}>
-              <a
-                href="https://github.com/fe-nov22-FiveLab/product_catalog_frontend"
-                className={styles.footer_link}
-                target="_blank"
-                rel="noreferrer"
-              >
-                rights
-              </a>
+              <Link to="/rights">
+                <div className={styles.footer_link}>rights</div>
+              </Link>
             </li>
           </ul>
 

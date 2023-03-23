@@ -1,0 +1,67 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.container {
+  flex-grow: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  @include onTablet {
+    padding: 0 24px;
+  }
+
+  @include onDesktop {
+    padding: 0 32px;
+  }
+}
+
+.title {
+  margin-bottom: 24px;
+  font-weight: 700;
+  font-size: 48px;
+  color: $primary-color;
+
+  @include onTablet {
+    margin-bottom: 0 32px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 0 56px;
+  }
+}
+
+.first_text {
+  margin-bottom: 24px;
+  font-weight: 600;
+  font-size: 16px;
+  color: $primary-color;
+
+  @include onTablet {
+    margin-bottom: 0 32px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 0 56px;
+  }
+}
+
+.li_text {
+  margin-bottom: 5px;
+}
+
+.text {
+  margin-bottom: 24px;
+  font-weight: 500;
+  font-size: 14px;
+  color: $primary-color;
+
+  @include onTablet {
+    margin-bottom: 0 32px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 0 56px;
+  }
+}

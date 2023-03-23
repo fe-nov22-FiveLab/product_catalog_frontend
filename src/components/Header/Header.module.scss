@@ -2,7 +2,9 @@
 @import '../../styles/mixins.scss';
 
 .header {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 99;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,80 +24,6 @@
   }
 }
 
-.nav {
-  display: flex;
-
-  &__logo {
-    padding-left: 16px;
-    padding-right: 16px;
-
-    &__image {
-      height: 20px;
-      width: 64px;
-
-      @include onDesktop {
-        height: 26px;
-        width: 80px;
-      }
-    }
-  }
-
-  &__list {
-    display: flex;
-
-    @media (max-width: 639px) {
-      display: none;
-    }
-  }
-
-  &__item {
-    display: flex;
-    padding-left: 32px;
-
-    line-height: 11px;
-    font-size: 12px;
-    font-weight: 800;
-
-    @include onDesktop {
-      padding-left: 64px;
-    }
-  }
-
-  &__link {
-    display: flex;
-    align-items: center;
-
-    text-decoration: none;
-    color: $secondary-color;
-
-    &:hover {
-      color: $primary-color;
-    }
-  }
-}
-
-.is_active {
-  color: $primary-color;
-  position: relative;
-
-  &::after {
-    content: '';
-
-    position: absolute;
-    display: block;
-    top: 135%;
-
-    height: 2px;
-    width: 100%;
-
-    background-color: $primary-color;
-
-    @include onDesktop {
-      top: 145%;
-    }
-  }
-}
-
 .nav__is_active::after {
   top: 35px;
   height: 3px;
@@ -108,6 +36,19 @@
 .icon {
   display: flex;
   position: relative;
+}
+
+.icon__is_active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  border-bottom: 2px solid $primary-color;
+
+  @include onDesktop {
+    top: 20px;
+  }
 }
 
 .icon__action {
@@ -155,12 +96,12 @@
 
   @include onTablet {
     top: 10px;
-    right: 58%;
+    right: 18%;
   }
 
   @include onDesktop {
     top: 18px;
-    right: 63%;
+    right: 26%;
   }
 }
 
