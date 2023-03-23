@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './ShopByCategory.module.scss';
 import { Link } from 'react-router-dom';
 import phone from '../../assets/img/categories/phone-category.jpg';
 import tablets from '../../assets/img/categories/tablet-category.jpg';
 import accessories from '../../assets/img/categories/accessories-category.jpg';
+import { getPhones } from '../../utils/fetchData';
 
 export const ShopByCategory: React.FC = () => {
+  const [total, setTotal] = useState(0);
+
+  useEffect(() => {
+    const loadPhonesData = async () => {
+      const phonesData = await getPhones('');
+      setTotal(phonesData.total);
+    };
+
+    loadPhonesData();
+  }, []);
+
   return (
     <div className={styles.category}>
       <h2 className={styles.category__title}>Shop by category</h2>
@@ -18,7 +30,7 @@ export const ShopByCategory: React.FC = () => {
           <Link to={'/phones'} className={styles.category__subtitle}>
             Mobile phones
           </Link>
-          <p className={styles.category__amount}>71 models</p>
+          <p className={styles.category__amount}>{total} models</p>
         </div>
 
         <div className={styles.category__item}>
