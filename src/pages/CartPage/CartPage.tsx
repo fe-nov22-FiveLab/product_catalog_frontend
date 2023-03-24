@@ -5,7 +5,6 @@ import { CartCheckout } from '../../components/CartCheckout/CartCheckout';
 import { CartItem } from '../../components/CartItem/CartItem';
 import styles from './CartPage.module.scss';
 import arrowBack from '../../assets/img/icons/arrow-back.svg';
-import empty_cart from '../../assets/img/empty-cart.png';
 import { useNavigate } from 'react-router-dom';
 
 export const CartPage: React.FC = () => {

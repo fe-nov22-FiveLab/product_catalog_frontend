@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './ItemCard.module.scss';
 import arrowBack from '../../assets/img/icons/arrow-back.svg';
 import favourites from '../../assets/img/icons/favourites_heart.svg';
@@ -99,7 +99,7 @@ export const ItemCard: React.FC = () => {
         <div className={styles.product_error}>
           <p className={styles.error}>Product not found</p>
 
-          <div className={styles.button_container} onClick={goBack} >
+          <div className={styles.button_container} onClick={goBack}>
             <button className={styles.button_back}>Back to phones</button>
           </div>
         </div>
