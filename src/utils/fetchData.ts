@@ -3,7 +3,7 @@ import { Phone } from '../@types/Phone';
 import { PhonesData } from '../@types/PhonesData';
 import { RequestMethod } from '../@types/Request';
 
-const BASE_URL = 'https://product-catalog-api-sc0v.onrender.com';
+const BASE_URL = 'https://product-api-rtk8.onrender.com';
 
 async function request<T>(
   url: string,
